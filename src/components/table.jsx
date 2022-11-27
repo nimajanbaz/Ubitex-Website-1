@@ -10,7 +10,7 @@ export const Table = ({ columns, data }) => {
 
   // Render the UI for your table
   return (
-    <table {...getTableProps()} className="rtl-grid mt-10 mx-auto w-full">
+    <table {...getTableProps()} className="rtl-grid mt-10 mx-auto w-full overflow-scroll">
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>

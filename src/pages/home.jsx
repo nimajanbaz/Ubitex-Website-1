@@ -212,7 +212,7 @@ const HomePage = (props) => {
               ارزهای دیجیتال یوبیتکس
             </h3>
             {data ? (
-              <div className="md:overflow-auto lg:overflow-hidden">
+              <div className="max-md:overflow-scroll">
                 <Table columns={columns} data={data.slice(0, 10)} />
                 <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
                   <Link

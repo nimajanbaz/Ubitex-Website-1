@@ -88,7 +88,7 @@ export default function Navbar({ isDark }) {
         </div>
       </div>
 
-      {/* <Transition
+      <Transition
         as={Fragment}
         enter="duration-200 ease-out"
         enterFrom="opacity-0 scale-95"
@@ -101,7 +101,7 @@ export default function Navbar({ isDark }) {
           className="absolute inset-x-0 top-0 origin-top-right transform p-2 transition md:hidden">
           <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg">
             <div className="space-y-6 py-6 px-5">
-              <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+              <div className="grid grid-cols-1 gap-y-4 gap-x-8">
                 {menuItems.map((item) => {
                   return (
                     <div key={item.id}>
@@ -128,7 +128,7 @@ export default function Navbar({ isDark }) {
             </div>
           </div>
         </Popover.Panel>
-      </Transition> */}
+      </Transition>
     </Popover>
   );
 }
