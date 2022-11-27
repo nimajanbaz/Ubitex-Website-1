@@ -44,11 +44,11 @@ export default function Navbar({ isDark }) {
         className={`w-full mx-auto shadow-xl ${isDark ? "shadow-[0_35px_60px_-15px_rgba(6,37,70,1)]" : "shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"}`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div
-            className={`flex items-center justify-between py-6 md:justify-start md:space-x-10`}>
+            className={`flex items-center justify-between py-4 md:justify-start md:space-x-10`}>
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link to="/">
                 <img
-                  className="h-10 w-auto sm:h-10"
+                  className="h-12 w-auto sm:h-10"
                   src={logo}
                   alt="Ubitex Logo"
                 />

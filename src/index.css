@@ -34,3 +34,15 @@
     transform: translateX(0px);
   }
 }
+
+.rtl-grid {
+  direction: rtl;
+}
+
+.filter-green {
+  filter: invert(42%) sepia(56%) saturate(3755%) hue-rotate(110deg) brightness(95%) contrast(100%);
+}
+
+.filter-red {
+  filter: invert(22%) sepia(56%) saturate(88855%) hue-rotate(344deg) brightness(100%) contrast(100%)
+}
