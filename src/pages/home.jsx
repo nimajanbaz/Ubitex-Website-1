@@ -3,24 +3,21 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Navbar from "../components/navbar";
 import { Table } from "../components/table";
-import platform from "../assets/img/platform.webp";
-import orders from "../assets/img/orders.webp";
-import deposit from "../assets/img/deposit.webp";
-import app from "../assets/img/app-01.webp";
-import mobile from "../assets/img/app.png";
-import gift from "../assets/img/gift.png";
-import stoploss from "../assets/img/stoploss.png";
-import support from "../assets/img/support.png";
 import about from "../assets/img/about-2.webp";
+import ubitexLogo from "../assets/img/logo-01.png";
 import mobileApp from "../assets/img/5.webp";
+import {
+  header_images,
+  header_boxes,
+  center_boxes,
+  footer_data,
+} from "../data";
 
 const HomePage = (props) => {
   props.onBg("bg-[#051933]");
 
-  const ver_class =
-    "absolute p-2 rounded-lg border border-[#072349] shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all";
-
   const [data, setData] = useState();
+
   const columns = useMemo(
     () => [
       {
@@ -127,64 +124,6 @@ const HomePage = (props) => {
     []
   );
 
-  const header_images = [
-    {
-      id: 1,
-      src: platform,
-      alt: "Platform",
-      class: `${ver_class} animate-ver_7s left-10`,
-    },
-    {
-      id: 2,
-      src: deposit,
-      alt: "Deposit",
-      class: `${ver_class} animate-ver_5s left-80 top-60 w-1/4`,
-    },
-    {
-      id: 3,
-      src: orders,
-      alt: "Orders",
-      class: `${ver_class} animate-hor_5s left-36 top-[470px] w-3/4`,
-    },
-    {
-      id: 4,
-      src: app,
-      alt: "Application",
-      class: `${ver_class} animate-hor_7s top-36 w-3/12 !border-[7px]`,
-    },
-  ];
-
-  const header_boxes = [
-    {
-      id: 1,
-      image: mobile,
-      title: "اپلیکیشن موبایل",
-      description:
-        "اپلیکیشن یوبیتکس در دو نسخه اندروید و IOS با رابط کاربری ساده و حرفه ای",
-    },
-    {
-      id: 2,
-      image: gift,
-      title: "کارت هدیه ارزدیجیتال",
-      description:
-        "ساخت رایگان کارت هدیه رمزارزی با طرح دلخواه در مناسبت های مختلف",
-    },
-    {
-      id: 3,
-      image: support,
-      title: "پشتیبانی 24 ساعته",
-      description:
-        "پشتیبانی آنلاین حرفه ای 24 ساعته در 7 روز هفته از طریق تیکت و چت آنلاین",
-    },
-    {
-      id: 4,
-      image: stoploss,
-      title: "تعیین حد سود / ضرر",
-      description:
-        "امکان تعیین حد سود / ضرر به دو صورت عادی و استاپ با بهترین قیمت",
-    },
-  ];
-
   useEffect(() => {
     const getData = async () => {
       await axios
@@ -218,14 +157,22 @@ const HomePage = (props) => {
           </div>
 
           {/* Right Box */}
-          <div className="flex flex-col space-y-3 items-end lg:w-4/12 md:w-full">
-            <h3>...داستان پول عوض شد</h3>
-            <h1 className="text-[#f39200] text-3xl font-semibold">
-              صرافی ارز دیجیتال یوبیتکس
-            </h1>
-            <h3>پلتفرم مبادلات رمزارزی شما</h3>
-            <h2 className="text-xl">خرید و فروش بیش از 100 رمزارز</h2>
-            <h2 className="text-xl">در تالار معاملات با کارمزد ثابت 0.0025</h2>
+          <div className="flex flex-col space-y-7 items-end lg:w-4/12 md:w-full">
+            <div className="flex flex-col space-y-7">
+              <div className="flex flex-col space-y-2">
+                <h3 className="text-2xl">...داستان پول عوض شد</h3>
+                <h1 className="text-[#f39200] text-4xl font-semibold">
+                  صرافی ارز دیجیتال یوبیتکس
+                </h1>
+                <h3 className="text-2xl">پلتفرم مبادلات رمزارزی شما</h3>
+              </div>
+              <div className="flex flex-col space-y-2">
+                <h2 className="text-xl">خرید و فروش بیش از 100 رمزارز</h2>
+                <h2 className="text-xl">
+                  در تالار معاملات با کارمزد ثابت 0.0025
+                </h2>
+              </div>
+            </div>
 
             <div className="flex space-x-3 space-x-reverse flex-row-reverse mt-3">
               <Link to="/redirect-to-platform">
@@ -290,11 +237,11 @@ const HomePage = (props) => {
                 </h3>
                 <span>برخی از امکانات پلتفرم یوبیتکس</span>
               </div>
-              <div className="mx-auto grid lg:grid-cols-2 md:grid-cols-1 gap-3">
-                {header_boxes.map((data) => {
+              <div className="mx-auto grid lg:grid-cols-2 md:grid-cols-1 gap-7">
+                {center_boxes.map((data) => {
                   return (
                     <div
-                      className="shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] p-7 hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl"
+                      className="shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] p-7 hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-lg"
                       key={data.id}>
                       <img
                         src={data.image}
@@ -340,6 +287,62 @@ const HomePage = (props) => {
                   </button>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div>
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-10  max-w-[1600px] mx-auto items-center">
+              <div className="flex flex-col text-center">
+                <span className="text-[#f39200] text-xl font-semibold mb-3">
+                  یوبیتکس
+                </span>
+                {footer_data.support.map((item) => {
+                  return (
+                    <Link to={item.href} key={item.id} className="mb-2">
+                      <a className="hover:text-[#f39200] transition-all">
+                        {item.title}
+                      </a>
+                    </Link>
+                  );
+                })}
+              </div>
+              <div className="flex flex-col text-center">
+                <span className="text-[#f39200] text-xl font-semibold mb-3">
+                  خدمات
+                </span>
+                {footer_data.services.map((item) => {
+                  return (
+                    <Link to={item.href} key={item.id} className="mb-2">
+                      <a className="hover:text-[#f39200] transition-all">
+                        {item.title}
+                      </a>
+                    </Link>
+                  );
+                })}
+              </div>
+              <div className="flex flex-col text-center">
+                <span className="text-[#f39200] text-xl font-semibold mb-3">
+                  پشتیبانی
+                </span>
+                {footer_data.ubitex.map((item) => {
+                  return (
+                    <Link to={item.href} key={item.id} className="mb-2">
+                      <a className="hover:text-[#f39200] transition-all">
+                        {item.title}
+                      </a>
+                    </Link>
+                  );
+                })}
+              </div>
+              <div>
+                <img src={ubitexLogo} alt="" className="mx-auto w-1/2" />
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-6 md:grid-cols-2 gap-10 max-w-[1300px] mx-auto items-center mt-6">
+              {footer_data.download_app.map((img) => {
+                return <img src={img.img} alt="" key={img.id} />;
+              })}
             </div>
           </div>
         </div>

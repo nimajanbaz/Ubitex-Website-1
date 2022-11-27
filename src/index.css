@@ -46,3 +46,25 @@
 .filter-red {
   filter: invert(22%) sepia(56%) saturate(88855%) hue-rotate(344deg) brightness(100%) contrast(100%)
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #0f4f8b9c;
+  @apply bg-[#04162d] rounded-full
+}
+
+::-webkit-scrollbar-thumb {
+  /* background: #0c3e6d; */
+  transition: 0.15s;
+  border-radius: 5px;
+  @apply bg-[#0c3e6d]
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f39200;
+  transition: 0.15s;
+}
