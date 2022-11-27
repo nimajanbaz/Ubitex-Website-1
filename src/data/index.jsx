@@ -174,26 +174,32 @@ export const footer_data = {
     {
       id: 1,
       img: download_app_1,
+      href: "https://cafebazaar.ir/app/io.ubitex.ubitex",
     },
     {
       id: 2,
       img: download_app_2,
+      href: "https://myket.ir/app/io.ubitex.ubitex",
     },
     {
       id: 3,
       img: download_app_3,
+      href: "https://ubitex.io/Ubitex.apk",
     },
     {
       id: 4,
       img: download_app_4,
+      href: "https://anardoni.com/ios/app/fNcCgkDHU",
     },
     {
       id: 5,
       img: download_app_5,
+      href: "https://anardoni.com/ios/app/fNcCgkDHU",
     },
     {
       id: 6,
       img: download_app_6,
+      href: "https://pwa.ubitex.io/",
     },
   ],
 };

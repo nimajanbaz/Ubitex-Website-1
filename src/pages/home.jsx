@@ -291,8 +291,8 @@ const HomePage = (props) => {
           </div>
 
           <div>
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-10  max-w-[1600px] mx-auto items-center">
-              <div className="flex flex-col text-center">
+            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-10  max-w-[1300px] mx-auto items-center">
+              <div className="grid grid-col text-center">
                 <span className="text-[#f39200] text-xl font-semibold mb-3">
                   یوبیتکس
                 </span>
@@ -306,7 +306,7 @@ const HomePage = (props) => {
                   );
                 })}
               </div>
-              <div className="flex flex-col text-center">
+              <div className="grid grid-col text-center">
                 <span className="text-[#f39200] text-xl font-semibold mb-3">
                   خدمات
                 </span>
@@ -320,7 +320,7 @@ const HomePage = (props) => {
                   );
                 })}
               </div>
-              <div className="flex flex-col text-center">
+              <div className="grid grid-col text-center">
                 <span className="text-[#f39200] text-xl font-semibold mb-3">
                   پشتیبانی
                 </span>
@@ -335,14 +335,23 @@ const HomePage = (props) => {
                 })}
               </div>
               <div>
-                <img src={ubitexLogo} alt="" className="mx-auto w-1/2" />
+                <img src={ubitexLogo} alt="" className="mx-auto w-2/3" />
               </div>
             </div>
 
-            <div className="grid lg:grid-cols-6 md:grid-cols-2 gap-10 max-w-[1300px] mx-auto items-center mt-6">
+            <div className="grid lg:grid-cols-6 md:grid-cols-2 sm:grid-cols-2 gap-10 max-w-[1300px] mx-auto items-center my-6">
               {footer_data.download_app.map((img) => {
-                return <img src={img.img} alt="" key={img.id} />;
+                return (
+                  <a href={img.href}><img src={img.img} alt="" key={img.id} /></a>
+                )
               })}
+            </div>
+
+            <div className="border-b border-b-[#062042] my-6"></div>
+
+            <div className="flex flex-col justify-center items-center pb-6">
+              <span>تلفن تماس: 91001716 - ساعت 9 الی 17</span>
+              <span>تمام حقوق این سایت متعلق به یوبیتکس می باشد.</span>
             </div>
           </div>
         </div>
