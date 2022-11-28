@@ -38,6 +38,16 @@ const App = () => {
               />
             }
           />
+
+          <Route
+            path="/redirect-to-blog"
+            element={
+              <Redirect
+                onBg={(e) => setColor(e)}
+                href={"https://test.ubitex.io/blog"}
+              />
+            }
+          />
         </Routes>
       </div>
     </Router>

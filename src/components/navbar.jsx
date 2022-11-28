@@ -29,7 +29,7 @@ export default function Navbar({ isDark }) {
     {
       id: 5,
       title: "بلاگ",
-      href: "/blog",
+      href: "/redirect-to-blog",
     },
     {
       id: 6,
