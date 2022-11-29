@@ -18,7 +18,7 @@ const Application = () => {
           <p className="mt-3">
             ترید آسان، همه جا و همه وقت از طریق اپلیکیشن موبایل یوبیتکس
           </p>
-          <img src={headerImage} alt="Header Image" className="mt-5" />
+          <img src={headerImage} alt="Header" className="mt-5" />
           <div className="border-b dark:border-b-[#072349] dark:shadow-[0px_5px_20px_0px_rgba(10,27,600,1)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.1)] w-full"></div>
         </div>
 

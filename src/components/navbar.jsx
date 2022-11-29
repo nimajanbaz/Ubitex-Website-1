@@ -24,7 +24,7 @@ export default function Navbar() {
     {
       id: 1,
       title: "قیمت لحظه‌ای",
-      href: "https://app.ubitex.io/markets",
+      href: "/redirect-to-markets",
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ export default function Navbar() {
     {
       id: 3,
       title: "تالار معاملات",
-      href: "https://app.ubitex.io",
+      href: "/redirect-to-platform",
     },
     {
       id: 4,
@@ -87,11 +87,11 @@ export default function Navbar() {
               })}
             </Popover.Group>
             <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
-              <a
-                href="#"
+              <Link
+                to="/redirect-to-platform"
                 className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-[#f39200] px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-[#ce7c00]">
                 ورود / ثبت نام
-              </a>
+              </Link>
               <div className="ml-3">
                 <span
                   className="text-2xl cursor-pointer dark:text-gray-300 text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all"
@@ -132,11 +132,11 @@ export default function Navbar() {
                 })}
               </div>
               <div className="mt-6 text-center text-base font-medium text-gray-500">
-                <a
-                  href="#"
+                <Link
+                  href="/redirect-to-platform"
                   className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-[#f39200] px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-[#ce7c00]">
                   ورود / ثبت نام
-                </a>
+                </Link>
               </div>
             </div>
           </div>
