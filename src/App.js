@@ -6,24 +6,21 @@ import Terms from "./pages/terms";
 import HomePage from "./pages/home";
 
 const App = () => {
-  const [color, setColor] = useState();
-
   return (
     <Router>
-      <div className={`font-display text-right ${color}`}>
+      <div className={`font-display text-right`}>
         <Routes>
           <Route
             path="/about-us"
-            element={<AboutUs onBg={(e) => setColor(e)} />}
+            element={<AboutUs />}
           />
-          <Route path="/terms" element={<Terms onBg={(e) => setColor(e)} />} />
-          <Route path="/" element={<HomePage onBg={(e) => setColor(e)} />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/" element={<HomePage />} />
 
           <Route
             path="/redirect-to-platform"
             element={
               <Redirect
-                onBg={(e) => setColor(e)}
                 href={"https://app.ubitex.io"}
               />
             }
@@ -33,7 +30,6 @@ const App = () => {
             path="/redirect-to-markets"
             element={
               <Redirect
-                onBg={(e) => setColor(e)}
                 href={"https://app.ubitex.io/markets"}
               />
             }
@@ -43,8 +39,7 @@ const App = () => {
             path="/redirect-to-blog"
             element={
               <Redirect
-                onBg={(e) => setColor(e)}
-                href={"https://test.ubitex.io/blog"}
+                href={"https://ubitex.io/blog"}
               />
             }
           />

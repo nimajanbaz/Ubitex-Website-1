@@ -1,6 +1,4 @@
 const Redirect = (props) => {
-  props.onBg("bg-white");
-
   return (
     <>
       <div className="flex justify-center items-center text-[#04162d] flex-col space-y-3 space-y-reverse text-sm">

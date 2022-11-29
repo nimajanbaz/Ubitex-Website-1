@@ -1,15 +1,28 @@
-import { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
 import logo from "../assets/img/logo-Ubitex.png";
+import { RiMoonClearFill, RiSunLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
-export default function Navbar({ isDark }) {
+export default function Navbar() {
+  const [theme, setTheme] = useState("dark");
+
+  useEffect(() => {
+    if (theme === "light") {
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+    }
+  }, [theme]);
+
   const menuItems = [
     {
       id: 1,
       title: "قیمت لحظه‌ای",
-      href: "/redirect-to-markets",
+      href: "https://app.ubitex.io/markets",
     },
     {
       id: 2,
@@ -19,7 +32,7 @@ export default function Navbar({ isDark }) {
     {
       id: 3,
       title: "تالار معاملات",
-      href: "/redirect-to-platform",
+      href: "https://app.ubitex.io",
     },
     {
       id: 4,
@@ -38,10 +51,8 @@ export default function Navbar({ isDark }) {
     },
   ];
   return (
-    <Popover
-      className={`relative mb-5 ${isDark ? "bg-[#051a36]" : "bg-white"}`}>
-      <div
-        className={`w-full mx-auto shadow-xl ${isDark ? "shadow-[0_35px_60px_-15px_rgba(6,37,70,1)]" : "shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"}`}>
+    <Popover className="relative dark:bg-[#051a36] bg-white">
+      <div className="w-full dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.1)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div
             className={`flex items-center justify-between py-4 md:justify-start md:space-x-10`}>
@@ -60,17 +71,13 @@ export default function Navbar({ isDark }) {
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
             </div>
-            <Popover.Group as="nav" className="hidden space-x-10 md:flex">
+            <Popover.Group as="nav" className="hidden space-x-3 md:flex">
               {menuItems.map((item) => {
                 return (
                   <div key={item.id}>
                     <Link
                       to={item.href}
-                      className={`text-base font-medium ${
-                        isDark
-                          ? "text-gray-200 hover:text-[#f39200]"
-                          : "text-gray-500 hover:text-[#04162d]"
-                      }`}>
+                      className="text-base font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
                       {item.title}
                     </Link>
                   </div>
@@ -83,6 +90,13 @@ export default function Navbar({ isDark }) {
                 className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-[#f39200] px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-[#ce7c00]">
                 ورود / ثبت نام
               </a>
+              <div className="ml-3">
+                <span
+                  className="text-2xl cursor-pointer dark:text-gray-300 text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all"
+                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
+                  {theme === "light" ? <RiMoonClearFill /> : <RiSunLine />}
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -107,11 +121,8 @@ export default function Navbar({ isDark }) {
                     <div key={item.id}>
                       <Link
                         to={item.href}
-                        className={`text-base font-medium ${
-                          isDark
-                            ? "text-gray-500 hover:text-[#f39200]"
-                            : "text-gray-500 hover:text-[#04162d]"
-                        }`}>
+                        className={`text-base font-medium text-gray-500 hover:text-[#f39200]
+                        `}>
                         {item.title}
                       </Link>
                     </div>
