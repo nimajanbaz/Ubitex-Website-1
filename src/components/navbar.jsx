@@ -6,10 +6,12 @@ import { RiMoonClearFill, RiSunLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
   useEffect(() => {
-    if (theme === "light") {
+    localStorage.setItem("theme", theme);
+
+    if (localStorage.getItem("theme") === "light") {
       document.documentElement.classList.add("light");
       document.documentElement.classList.remove("dark");
     } else {

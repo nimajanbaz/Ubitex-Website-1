@@ -299,11 +299,11 @@ export default function Home() {
                       ترید آسان، همه جا و همه وقت از طریق اپلیکیشن موبایل
                       یوبیتکس
                     </p>
-                    <div className="flex justify-end">
+                    <Link to={'/app'} className="flex justify-end">
                       <button className="px-4 py-2 border border-[#f39200] rounded-md text-[#f39200] transition-all hover:bg-[#f39200] hover:text-white">
                         دانلود اپلیکیشن
                       </button>
-                    </div>
+                    </Link>
                   </div>
                 </div>
               </div>

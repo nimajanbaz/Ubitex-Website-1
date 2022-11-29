@@ -4,6 +4,8 @@ import Redirect from "./components/redirect";
 import AboutUs from "./pages/aboutUs";
 import Terms from "./pages/terms";
 import HomePage from "./pages/home";
+import Application from "./pages/app";
+import Guide from "./pages/guide";
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
           />
           <Route path="/terms" element={<Terms />} />
           <Route path="/" element={<HomePage />} />
+          <Route path="/app" element={<Application />} />
+          <Route path="/guide" element={<Guide />} />
 
           <Route
             path="/redirect-to-platform"
