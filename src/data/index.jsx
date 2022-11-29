@@ -26,7 +26,7 @@ import guide_7 from "../assets/img/guide/7.png";
 import guide_8 from "../assets/img/guide/8.png";
 
 const ver_class =
-  "absolute p-2 rounded-lg border dark:border-[#072349] border-gray-300 dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.2)] dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur dark:bg-[#051a36] bg-gray-200 bg-opacity-25 hover:bg-opacity-30 transition-all";
+  "absolute p-2 rounded-lg border dark:border-[#072349] border-gray-300 dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.2)] dark:hover:bg-[#07244b] dark:backdrop-blur backdrop-blur hover:backdrop-blur dark:hover:backdrop-blur dark:bg-[#051a36] bg-gray-200 bg-opacity-25 dark:bg-opacity-25 hover:bg-opacity-30 transition-all";
 
 export const header_images = [
   {
