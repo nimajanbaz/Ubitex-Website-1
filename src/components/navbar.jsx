@@ -3,10 +3,15 @@ import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import logo from "../assets/img/logo-Ubitex.png";
 import { RiMoonClearFill, RiSunLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
-  const [theme, setTheme] = useState(localStorage.getItem("theme"));
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -29,7 +34,7 @@ export default function Navbar() {
     {
       id: 2,
       title: "راهنمای استفاده",
-      href: "/guide",
+      href: "/support-center",
     },
     {
       id: 3,
@@ -39,7 +44,7 @@ export default function Navbar() {
     {
       id: 4,
       title: "امکانات",
-      href: "",
+      href: "/features",
     },
     {
       id: 5,
@@ -49,7 +54,7 @@ export default function Navbar() {
     {
       id: 6,
       title: "اپلیکیشن",
-      href: "/app",
+      href: "/download",
     },
   ];
   return (

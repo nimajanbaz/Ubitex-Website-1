@@ -75,7 +75,8 @@ const Footer = () => {
 
       <div className="flex flex-col justify-center items-center pb-6">
         <span>تلفن تماس: 91001716 - ساعت 9 الی 17</span>
-        <span>تمام حقوق این سایت متعلق به یوبیتکس می باشد.</span>
+        <span>.تمام حقوق این سایت متعلق به یوبیتکس می باشد</span>
+        <span className="text-gray-400 dark:text-gray-500 text-sm mt-2"> 2019-2022 UBITEX - v{require("../../package.json").version.replace('"', "")}</span>
       </div>
     </footer>
   );

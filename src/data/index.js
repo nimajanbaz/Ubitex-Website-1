@@ -16,14 +16,6 @@ import download_app_3 from "../assets/img/Icons-03.svg";
 import download_app_4 from "../assets/img/Icons-04.svg";
 import download_app_5 from "../assets/img/Icons-05.svg";
 import download_app_6 from "../assets/img/Icons-06.svg";
-import guide_1 from "../assets/img/guide/1.png";
-import guide_2 from "../assets/img/guide/2.png";
-import guide_3 from "../assets/img/guide/3.png";
-import guide_4 from "../assets/img/guide/4.png";
-import guide_5 from "../assets/img/guide/5.png";
-import guide_6 from "../assets/img/guide/6.png";
-import guide_7 from "../assets/img/guide/7.png";
-import guide_8 from "../assets/img/guide/8.png";
 
 const ver_class =
   "absolute p-2 rounded-lg border dark:border-[#072349] border-gray-300 dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.2)] dark:hover:bg-[#07244b] dark:backdrop-blur backdrop-blur hover:backdrop-blur dark:hover:backdrop-blur dark:bg-[#051a36] bg-gray-200 bg-opacity-25 dark:bg-opacity-25 hover:bg-opacity-30 transition-all";
@@ -153,7 +145,7 @@ export const footer_data = {
     {
       id: 3,
       title: "اپلیکیشن",
-      href: "/app",
+      href: "/download",
     },
   ],
   support: [
@@ -170,7 +162,7 @@ export const footer_data = {
     {
       id: 3,
       title: "راهنمای استفاده",
-      href: "/guide",
+      href: "/support-center",
     },
     {
       id: 4,
@@ -312,64 +304,5 @@ export const terms_data = [
         text: "ممکن است یوبیتکس، هر از گاهی این توافقنامه را تغییر یا بهبود بخشد؛ اگرچه سعی می‌شود از طریق ایمیل کلیه کاربران از تغییرات مطلع شوند با این حال پیشنهاد می‌گردد هر چند وقت یک‌بار این صفحه را مطالعه نمایید تا از تغییرات احتمالی آگاه شوید.",
       },
     ],
-  },
-];
-
-export const guide_data = [
-  {
-    id: 1,
-    img: guide_1,
-    title: "ثبت نام",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-    videoLink: "",
-  },
-  {
-    id: 2,
-    img: guide_2,
-    title: "واریز و برداشت",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-    videoLink: "",
-  },
-  {
-    id: 3,
-    img: guide_3,
-    title: "خرید و فروش",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-    videoLink: "",
-  },
-  {
-    id: 4,
-    img: guide_4,
-    title: "حد سود / ضرر",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-    videoLink: "",
-  },
-  {
-    id: 5,
-    img: guide_5,
-    title: "گوگل اتنتیکیتور",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-    videoLink: "",
-  },
-  {
-    id: 6,
-    img: guide_6,
-    title: "بروزرسانی",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-    videoLink: "",
-  },
-  {
-    id: 7,
-    img: guide_7,
-    title: "ساخت کریپتوکارت",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-    videoLink: "",
-  },
-  {
-    id: 8,
-    img: guide_8,
-    title: "دریافت کریپتوکارت",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-    videoLink: "",
   },
 ];

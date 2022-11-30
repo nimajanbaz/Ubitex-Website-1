@@ -1,12 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
-import Navbar from "../components/navbar";
 import { Table } from "../components/table";
 import about from "../assets/img/about-2.webp";
 import mobileApp from "../assets/img/5.webp";
 import { header_images, header_boxes, center_boxes } from "../data";
 import { Link } from "react-router-dom";
-import Footer from "../components/footer";
 
 export default function Home() {
   const [data, setData] = useState();
@@ -132,7 +130,6 @@ export default function Home() {
 
   return (
     <>
-      <Navbar />
       <div className="dark:bg-[#04162d] bg-gray-100">
         <div className="mx-auto text-white">
           <div className="mx-auto">
@@ -311,8 +308,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 }
