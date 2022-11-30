@@ -58,7 +58,7 @@ export default function Navbar() {
     },
   ];
   return (
-    <Popover className="relative dark:bg-[#051a36] bg-white">
+    <Popover className="relative dark:bg-[#051a36] bg-white font-display text-right">
       <div className="w-full dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.1)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div

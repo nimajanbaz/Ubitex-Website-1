@@ -24,7 +24,8 @@ export const help_center_data = [
     img: guide_2,
     title: "واریز و برداشت",
     text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
-    videoLink: "",
+    videoLink:
+      "https://www.aparat.com/video/video/embed/videohash/frbHD/vt/frame",
     slug: "/support-center/guide/deposit-and-withdrawal",
   },
   {
@@ -95,17 +96,20 @@ export const quik_access_data = [
     icon: <HiAnnotation />,
     text: "لورم ایپسوم",
     href: "/support-center/guide/receive-cryptocard",
-  },  {
+  },
+  {
     id: 3,
     icon: <HiCreditCard />,
     text: "لورم ایپسوم",
     href: "/support-center/guide/receive-cryptocard",
-  },  {
+  },
+  {
     id: 4,
     icon: <HiFingerPrint />,
     text: "لورم ایپسوم",
     href: "/support-center/guide/receive-cryptocard",
-  },  {
+  },
+  {
     id: 5,
     icon: <HiAnnotation />,
     text: "لورم ایپسوم",

@@ -1,9 +1,11 @@
 import React from "react";
 import headerImage from "../assets/img/header-phone.png";
+import Header from "../components/header";
 
 const Features = () => {
   return (
     <>
+      <Header title={"امکانات"} />
       <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
         {/* Header */}
         <div className="flex flex-col justify-center items-center text-center my-10">

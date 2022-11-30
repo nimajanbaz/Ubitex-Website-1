@@ -130,179 +130,170 @@ export default function Home() {
 
   return (
     <>
-      <div className="dark:bg-[#04162d] bg-gray-100">
-        <div className="mx-auto text-white">
-          <div className="mx-auto">
-            <div className="max-w-[1600px] flex justify-center items-center mx-auto">
-              {/* Left Box */}
-              <div className="w-8/12 top-5 relative max-lg:hidden min-h-[770px]">
-                {header_images.map((image) => {
-                  return (
-                    <img
-                      key={image.id}
-                      src={image.src}
-                      alt={image.alt}
-                      className={image.class}
-                    />
-                  );
-                })}
+      <div className="mx-auto">
+        <div className="max-w-[1600px] flex justify-center items-center mx-auto">
+          {/* Left Box */}
+          <div className="w-8/12 top-5 relative max-lg:hidden min-h-[770px]">
+            {header_images.map((image) => {
+              return (
+                <img
+                  key={image.id}
+                  src={image.src}
+                  alt={image.alt}
+                  className={image.class}
+                />
+              );
+            })}
+          </div>
+
+          {/* Right Box */}
+          <div className="flex flex-col space-y-7 items-end lg:w-4/12 md:w-full text-right">
+            <div className="flex flex-col space-y-7">
+              <div className="flex flex-col space-y-2">
+                <h3 className="text-2xl dark:text-gray-100 text-gray-800">
+                  ...داستان پول عوض شد
+                </h3>
+                <h1 className="text-[#f39200] text-4xl font-semibold">
+                  صرافی ارز دیجیتال یوبیتکس
+                </h1>
+                <h3 className="text-2xl dark:text-gray-100 text-gray-800">
+                  پلتفرم مبادلات رمزارزی شما
+                </h3>
               </div>
-
-              {/* Right Box */}
-              <div className="flex flex-col space-y-7 items-end lg:w-4/12 md:w-full text-right">
-                <div className="flex flex-col space-y-7">
-                  <div className="flex flex-col space-y-2">
-                    <h3 className="text-2xl dark:text-gray-100 text-gray-800">
-                      ...داستان پول عوض شد
-                    </h3>
-                    <h1 className="text-[#f39200] text-4xl font-semibold">
-                      صرافی ارز دیجیتال یوبیتکس
-                    </h1>
-                    <h3 className="text-2xl dark:text-gray-100 text-gray-800">
-                      پلتفرم مبادلات رمزارزی شما
-                    </h3>
-                  </div>
-                  <div className="flex flex-col space-y-2">
-                    <h2 className="text-xl dark:text-gray-100 text-gray-800">
-                      خرید و فروش بیش از 100 رمزارز
-                    </h2>
-                    <h2 className="text-xl dark:text-gray-100 text-gray-800">
-                      در تالار معاملات با کارمزد ثابت 0.0025
-                    </h2>
-                  </div>
-                </div>
-
-                <div className="flex space-x-3 space-x-reverse flex-row-reverse mt-3">
-                  <Link to="/redirect-to-platform">
-                    <button className="px-6 py-2 bg-[#f39200] rounded-md">
-                      <span>ثبت نام</span>
-                    </button>
-                  </Link>
-                  <Link to="/app">
-                    <button className="px-4 py-2 border border-[#f39200] rounded-md text-[#f39200] transition-all hover:bg-[#f39200] hover:text-white">
-                      <span>دانلود اپلیکیشن</span>
-                    </button>
-                  </Link>
-                </div>
+              <div className="flex flex-col space-y-2">
+                <h2 className="text-xl dark:text-gray-100 text-gray-800">
+                  خرید و فروش بیش از 100 رمزارز
+                </h2>
+                <h2 className="text-xl dark:text-gray-100 text-gray-800">
+                  در تالار معاملات با کارمزد ثابت 0.0025
+                </h2>
               </div>
             </div>
-            <div className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] dark:bg-[#04162d] bg-white space-y-20">
-              <div className="grid lg:grid-cols-4 md:grid-cols-1 gap-14 max-w-[1500px] items-center mx-auto ">
-                {header_boxes.map((data) => {
+
+            <div className="flex space-x-3 space-x-reverse flex-row-reverse mt-3">
+              <Link to="/redirect-to-platform">
+                <button className="px-6 py-2 bg-[#f39200] rounded-md">
+                  <span>ثبت نام</span>
+                </button>
+              </Link>
+              <Link to="/app">
+                <button className="px-4 py-2 border border-[#f39200] rounded-md text-[#f39200] transition-all hover:bg-[#f39200] hover:text-white">
+                  <span>دانلود اپلیکیشن</span>
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className=" dark:bg-[#04162d] bg-white space-y-20">
+          <div className="grid lg:grid-cols-4 md:grid-cols-1 gap-14 max-w-[1500px] items-center mx-auto ">
+            {header_boxes.map((data) => {
+              return (
+                <div
+                  className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl flex flex-col items-end space-y-2 md:mb-3 lg:-mt-16 z-30 cursor-pointer"
+                  key={data.id}>
+                  <img
+                    src={data.image}
+                    alt=""
+                    className="w-14 text-right dark:bg-[#062246] bg-gray-300 rounded-lg p-3"
+                  />
+                  <span className="text-gray-700 dark:text-gray-200">
+                    {data.title}
+                  </span>
+                  <p className="text-xs text-right text-gray-700 dark:text-gray-300">
+                    {data.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-col max-w-[1600px] mx-auto mt-10">
+            <h3 className="text-2xl text-[#f39200] font-semibold text-right">
+              ارزهای دیجیتال یوبیتکس
+            </h3>
+            {data ? (
+              <div className="max-md:overflow-scroll">
+                <Table columns={columns} data={data.slice(0, 10)} />
+                <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
+                  <Link
+                    to={"/redirect-to-platform"}
+                    className="text-[#f39200] cursor-pointer transition-all text-lg px-4 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
+                    <span>مشاهده تمام ارزهای دیجیتال</span>
+                  </Link>
+                </div>
+              </div>
+            ) : (
+              <div className="my-10 flex justify-center items-center">
+                <p>...درحال بارگزاری</p>
+              </div>
+            )}
+          </div>
+
+          <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 max-w-[1600px] mx-auto items-center text-right">
+            <div>
+              <div className="flex flex-col space-y-3 mb-3">
+                <h3 className="text-3xl font-semibold text-[#f39200]">
+                  امکانات
+                </h3>
+                <span>برخی از امکانات پلتفرم یوبیتکس</span>
+              </div>
+              <div className="mx-auto grid lg:grid-cols-2 md:grid-cols-1 gap-7">
+                {center_boxes.map((data) => {
                   return (
                     <div
-                      className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl flex flex-col items-end space-y-2 md:mb-3 lg:-mt-16 z-30 cursor-pointer"
+                      className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-lg"
                       key={data.id}>
                       <img
                         src={data.image}
                         alt=""
-                        className="w-14 text-right dark:bg-[#062246] bg-gray-300 rounded-lg p-3"
+                        className="w-14 text-right bg-gray-200 dark:bg-[#07244b] rounded-lg p-3"
                       />
                       <span className="text-gray-700 dark:text-gray-200">
                         {data.title}
                       </span>
-                      <p className="text-xs text-right text-gray-700 dark:text-gray-300">
+                      <p className="text-xs mt-3 text-gray-700 dark:text-gray-200">
                         {data.description}
                       </p>
+                      <span className="text-[#f39200] text-xs mt-3 cursor-pointer">
+                        مطالعه بیشتر
+                      </span>
                     </div>
                   );
                 })}
               </div>
+            </div>
 
-              <div className="flex flex-col max-w-[1600px] mx-auto mt-10">
-                <h3 className="text-2xl text-[#f39200] font-semibold text-right">
-                  ارزهای دیجیتال یوبیتکس
-                </h3>
-                {data ? (
-                  <div className="max-md:overflow-scroll">
-                    <Table columns={columns} data={data.slice(0, 10)} />
-                    <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
-                      <Link
-                        to={"/redirect-to-platform"}
-                        className="text-[#f39200] cursor-pointer transition-all text-lg px-4 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
-                        <span>مشاهده تمام ارزهای دیجیتال</span>
-                      </Link>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="my-10 flex justify-center items-center">
-                    <p>...درحال بارگزاری</p>
-                  </div>
-                )}
-              </div>
+            <div>
+              <img src={about} alt="" className="mx-auto animate-ver_5s" />
+            </div>
+          </div>
 
-              <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 max-w-[1600px] mx-auto items-center text-right">
-                <div>
-                  <div className="flex flex-col space-y-3 mb-3">
-                    <h3 className="text-3xl font-semibold text-[#f39200]">
-                      امکانات
-                    </h3>
-                    <span>برخی از امکانات پلتفرم یوبیتکس</span>
-                  </div>
-                  <div className="mx-auto grid lg:grid-cols-2 md:grid-cols-1 gap-7">
-                    {center_boxes.map((data) => {
-                      return (
-                        <div
-                          className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-lg"
-                          key={data.id}>
-                          <img
-                            src={data.image}
-                            alt=""
-                            className="w-14 text-right bg-gray-200 dark:bg-[#07244b] rounded-lg p-3"
-                          />
-                          <span className="text-gray-700 dark:text-gray-200">
-                            {data.title}
-                          </span>
-                          <p className="text-xs mt-3 text-gray-700 dark:text-gray-200">
-                            {data.description}
-                          </p>
-                          <span className="text-[#f39200] text-xs mt-3 cursor-pointer">
-                            مطالعه بیشتر
-                          </span>
-                        </div>
-                      );
-                    })}
-                  </div>
+          <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 max-w-[1600px] mx-auto items-center text-right">
+            <div>
+              <img src={mobileApp} alt="" className="mx-auto animate-ver_5s" />
+            </div>
+
+            <div>
+              <div className="flex flex-col space-y-5 mb-3">
+                <div className="flex flex-col space-y-2">
+                  <span className="text-2xl text-gray-700 dark:text-gray-200">
+                    با اپلیکیشن موبایل
+                  </span>
+                  <span className="text-4xl font-semibold text-[#f39200]">
+                    صرافی ارز دیجیتال یوبیتکس
+                  </span>
+                  <span className="text-2xl text-gray-700 dark:text-gray-200">
+                    همیشه بروز باشید
+                  </span>
                 </div>
-
-                <div>
-                  <img src={about} alt="" className="mx-auto animate-ver_5s" />
-                </div>
-              </div>
-
-              <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 max-w-[1600px] mx-auto items-center text-right">
-                <div>
-                  <img
-                    src={mobileApp}
-                    alt=""
-                    className="mx-auto animate-ver_5s"
-                  />
-                </div>
-
-                <div>
-                  <div className="flex flex-col space-y-5 mb-3">
-                    <div className="flex flex-col space-y-2">
-                      <span className="text-2xl text-gray-700 dark:text-gray-200">
-                        با اپلیکیشن موبایل
-                      </span>
-                      <span className="text-4xl font-semibold text-[#f39200]">
-                        صرافی ارز دیجیتال یوبیتکس
-                      </span>
-                      <span className="text-2xl text-gray-700 dark:text-gray-200">
-                        همیشه بروز باشید
-                      </span>
-                    </div>
-                    <p className="text-gray-700 dark:text-gray-200">
-                      ترید آسان، همه جا و همه وقت از طریق اپلیکیشن موبایل
-                      یوبیتکس
-                    </p>
-                    <Link to={'/app'} className="flex justify-end">
-                      <button className="px-4 py-2 border border-[#f39200] rounded-md text-[#f39200] transition-all hover:bg-[#f39200] hover:text-white">
-                        دانلود اپلیکیشن
-                      </button>
-                    </Link>
-                  </div>
-                </div>
+                <p className="text-gray-700 dark:text-gray-200">
+                  ترید آسان، همه جا و همه وقت از طریق اپلیکیشن موبایل یوبیتکس
+                </p>
+                <Link to={"/app"} className="flex justify-end">
+                  <button className="px-4 py-2 border border-[#f39200] rounded-md text-[#f39200] transition-all hover:bg-[#f39200] hover:text-white">
+                    دانلود اپلیکیشن
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

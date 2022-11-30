@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="dark:bg-[#04162d] bg-gray-100 pt-5 dark:shadow-[0_-15px_40px_-15px_rgba(6,37,70,0.7)] shadow-[0_-15px_40px_-15px_rgba(0,0,0,0.1)]">
+    <footer className="dark:bg-[#04162d] bg-gray-100 pt-5 dark:shadow-[0_-15px_40px_-15px_rgba(6,37,70,0.7)] shadow-[0_-15px_40px_-15px_rgba(0,0,0,0.1)] font-display">
       <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-10  max-w-[1300px] mx-auto items-center">
         <div className="grid grid-col text-center">
           <span className="text-[#f39200] text-xl font-semibold mb-3">
@@ -56,20 +56,6 @@ const Footer = () => {
           />
         </div>
       </div>
-
-      {/* <div className="grid lg:grid-cols-6 md:grid-cols-2 sm:grid-cols-2 gap-10 max-w-[1300px] mx-auto items-center my-6">
-        {footer_data.download_app.map((img) => {
-          return (
-            <Link to={img.href}>
-              <img
-                src={img.img}
-                alt=""
-                key={img.id}
-              />
-            </Link>
-          );
-        })}
-      </div> */}
 
       <div className="border-b dark:border-b-[#062042] border-gray-300 my-6"></div>
 

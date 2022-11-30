@@ -2,10 +2,13 @@ import React from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GrBitcoin } from "react-icons/gr";
 import { BiLineChart } from "react-icons/bi";
+import Header from "../components/header";
 
 const AboutUs = () => {
   return (
     <>
+      <Header title={"درباره ما"} />
+
       <div className="px-4 sm:px-6 text-right max-w-[1200px] mx-auto my-20">
         <div className="p-20 rounded-xl text-gray-700 dark:text-gray-400 bg-white dark:bg-[#051a36] dark:shadow-[0_0px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_0px_40px_0px_rgba(0,0,0,0.05)]">
           <h2 className="text-[#f39200] text-2xl font-semibold">
@@ -48,8 +51,8 @@ const AboutUs = () => {
               <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                 <BsCurrencyDollar />
               </span>
-              <h3 className="text-2xl font-semibold">کارمزد رقابتی</h3>
-              <p>
+              <h3 className="text-xl font-semibold">کارمزد رقابتی</h3>
+              <p className="text-sm">
                 کارمزد معاملات ثابت و به میزان ۰.۲۵ درصد که جزو پایین‌ترین
                 کارمزدها در میان صرافی‌های ارز دیجیتال ایرانی است.
               </p>
@@ -59,10 +62,10 @@ const AboutUs = () => {
               <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                 <BiLineChart />
               </span>
-              <h3 className="text-2xl font-semibold">کارمزد رقابتی</h3>
-              <p>
-                کارمزد معاملات ثابت و به میزان ۰.۲۵ درصد که جزو پایین‌ترین
-                کارمزدها در میان صرافی‌های ارز دیجیتال ایرانی است.
+              <h3 className="text-xl font-semibold">پلتفرم معاملاتی</h3>
+              <p className="text-sm">
+                امکان معامله شخص به شخص (C2C) و بدون دخالت صرافی برای کاربران
+                تازه وارد و حرفه‌ای در بازارهای تومان و تتر
               </p>
             </div>
 
@@ -70,10 +73,10 @@ const AboutUs = () => {
               <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                 <GrBitcoin />
               </span>
-              <h3 className="text-2xl font-semibold">کارمزد رقابتی</h3>
-              <p>
-                کارمزد معاملات ثابت و به میزان ۰.۲۵ درصد که جزو پایین‌ترین
-                کارمزدها در میان صرافی‌های ارز دیجیتال ایرانی است.
+              <h3 className="text-xl font-semibold">تنوع ارز بالا</h3>
+              <p className="text-sm">
+                امکان معامله بیش از 100 رمزارز در حوزه ‌های گیمفای، متاورس، NFT،
+                میم کوین و... که به صورت دوره ای به تالار معاملات اضافه می شود.
               </p>
             </div>
           </div>

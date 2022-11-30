@@ -1,10 +1,12 @@
-import { help_center_data } from "../../../data/helpCenterData";
+import { help_center_data } from "../../data/helpCenterData";
 import { Link } from "react-router-dom";
 import { HiArrowSmLeft } from "react-icons/hi";
+import Header from "../../components/header";
 
 const VideoGuide = () => {
   return (
     <>
+      <Header title={"راهنمای تصویری"} />
       <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
         <div className="mb-10 w-full relative">
           <div className="my-10 flex justify-between items-center flex-row-reverse">

@@ -1,9 +1,12 @@
 import React from "react";
 import { terms_data } from "../data";
+import Header from "../components/header";
 
 const AboutUs = () => {
   return (
     <>
+      <Header title={"قوانین و مقررات"} />
+
       <div className="px-4 sm:px-6 text-right max-w-[1200px] mx-auto my-20">
         <div className="p-20 rounded-xl text-gray-700 dark:text-gray-400 bg-white dark:bg-[#051a36] dark:shadow-[0_0px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_0px_40px_0px_rgba(0,0,0,0.05)]">
           <h2 className="text-[#f39200] text-2xl font-semibold">
@@ -21,9 +24,15 @@ const AboutUs = () => {
                   <h3 className="my-5 text-[#f39200] font-semibold text-2xl">
                     {term.title}
                   </h3>
-                  <ul style={{ listStyleType: 'decimal'}} className='rtl-grid leading-loose	'>
+                  <ul
+                    style={{ listStyleType: "decimal" }}
+                    className="rtl-grid leading-loose	">
                     {term.texts.map((text) => {
-                      return <li key={text.id} className='mt-3'>{text.text}</li>;
+                      return (
+                        <li key={text.id} className="mt-3">
+                          {text.text}
+                        </li>
+                      );
                     })}
                   </ul>
                 </div>
