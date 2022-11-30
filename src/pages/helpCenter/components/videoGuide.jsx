@@ -1,13 +1,10 @@
 import { help_center_data } from "../../../data/helpCenterData";
 import { Link } from "react-router-dom";
 import { HiArrowSmLeft } from "react-icons/hi";
-import Navbar from "../../../components/navbar";
-import Footer from "../../../components/footer";
 
 const VideoGuide = () => {
   return (
     <>
-      <Navbar />
       <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
         <div className="mb-10 w-full relative">
           <div className="my-10 flex justify-between items-center flex-row-reverse">
@@ -23,14 +20,14 @@ const VideoGuide = () => {
               </button>
             </Link>
           </div>
-          <div className="grid grid-cols-4 gap-5 md:grid-cols-3 mb-10">
+          <div className="grid grid-cols-4 gap-5 md:grid-cols-3 mb-10 rtl-grid">
             {help_center_data.map((guide) => {
               return (
                 <div className="bg-gray-100 dark:bg-[#051a36] p-3 rounded-md flex flex-col space-y-4">
                   <img
                     src={guide.img}
                     alt=""
-                    className="object-cover w-full  rounded-md"
+                    className="object-cover w-full rounded-md"
                   />
                   <h3 className="text-xl font-semibold px-3">{guide.title}</h3>
                   <p className="px-3 text-sm">{guide.text}</p>
@@ -45,7 +42,6 @@ const VideoGuide = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

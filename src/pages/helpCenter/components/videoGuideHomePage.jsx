@@ -18,7 +18,7 @@ const VideoGuideHomePage = () => {
           </button>
         </Link>
       </div>
-      <div className="grid grid-cols-4 gap-5 md:grid-cols-3 mb-10">
+      <div className="grid grid-cols-4 gap-5 md:grid-cols-3 mb-10 rtl-grid">
         {help_center_data.slice(0, 3).map((guide) => {
           return (
             <div className="bg-gray-100 dark:bg-[#051a36] p-3 rounded-md flex flex-col space-y-4">
