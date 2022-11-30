@@ -11,7 +11,6 @@ import HomePage from "./pages/home";
 import Application from "./pages/app";
 import HelpCenter from "./pages/helpCenter";
 import HelpCenterItem from "./pages/helpCenter/helpCenterItem";
-import Features from "./pages/features";
 import VideoGuide from "./pages/helpCenter/videoGuide";
 
 const App = () => {
@@ -32,18 +31,15 @@ const App = () => {
               path="/support-center/guide/:slug"
               element={<HelpCenterItem />}
             />
-            <Route path="/features" element={<Features />} />
 
             <Route
               path="/redirect-to-platform"
               element={<Redirect href={"https://app.ubitex.io"} />}
             />
-
             <Route
               path="/redirect-to-markets"
               element={<Redirect href={"https://app.ubitex.io/markets"} />}
             />
-
             <Route
               path="/redirect-to-blog"
               element={<Redirect href={"https://ubitex.io/blog"} />}

@@ -16,9 +16,17 @@ import download_app_3 from "../assets/img/Icons-03.svg";
 import download_app_4 from "../assets/img/Icons-04.svg";
 import download_app_5 from "../assets/img/Icons-05.svg";
 import download_app_6 from "../assets/img/Icons-06.svg";
+import {
+  FaTelegram,
+  FaInstagram,
+  FaFacebook,
+  FaTwitter,
+  FaLinkedin,
+  FaYoutube,
+} from "react-icons/fa";
 
 const ver_class =
-  "absolute p-2 rounded-lg border dark:border-[#072349] border-gray-300 dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.2)] dark:hover:bg-[#07244b] dark:backdrop-blur backdrop-blur hover:backdrop-blur dark:hover:backdrop-blur dark:bg-[#051a36] bg-gray-200 bg-opacity-25 dark:bg-opacity-25 hover:bg-opacity-30 transition-all";
+  "absolute p-2 cursor-pointer rounded-lg border dark:border-[#072349] border-gray-300 dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.2)] dark:hover:bg-[#07244b] dark:backdrop-blur backdrop-blur hover:backdrop-blur dark:hover:backdrop-blur dark:bg-[#051a36] bg-gray-200 bg-opacity-25 dark:bg-opacity-25 hover:bg-opacity-30 transition-all";
 
 export const header_images = [
   {
@@ -117,16 +125,11 @@ export const footer_data = {
     },
     {
       id: 2,
-      title: "امکانات",
-      href: "/features",
-    },
-    {
-      id: 3,
       title: "بلاگ",
       href: "/redirect-to-blog",
     },
     {
-      id: 4,
+      id: 3,
       title: "قوانین و مقررات",
       href: "/terms",
     },
@@ -151,21 +154,16 @@ export const footer_data = {
   support: [
     {
       id: 1,
-      title: "سوالات متداول",
-      href: "/faq",
-    },
-    {
-      id: 2,
       title: "تماس با ما",
       href: "/conact-us",
     },
     {
-      id: 3,
+      id: 2,
       title: "راهنمای استفاده",
       href: "/support-center",
     },
     {
-      id: 4,
+      id: 3,
       title: "کارمزدها",
       href: "/fees",
     },
@@ -200,6 +198,38 @@ export const footer_data = {
       id: 6,
       img: download_app_6,
       href: "https://pwa.ubitex.io/",
+    },
+  ],
+  social: [
+    {
+      id: 1,
+      icon: <FaTelegram />,
+      href: "https://t.me/ubitex_io",
+    },
+    {
+      id: 2,
+      icon: <FaInstagram />,
+      href: "https://www.instagram.com/ubitex_io/",
+    },
+    {
+      id: 3,
+      icon: <FaFacebook />,
+      href: "https://www.facebook.com/Ubitex-107940351853274",
+    },
+    {
+      id: 4,
+      icon: <FaTwitter />,
+      href: "https://twitter.com/ubitex_io",
+    },
+    {
+      id: 5,
+      icon: <FaLinkedin />,
+      href: "#",
+    },
+    {
+      id: 6,
+      icon: <FaYoutube />,
+      href: "https://www.youtube.com/channel/UC8QCOafkmCY21MNw",
     },
   ],
 };

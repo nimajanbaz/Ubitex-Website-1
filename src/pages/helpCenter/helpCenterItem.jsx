@@ -22,7 +22,7 @@ const HelpCenterItem = () => {
                 <>
                   <Header title={`راهنمای ${item.title}`} />
 
-                  <div className="mb-10 flex justify-between items-center flex-row-reverse">
+                  <div className="mb-10 flex justify-between items-center flex-row-reverse" key={item.id}>
                     <div className="flex flex-col space-y-3">
                       <h1 className="text-[#f39200] text-3xl font-semibold">
                         راهنمای {item.title}

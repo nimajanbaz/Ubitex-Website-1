@@ -5,6 +5,14 @@ import logo from "../assets/img/logo-Ubitex.png";
 import { RiMoonClearFill, RiSunLine } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 
+const Bange = () => {
+  return (
+    <span class="bg-[#f39200] text-[#f39200] text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-[#f39200] bg-opacity-10 dark:bg-opacity-10 dark:text-[#f39200]">
+      جدید
+    </span>
+  );
+};
+
 export default function Navbar() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   const { pathname } = useLocation();
@@ -28,41 +36,46 @@ export default function Navbar() {
   const menuItems = [
     {
       id: 1,
-      title: "قیمت لحظه‌ای",
+      title: "بازارها",
       href: "/redirect-to-markets",
+      star: false,
     },
     {
       id: 2,
-      title: "راهنمای استفاده",
-      href: "/support-center",
+      title: "تالار معاملات",
+      href: "/redirect-to-platform",
+      star: false,
     },
     {
       id: 3,
-      title: "تالار معاملات",
+      title: "تبدیل",
       href: "/redirect-to-platform",
+      star: true,
     },
     {
       id: 4,
-      title: "امکانات",
-      href: "/features",
+      title: "راهنمای استفاده",
+      href: "/support-center",
+      star: false,
     },
     {
       id: 5,
       title: "بلاگ",
       href: "/redirect-to-blog",
+      star: false,
     },
     {
       id: 6,
       title: "اپلیکیشن",
       href: "/download",
+      star: false,
     },
   ];
   return (
     <Popover className="relative dark:bg-[#051a36] bg-white font-display text-right">
       <div className="w-full dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.1)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
-          <div
-            className={`flex items-center justify-between py-4 md:justify-start md:space-x-10`}>
+          <div className="flex items-center justify-between py-4 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
               <Link to="/">
                 <img
@@ -78,23 +91,27 @@ export default function Navbar() {
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
             </div>
-            <Popover.Group as="nav" className="hidden space-x-3 md:flex">
-              {menuItems.map((item) => {
-                return (
-                  <div key={item.id}>
-                    <Link
-                      to={item.href}
-                      className="text-base font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
-                      {item.title}
-                    </Link>
-                  </div>
-                );
-              })}
-            </Popover.Group>
-            <div className="hidden items-center justify-end md:flex md:flex-1 lg:w-0">
+            <div className="hidden items-center justify-end md:flex">
+              <Popover.Group
+                as="nav"
+                className="hidden space-x-3 md:flex rtl-grid">
+                {menuItems.map((item) => {
+                  return (
+                    <span key={item.id}>
+                      <Link
+                        to={item.href}
+                        className="flex space-x-2 justify-center items-center text-base font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+                        {item.title}
+
+                        {item.star ? <Bange /> : null}
+                      </Link>
+                    </span>
+                  );
+                })}
+              </Popover.Group>
               <Link
                 to="/redirect-to-platform"
-                className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-[#f39200] px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-[#ce7c00]">
+                className="ml-8 rounded-md bg-opacity-10 bg-[#f39200] text-[#f39200] px-4 py-2 text-base">
                 ورود / ثبت نام
               </Link>
               <div className="ml-3">

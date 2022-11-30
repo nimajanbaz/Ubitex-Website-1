@@ -14,72 +14,72 @@ export const help_center_data = [
     id: 1,
     img: guide_1,
     title: "ثبت نام",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+    text: "آموزش ثبت نام و مراحل احراز هویت در پلتفرم یوبیتکس",
     videoLink:
-      "https://www.aparat.com/video/video/embed/videohash/frbHD/vt/frame",
+      "https://www.aparat.com/video/video/embed/videohash/741ZI/vt/frame",
     slug: "/support-center/guide/register",
   },
   {
     id: 2,
     img: guide_2,
     title: "واریز و برداشت",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+    text: "نحوه واریز و برداشت ارزی در پلتفرم یوبیتکس",
     videoLink:
-      "https://www.aparat.com/video/video/embed/videohash/frbHD/vt/frame",
+      "https://www.aparat.com/video/video/embed/videohash/ray6O/vt/frame",
     slug: "/support-center/guide/deposit-and-withdrawal",
   },
   {
     id: 3,
     img: guide_3,
     title: "خرید و فروش",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+    text: "راهنمای نحوه کار با صرافی یوبیتکس، معامله و...",
     videoLink:
-      "https://www.aparat.com/video/video/embed/videohash/frbHD/vt/frame",
+      "https://www.aparat.com/video/video/embed/videohash/cRmrP/vt/frame",
     slug: "/support-center/guide/trade",
   },
   {
     id: 4,
     img: guide_4,
     title: "حد سود / ضرر",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+    text: "آموزش ثبت سفارش به صورت حد سود و ضرر",
     videoLink:
-      "https://www.aparat.com/video/video/embed/videohash/frbHD/vt/frame",
+      "https://www.aparat.com/video/video/embed/videohash/DNGdT/vt/frame",
     slug: "/support-center/guide/stop-limit",
   },
   {
     id: 5,
     img: guide_5,
     title: "گوگل اتنتیکیتور",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+    text: "آموزش نحوه فعالسازی و استفاده از  تأیید دو مرحله ای",
     videoLink:
-      "https://www.aparat.com/video/video/embed/videohash/frbHD/vt/frame",
+      "https://www.aparat.com/video/video/embed/videohash/yr1DC/vt/frame",
     slug: "/support-center/guide/google-authenticator",
   },
   {
     id: 6,
     img: guide_6,
     title: "بروزرسانی",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+    text: "بررسی قابلیت های جدید پلتفرم یوبیتکس",
     videoLink:
-      "https://www.aparat.com/video/video/embed/videohash/frbHD/vt/frame",
+      "https://www.aparat.com/video/video/embed/videohash/fT7jS/vt/frame",
     slug: "/support-center/guide/ubitex-2022-update",
   },
   {
     id: 7,
     img: guide_7,
     title: "ساخت کریپتوکارت",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+    text: "در این ویدئو آموزش ساخت کریپتوکارت یوبیتکس را مشاهده میکنید",
     videoLink:
-      "https://www.aparat.com/video/video/embed/videohash/frbHD/vt/frame",
+      "https://www.aparat.com/video/video/embed/videohash/WI3hQ/vt/frame",
     slug: "/support-center/guide/create-cryptocard",
   },
   {
     id: 8,
     img: guide_8,
     title: "دریافت کریپتوکارت",
-    text: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ",
+    text: "در این ویدئو آموزش دریافت کریپتوکارت یوبیتکس را مشاهده میکنید",
     videoLink:
-      "https://www.aparat.com/video/video/embed/videohash/frbHD/vt/frame",
+      "https://www.aparat.com/video/video/embed/videohash/ZAN9K/vt/frame",
     slug: "/support-center/guide/receive-cryptocard",
   },
 ];

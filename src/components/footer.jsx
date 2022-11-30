@@ -12,8 +12,11 @@ const Footer = () => {
           </span>
           {footer_data.support.map((item) => {
             return (
-              <Link to={item.href} key={item.id} className="mb-2">
-                <span className="hover:text-[#f39200] transition-all">
+              <Link
+                to={item.href}
+                key={item.id}
+                className="mb-3 dark:text-gray-300 text-gray-600 hover:text-[#f39200]">
+                <span className="hover:text-[#f39200] transition-all px-2 py-1 rounded-md bg-opacity-0 hover:bg-opacity-10 bg-[#f39200]">
                   {item.title}
                 </span>
               </Link>
@@ -26,8 +29,11 @@ const Footer = () => {
           </span>
           {footer_data.services.map((item) => {
             return (
-              <Link to={item.href} key={item.id} className="mb-2">
-                <span className="hover:text-[#f39200] transition-all">
+              <Link
+                to={item.href}
+                key={item.id}
+                className="mb-3 dark:text-gray-300 text-gray-600 hover:text-[#f39200]">
+                <span className="hover:text-[#f39200] transition-all px-2 py-1 rounded-md bg-opacity-0 hover:bg-opacity-10 bg-[#f39200]">
                   {item.title}
                 </span>
               </Link>
@@ -40,8 +46,11 @@ const Footer = () => {
           </span>
           {footer_data.ubitex.map((item) => {
             return (
-              <Link to={item.href} key={item.id} className="mb-2">
-                <span className="hover:text-[#f39200] transition-all">
+              <Link
+                to={item.href}
+                key={item.id}
+                className="mb-3 dark:text-gray-300 text-gray-600 hover:text-[#f39200]">
+                <span className="hover:text-[#f39200] transition-all px-2 py-1 rounded-md bg-opacity-0 hover:bg-opacity-10 bg-[#f39200]">
                   {item.title}
                 </span>
               </Link>
@@ -49,12 +58,20 @@ const Footer = () => {
           })}
         </div>
         <div>
-          <img
-            src={ubitexLogo}
-            alt=""
-            className="mx-auto w-2/3"
-          />
+          <img src={ubitexLogo} alt="" className="mx-auto w-2/3" />
         </div>
+      </div>
+
+      <div className="flex space-x-3 justify-center items-center">
+        {footer_data.social.map((item) => {
+          return (
+            <a href={item.href} key={item.id}>
+              <div className="transition-all cursor-pointer rounded-md p-3 bg-[#f39200] bg-opacity-0 hover:bg-opacity-10 text-gray-400 dark:text-gray-400 hover:text-[#f39200] dark:hover:text-[#f39200]">
+                <span className="text-xl">{item.icon}</span>
+              </div>
+            </a>
+          );
+        })}
       </div>
 
       <div className="border-b dark:border-b-[#062042] border-gray-300 my-6"></div>
@@ -62,7 +79,15 @@ const Footer = () => {
       <div className="flex flex-col justify-center items-center pb-6">
         <span>تلفن تماس: 91001716 - ساعت 9 الی 17</span>
         <span>.تمام حقوق این سایت متعلق به یوبیتکس می باشد</span>
-        <span className="text-gray-400 dark:text-gray-500 text-sm mt-2"> 2019-2022 UBITEX - v{require("../../package.json").version.replace('"', "")}</span>
+      </div>
+
+      <div className="border-b dark:border-b-[#062042] border-gray-300 mb-2"></div>
+      
+      <div className="flex flex-col justify-center items-center">
+        <span className="text-gray-400 dark:text-gray-500 text-sm mb-2">
+          2019-2022 UBITEX - v
+          {require("../../package.json").version.replace('"', "")}
+        </span>
       </div>
     </footer>
   );

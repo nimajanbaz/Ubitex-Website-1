@@ -3,6 +3,7 @@ import Header from "../../components/header";
 import headerImage from "../../assets/img/guide-header.jpg";
 import VideoGuideHomePage from "./components/videoGuideHomePage";
 import QuikAccessHomePage from "./components/quikAccessHomePage";
+import ContactHomePage from "./components/contactHomePage";
 
 const HelpCenter = () => {
   return (
@@ -25,6 +26,7 @@ const HelpCenter = () => {
       <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
         <QuikAccessHomePage />
         <VideoGuideHomePage />
+        <ContactHomePage />
       </div>
     </>
   );

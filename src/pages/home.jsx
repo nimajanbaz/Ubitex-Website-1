@@ -172,12 +172,12 @@ export default function Home() {
 
             <div className="flex space-x-3 space-x-reverse flex-row-reverse mt-3">
               <Link to="/redirect-to-platform">
-                <button className="px-6 py-2 bg-[#f39200] rounded-md">
+                <button className="px-5 py-2 bg-[#f39200] rounded-md">
                   <span>ثبت نام</span>
                 </button>
               </Link>
               <Link to="/app">
-                <button className="px-4 py-2 border border-[#f39200] rounded-md text-[#f39200] transition-all hover:bg-[#f39200] hover:text-white">
+                <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
                   <span>دانلود اپلیکیشن</span>
                 </button>
               </Link>
@@ -217,8 +217,8 @@ export default function Home() {
                 <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
                   <Link
                     to={"/redirect-to-platform"}
-                    className="text-[#f39200] cursor-pointer transition-all text-lg px-4 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
-                    <span>مشاهده تمام ارزهای دیجیتال</span>
+                    className="text-[#f39200] cursor-pointer transition-all text-lg px-6 py-3 bg-[#f39200] bg-opacity-10 rounded-md">
+                    <span>مشاهده همه بازارهای یوبیتکس</span>
                   </Link>
                 </div>
               </div>
@@ -237,7 +237,7 @@ export default function Home() {
                 </h3>
                 <span>برخی از امکانات پلتفرم یوبیتکس</span>
               </div>
-              <div className="mx-auto grid lg:grid-cols-2 md:grid-cols-1 gap-7">
+              <div className="mx-auto grid lg:grid-cols-2 md:grid-cols-1 gap-7 rtl-grid cursor-pointer">
                 {center_boxes.map((data) => {
                   return (
                     <div
@@ -248,15 +248,12 @@ export default function Home() {
                         alt=""
                         className="w-14 text-right bg-gray-200 dark:bg-[#07244b] rounded-lg p-3"
                       />
-                      <span className="text-gray-700 dark:text-gray-200">
+                      <span className="text-lg font-semibold mt-2 text-[#f39200]">
                         {data.title}
                       </span>
                       <p className="text-xs mt-3 text-gray-700 dark:text-gray-200">
                         {data.description}
                       </p>
-                      <span className="text-[#f39200] text-xs mt-3 cursor-pointer">
-                        مطالعه بیشتر
-                      </span>
                     </div>
                   );
                 })}
@@ -289,8 +286,8 @@ export default function Home() {
                 <p className="text-gray-700 dark:text-gray-200">
                   ترید آسان، همه جا و همه وقت از طریق اپلیکیشن موبایل یوبیتکس
                 </p>
-                <Link to={"/app"} className="flex justify-end">
-                  <button className="px-4 py-2 border border-[#f39200] rounded-md text-[#f39200] transition-all hover:bg-[#f39200] hover:text-white">
+                <Link to={"/download"} className="flex justify-end">
+                  <button className="text-[#f39200] cursor-pointer transition-all text-lg px-5 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
                     دانلود اپلیکیشن
                   </button>
                 </Link>
