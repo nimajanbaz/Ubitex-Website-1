@@ -7,7 +7,9 @@ import guide_6 from "../assets/img/guide/6.png";
 import guide_7 from "../assets/img/guide/7.png";
 import guide_8 from "../assets/img/guide/8.png";
 
-import { HiFingerPrint, HiAnnotation, HiCreditCard } from "react-icons/hi";
+import { HiArrowsUpDown } from "react-icons/hi2";
+import { ImMakeGroup } from "react-icons/im";
+import { FaUserPlus, FaBitcoin,FaGoogle } from "react-icons/fa";
 
 export const help_center_data = [
   {
@@ -87,44 +89,32 @@ export const help_center_data = [
 export const quik_access_data = [
   {
     id: 1,
-    icon: <HiFingerPrint />,
-    text: "لورم ایپسوم",
+    icon: <FaUserPlus />,
+    text: "ثبت‌نام و احراز هویت",
     href: "/support-center/guide/receive-cryptocard",
   },
   {
     id: 2,
-    icon: <HiAnnotation />,
-    text: "لورم ایپسوم",
+    icon: <HiArrowsUpDown />,
+    text: "واریز و برداشت",
     href: "/support-center/guide/receive-cryptocard",
   },
   {
     id: 3,
-    icon: <HiCreditCard />,
-    text: "لورم ایپسوم",
+    icon: <FaBitcoin />,
+    text: "خرید و فروش",
     href: "/support-center/guide/receive-cryptocard",
   },
   {
     id: 4,
-    icon: <HiFingerPrint />,
-    text: "لورم ایپسوم",
+    icon: <ImMakeGroup />,
+    text: "دعوت از دوستان",
     href: "/support-center/guide/receive-cryptocard",
   },
   {
     id: 5,
-    icon: <HiAnnotation />,
-    text: "لورم ایپسوم",
-    href: "/support-center/guide/receive-cryptocard",
-  },
-  {
-    id: 6,
-    icon: <HiCreditCard />,
-    text: "لورم ایپسوم",
-    href: "/support-center/guide/receive-cryptocard",
-  },
-  {
-    id: 7,
-    icon: <HiFingerPrint />,
-    text: "لورم ایپسوم",
+    icon: <FaGoogle />,
+    text: "گوگل اتنتیکیتور",
     href: "/support-center/guide/receive-cryptocard",
   },
 ];
