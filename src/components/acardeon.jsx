@@ -1,9 +1,10 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
-import { Link } from "react-router-dom";
 import { HiArrowSmLeft } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
 
 const Acardeon = ({ data }) => {
+  const navigate = useNavigate();
   return (
     <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
       <div className="my-10 flex justify-between items-center flex-row-reverse">
@@ -12,12 +13,13 @@ const Acardeon = ({ data }) => {
             سوالات متداول
           </h3>
         </div>
-        <Link to={"/support-center"}>
-          <button className="px-6 py-2 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200] flex space-x-2 space-x-reverse items-center justify-center flex-row-reverse">
-            <span>بازگشت</span>
-            <HiArrowSmLeft />
-          </button>
-        </Link>
+
+        <button
+          onClick={() => navigate(-1)}
+          className="px-6 py-2 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200] flex space-x-2 space-x-reverse items-center justify-center flex-row-reverse">
+          <span>بازگشت</span>
+          <HiArrowSmLeft />
+        </button>
       </div>
       {data.map((item) => {
         return (
