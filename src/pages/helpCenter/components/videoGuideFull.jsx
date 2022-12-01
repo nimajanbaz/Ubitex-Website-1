@@ -1,7 +1,7 @@
-import { help_center_data } from "../../data/helpCenterData";
+import { help_center_data } from "../../../data/helpCenterData";
 import { Link } from "react-router-dom";
 import { HiArrowSmLeft } from "react-icons/hi";
-import Header from "../../components/header";
+import Header from "../../../components/header";
 
 const VideoGuide = () => {
   return (
@@ -22,7 +22,7 @@ const VideoGuide = () => {
               </button>
             </Link>
           </div>
-          <div className="grid grid-cols-4 gap-5 md:grid-cols-3 mb-10 rtl-grid">
+          <div className="grid lg:grid-cols-3 gap-5 md:grid-cols-3 grid-cols-1 mb-10 rtl-grid">
             {help_center_data.map((guide) => {
               return (
                 <div className="bg-gray-100 dark:bg-[#051a36] p-3 rounded-md flex flex-col space-y-4">

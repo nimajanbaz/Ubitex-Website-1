@@ -103,11 +103,11 @@ export default function Home() {
         Header: "",
         accessor: "action",
         Cell: () => (
-          <Link href={"/redirect-to-platform"}>
+          <a href="https://app.ubitex.io">
             <button className="px-4 py-2 border border-[#f39200] rounded-md text-[#f39200] transition-all hover:bg-[#f39200] hover:text-white">
               خرید / فروش
             </button>
-          </Link>
+          </a>
         ),
       },
     ],
@@ -131,9 +131,9 @@ export default function Home() {
   return (
     <>
       <div className="mx-auto">
-        <div className="max-w-[1600px] flex justify-center items-center mx-auto">
+        <div className="max-w-[1750px] flex justify-center items-center mx-auto">
           {/* Left Box */}
-          <div className="w-8/12 top-5 relative max-lg:hidden min-h-[770px]">
+          <div className="w-8/12 top-5 relative max-lg:hidden min-h-[800px]">
             {header_images.map((image) => {
               return (
                 <img
@@ -176,7 +176,7 @@ export default function Home() {
                   <span>ثبت نام</span>
                 </button>
               </Link>
-              <Link to="/app">
+              <Link to="/download">
                 <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
                   <span>دانلود اپلیکیشن</span>
                 </button>
@@ -189,17 +189,15 @@ export default function Home() {
             {header_boxes.map((data) => {
               return (
                 <div
-                  className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl flex flex-col items-end space-y-2 md:mb-3 lg:-mt-16 z-30 cursor-pointer"
+                  className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl flex flex-col items-end space-y-4 md:mb-3 lg:-mt-16 z-30 cursor-pointer"
                   key={data.id}>
-                  <img
-                    src={data.image}
-                    alt=""
-                    className="w-14 text-right dark:bg-[#062246] bg-gray-300 rounded-lg p-3"
-                  />
-                  <span className="text-gray-700 dark:text-gray-200">
+                  <span
+                    className="text-3xl text-right dark:bg-[#062246] bg-gray-100 rounded-lg p-3 text-[#f39200]"
+                  >{data.icon}</span>
+                  <span className="text-gray-700 dark:text-gray-200 text-lg">
                     {data.title}
                   </span>
-                  <p className="text-xs text-right text-gray-700 dark:text-gray-300">
+                  <p className="text-sm text-right text-gray-700 dark:text-gray-300">
                     {data.description}
                   </p>
                 </div>

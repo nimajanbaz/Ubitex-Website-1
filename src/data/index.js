@@ -2,10 +2,7 @@ import crypto from "../assets/img/crypto.png";
 import free from "../assets/img/free.png";
 import blockchain from "../assets/img/blockchain.png";
 import trade from "../assets/img/trade.png";
-import mobile from "../assets/img/app.png";
-import gift from "../assets/img/gift.png";
-import stoploss from "../assets/img/stoploss.png";
-import support from "../assets/img/support.png";
+import stoploss_2 from "../assets/img/stoploss-02.webp";
 import platform from "../assets/img/platform.webp";
 import orders from "../assets/img/orders.webp";
 import deposit from "../assets/img/deposit.webp";
@@ -23,63 +20,74 @@ import {
   FaTwitter,
   FaLinkedin,
   FaYoutube,
+  FaHeadphonesAlt,
+  FaGift,
+  FaMobile
 } from "react-icons/fa";
 
+import { MdWaterfallChart } from "react-icons/md";
+
 const ver_class =
-  "absolute p-2 cursor-pointer rounded-lg border dark:border-[#072349] border-gray-300 dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.2)] dark:hover:bg-[#07244b] dark:backdrop-blur backdrop-blur hover:backdrop-blur dark:hover:backdrop-blur dark:bg-[#051a36] bg-gray-200 bg-opacity-25 dark:bg-opacity-25 hover:bg-opacity-30 transition-all";
+  "absolute p-2 cursor-pointer rounded-lg border dark:border-[#072349] border-gray-300 dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.2)] dark:hover:bg-[#07244b] dark:backdrop-blur backdrop-blur hover:backdrop-blur dark:hover:backdrop-blur dark:bg-[#051a36] bg-gray-200 bg-opacity-25 dark:bg-opacity-25 hover:bg-opacity-30 dark:hover:bg-opacity-40 transition-all";
 
 export const header_images = [
   {
     id: 1,
     src: platform,
     alt: "Platform",
-    class: `${ver_class} animate-ver_7s left-10`,
+    class: `${ver_class} animate-ver_7s left-10 top-6`,
   },
   {
     id: 2,
     src: deposit,
     alt: "Deposit",
-    class: `${ver_class} animate-ver_5s left-80 top-60 w-1/4`,
+    class: `${ver_class} animate-ver_5s left-80 top-64 w-1/5`,
   },
   {
     id: 3,
     src: orders,
     alt: "Orders",
-    class: `${ver_class} animate-hor_5s left-36 top-[470px] w-3/4`,
+    class: `${ver_class} animate-hor_5s left-40 top-[470px] w-4/6`,
   },
   {
     id: 4,
     src: app,
     alt: "Application",
-    class: `${ver_class} animate-hor_7s top-36 w-3/12 !border-[7px]`,
+    class: `${ver_class} animate-hor_7s top-40 w-1/5 !border-[7px]`,
+  },
+  {
+    id: 5,
+    src: stoploss_2,
+    alt: "Stop Loss",
+    class: `${ver_class} animate-hor_5s top-10 left-[750px] w-1/5`,
   },
 ];
 
 export const header_boxes = [
   {
     id: 1,
-    image: mobile,
+    icon: <FaMobile />,
     title: "اپلیکیشن موبایل",
     description:
       "اپلیکیشن یوبیتکس در دو نسخه اندروید و آیفون با رابط کاربری ساده و حرفه ای",
   },
   {
     id: 2,
-    image: gift,
+    icon: <FaGift />,
     title: "کارت هدیه ارزدیجیتال",
     description:
       "ساخت رایگان کارت هدیه رمزارزی با طرح دلخواه در مناسبت های مختلف",
   },
   {
     id: 3,
-    image: support,
+    icon: <FaHeadphonesAlt />,
     title: "پشتیبانی 24 ساعته",
     description:
       "پشتیبانی آنلاین حرفه ای 24 ساعته در 7 روز هفته از طریق تیکت و چت آنلاین",
   },
   {
     id: 4,
-    image: stoploss,
+    icon: <MdWaterfallChart />,
     title: "تعیین حد سود / ضرر",
     description:
       "امکان تعیین حد سود / ضرر به دو صورت عادی و استاپ با بهترین قیمت",
@@ -154,8 +162,8 @@ export const footer_data = {
   support: [
     {
       id: 1,
-      title: "تماس با ما",
-      href: "/conact-us",
+      title: "سوالات متداول",
+      href: "/support-center/faq",
     },
     {
       id: 2,

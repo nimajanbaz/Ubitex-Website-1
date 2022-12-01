@@ -11,14 +11,15 @@ import HomePage from "./pages/home";
 import Application from "./pages/app";
 import HelpCenter from "./pages/helpCenter";
 import HelpCenterItem from "./pages/helpCenter/helpCenterItem";
-import VideoGuide from "./pages/helpCenter/videoGuide";
+import VideoGuide from "./pages/helpCenter/components/videoGuideFull";
+import Faq from "./pages/helpCenter/faq";
 
 const App = () => {
   return (
     <HttpsRedirect>
       <Router>
         <Navbar />
-        <div className="font-display text-right xl:px-0 lg:px-0 md:px-12 sm:px-8 px-4">
+        <div className="font-display text-right xl:px-10 lg:px-12 md:px-12 sm:px-8 px-4">
           <Routes>
             <Route path="*" element={<NotFound />} />
             <Route path="/about-us" element={<AboutUs />} />
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/download" element={<Application />} />
             <Route path="/support-center" element={<HelpCenter />} />
+            <Route path="/support-center/faq" element={<Faq />} />
             <Route path="/support-center/guide" element={<VideoGuide />} />
             <Route
               path="/support-center/guide/:slug"
