@@ -49,7 +49,7 @@ export default function Navbar() {
     },
     {
       id: 3,
-      title: "تبدیل",
+      title: "معامله آنی",
       href: "/redirect-to-platform",
       star: true,
     },
@@ -75,9 +75,9 @@ export default function Navbar() {
   return (
     <Popover className="relative dark:bg-[#051a36] bg-white font-display text-right">
       <MyDialog
-        title="(OTC) تبدیل سریع"
+        title="(OTC) معامله آنی"
         text="تبدیل سریع، یک ابزار آسان به منظور خرید و فروش رمزارزها با چند کلیک ساده بدون سفارش‌گذاری در تالار معاملات است. شما می توانید به سادگی و خیلی سریع دارایی‌های رمزارزی را در هر زمان با قیمت واقعی بر اساس شرایط فعلی بازار تبدیل کنید."
-        buttonText="مشاهده صفحه تبدیل سریع"
+        buttonText="مشاهده صفحه معامله آنی"
         dialogOpen={dialogOpen}
         fullwidthButton
         image={OTC_PopUp}
@@ -131,7 +131,7 @@ export default function Navbar() {
               <Link
                 to="/redirect-to-platform"
                 className="ml-8 rounded-md bg-opacity-10 bg-[#f39200] text-[#f39200] px-4 py-2 text-base">
-                ورود / ثبت نام
+                ورود | ثبت نام
               </Link>
               <div className="ml-3">
                 <span
@@ -185,7 +185,7 @@ export default function Navbar() {
                 <Link
                   href="/redirect-to-platform"
                   className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-[#f39200] px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-[#ce7c00]">
-                  ورود / ثبت نام
+                  ورود | ثبت نام
                 </Link>
               </div>
             </div>

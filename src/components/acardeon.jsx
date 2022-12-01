@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Acardeon = ({ data }) => {
   const navigate = useNavigate();
   return (
-    <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
+    <>
       <div className="my-10 flex justify-between items-center flex-row-reverse">
         <div className="flex flex-col space-y-3">
           <h3 className="text-[#f39200] text-3xl font-semibold">
@@ -69,7 +69,7 @@ const Acardeon = ({ data }) => {
           </>
         );
       })}
-    </div>
+    </>
   );
 };
 

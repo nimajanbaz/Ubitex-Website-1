@@ -14,9 +14,9 @@ import download_app_4 from "../assets/img/Icons-04.svg";
 import download_app_5 from "../assets/img/Icons-05.svg";
 import download_app_6 from "../assets/img/Icons-06.svg";
 import {
-  FaTelegram,
+  FaTelegramPlane,
   FaInstagram,
-  FaFacebook,
+  FaFacebookF,
   FaTwitter,
   FaLinkedin,
   FaYoutube,
@@ -211,7 +211,7 @@ export const footer_data = {
   social: [
     {
       id: 1,
-      icon: <FaTelegram />,
+      icon: <FaTelegramPlane />,
       href: "https://t.me/ubitex_io",
     },
     {
@@ -221,7 +221,7 @@ export const footer_data = {
     },
     {
       id: 3,
-      icon: <FaFacebook />,
+      icon: <FaFacebookF />,
       href: "https://www.facebook.com/Ubitex-107940351853274",
     },
     {

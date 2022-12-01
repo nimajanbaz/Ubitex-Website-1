@@ -206,7 +206,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col max-w-[1600px] mx-auto mt-10">
-            <h3 className="text-2xl text-[#f39200] font-semibold text-right">
+            <h3 className="text-2xl text-[#f39200] font-semibold text-right mb-10">
               ارزهای دیجیتال یوبیتکس
             </h3>
             {data ? (

@@ -1,7 +1,7 @@
 import React from "react";
 import { useTable } from "react-table";
 
-export const Table = ({ columns, data }) => {
+export const Table = ({ columns, data, titleCenter }) => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({
       columns,
@@ -10,12 +10,12 @@ export const Table = ({ columns, data }) => {
 
   // Render the UI for your table
   return (
-    <table {...getTableProps()} className="rtl-grid mt-10 mx-auto w-full overflow-scroll">
+    <table {...getTableProps()} className="rtl-grid mx-auto w-full overflow-scroll">
       <thead>
         {headerGroups.map((headerGroup) => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps()} className='dark:text-gray-400 text-gray-600 text-right'>{column.render("Header")}</th>
+              <th {...column.getHeaderProps()} className={`dark:text-gray-400 text-gray-600 ${titleCenter ? 'text-center' : 'text-right'}`}>{column.render("Header")}</th>
             ))}
           </tr>
         ))}
