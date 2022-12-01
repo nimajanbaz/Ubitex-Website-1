@@ -16,7 +16,7 @@ const Footer = () => {
                 to={item.href}
                 key={item.id}
                 className="mb-3 dark:text-gray-300 text-gray-600 hover:text-[#f39200]">
-                <span className="hover:text-[#f39200] transition-all px-2 py-1 rounded-md bg-opacity-0 hover:bg-opacity-10 bg-[#f39200]">
+                <span className="hover:text-[#f39200] transition-all px-4 py-1 rounded-md bg-opacity-0 hover:bg-opacity-10 bg-[#f39200]">
                   {item.title}
                 </span>
               </Link>
@@ -33,7 +33,7 @@ const Footer = () => {
                 to={item.href}
                 key={item.id}
                 className="mb-3 dark:text-gray-300 text-gray-600 hover:text-[#f39200]">
-                <span className="hover:text-[#f39200] transition-all px-2 py-1 rounded-md bg-opacity-0 hover:bg-opacity-10 bg-[#f39200]">
+                <span className="hover:text-[#f39200] transition-all px-4 py-1 rounded-md bg-opacity-0 hover:bg-opacity-10 bg-[#f39200]">
                   {item.title}
                 </span>
               </Link>
@@ -50,7 +50,7 @@ const Footer = () => {
                 to={item.href}
                 key={item.id}
                 className="mb-3 dark:text-gray-300 text-gray-600 hover:text-[#f39200]">
-                <span className="hover:text-[#f39200] transition-all px-2 py-1 rounded-md bg-opacity-0 hover:bg-opacity-10 bg-[#f39200]">
+                <span className="hover:text-[#f39200] transition-all px-4 py-1 rounded-md bg-opacity-0 hover:bg-opacity-10 bg-[#f39200]">
                   {item.title}
                 </span>
               </Link>

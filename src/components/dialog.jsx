@@ -9,13 +9,8 @@ const MyDialog = ({
   dialogOpen,
   onDialogClose,
   fullwidthButton,
+  image
 }) => {
-  //   let [isOpen, setIsOpen] = useState(dialogOpen || false);
-  //   console.log(isOpen);
-
-  //   function closeModal() {
-  //     setIsOpen(false);
-  //   }
 
   return (
     <>
@@ -48,6 +43,9 @@ const MyDialog = ({
                     className="text-2xl font-semibold leading-6 text-[#f39200]">
                     {title}
                   </Dialog.Title>
+                  {image ? (
+                    <img src={image} alt={title} className='w-full my-5'/>
+                  ) : null}
                   <div className="mt-4">
                     <p className="text-gray-600 dark:text-gray-300">{text}</p>
                   </div>
