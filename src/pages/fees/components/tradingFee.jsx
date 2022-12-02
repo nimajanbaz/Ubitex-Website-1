@@ -14,14 +14,14 @@ const TradingFee = () => {
           const { level, levelDescripton } = props.row.original;
           return (
             <div
-              className={`flex flex-col cursor-pointer justify-center items-center ${
+              className={`flex flex-col cursor-pointer justify-center items-center text-sm ${
                 level == 1
                   ? "text-emerald-600"
                   : level == 2
                   ? "text-red-600"
                   : "text-amber-400"
               }`}>
-              <span className="text-2xl">
+              <span className="text-xl">
                 {level == 1 ? (
                   <FaUserCheck />
                 ) : level == 2 ? (
@@ -46,14 +46,14 @@ const TradingFee = () => {
             props.row.original;
           return (
             <div
-              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer ${
+              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer text-sm ${
                 cryptoWithdrawal ? "text-emerald-600" : "text-red-600"
               }`}>
               <div
                 className={`flex items-center space-x-1 space-x-reverse px-4 py-2 rounded-md bg-opacity-10 ${
                   cryptoWithdrawal ? "bg-emerald-600" : "bg-red-600"
                 }`}>
-                <span className="text-2xl">
+                <span className="text-xl">
                   {cryptoWithdrawal ? <IoCheckmarkDone /> : <IoClose />}
                 </span>
                 <span>{cryptoWithdrawal ? "فعال" : "غیرفعال"}</span>
@@ -73,14 +73,14 @@ const TradingFee = () => {
             props.row.original;
           return (
             <div
-              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer ${
+              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer text-sm ${
                 tomanWithdrawal ? "text-emerald-600" : "text-red-600"
               }`}>
               <div
                 className={`flex items-center space-x-1 space-x-reverse px-4 py-2 rounded-md bg-opacity-10 ${
                   tomanWithdrawal ? "bg-emerald-600" : "bg-red-600"
                 }`}>
-                <span className="text-2xl">
+                <span className="text-xl">
                   {tomanWithdrawal ? <IoCheckmarkDone /> : <IoClose />}
                 </span>
                 <span>{tomanWithdrawal ? "فعال" : "غیرفعال"}</span>
@@ -99,14 +99,14 @@ const TradingFee = () => {
           const { cryptoDeposit, cryptoDepositDescripton } = props.row.original;
           return (
             <div
-              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer ${
+              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer text-sm ${
                 cryptoDeposit ? "text-emerald-600" : "text-red-600"
               }`}>
               <div
                 className={`flex items-center space-x-1 space-x-reverse px-4 py-2 rounded-md bg-opacity-10 ${
                     cryptoDeposit ? "bg-emerald-600" : "bg-red-600"
                 }`}>
-                <span className="text-2xl">
+                <span className="text-xl">
                   {cryptoDeposit ? <IoCheckmarkDone /> : <IoClose />}
                 </span>
                 <span>{cryptoDeposit ? "فعال" : "غیرفعال"}</span>
@@ -125,14 +125,14 @@ const TradingFee = () => {
           const { tomanDeposit, tomanDepositDescripton } = props.row.original;
           return (
             <div
-            className={`flex flex-col justify-center items-center space-y-2 cursor-pointer ${
+            className={`flex flex-col justify-center items-center space-y-2 cursor-pointer text-sm ${
                 tomanDeposit ? "text-emerald-600" : "text-red-600"
             }`}>
             <div
               className={`flex items-center space-x-1 space-x-reverse px-4 py-2 rounded-md bg-opacity-10 ${
                 tomanDeposit ? "bg-emerald-600" : "bg-red-600"
               }`}>
-              <span className="text-2xl">
+              <span className="text-xl">
                 {tomanDeposit ? <IoCheckmarkDone /> : <IoClose />}
               </span>
               <span>{tomanDeposit ? "فعال" : "غیرفعال"}</span>
@@ -175,7 +175,7 @@ const TradingFee = () => {
 
   return (
     <>
-      <div className="my-10 p-10 rounded-lg dark:bg-[#051a36] bg-gray-100">
+      <div className="my-10 p-10 rounded-lg dark:bg-[#051a36] bg-gray-50">
         <Table columns={columns} data={trading_fee_data} titleCenter/>
       </div>
     </>

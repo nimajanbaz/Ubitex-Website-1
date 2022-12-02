@@ -18,7 +18,6 @@ export default function Navbar() {
   }, [pathname]);
 
   const handleDialog = () => {
-    console.log(dialogOpen);
     setDialogOpen(true);
   };
 
@@ -78,6 +77,7 @@ export default function Navbar() {
         title="(OTC) معامله آنی"
         text="تبدیل سریع، یک ابزار آسان به منظور خرید و فروش رمزارزها با چند کلیک ساده بدون سفارش‌گذاری در تالار معاملات است. شما می توانید به سادگی و خیلی سریع دارایی‌های رمزارزی را در هر زمان با قیمت واقعی بر اساس شرایط فعلی بازار تبدیل کنید."
         buttonText="مشاهده صفحه معامله آنی"
+        buttonUrl='/redirect-to-platform'
         dialogOpen={dialogOpen}
         fullwidthButton
         image={OTC_PopUp}
