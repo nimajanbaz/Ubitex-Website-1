@@ -1,10 +1,13 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import Header from "../components/header";
 
 const NotFound = () => {
   let navigate = useNavigate();
 
   return (
     <>
+      <Header title={"404"} />
+
       <div className="h-screen flex justify-center items-center flex-col">
         <h2 className="text-[#f39200] text-[140px] font-semibold">404</h2>
         <p className="text-3xl mb-10">!صفحه مورد نظر پیدا نشد</p>

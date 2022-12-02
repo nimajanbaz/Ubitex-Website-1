@@ -1,7 +1,6 @@
 import React from "react";
 import headerImage from "../assets/img/header-phone.png";
 import { footer_data } from "../data";
-import { Link } from "react-router-dom";
 import Header from "../components/header";
 
 const Application = () => {
@@ -25,9 +24,9 @@ const Application = () => {
         <div className="grid lg:grid-cols-6 md:grid-cols-2 sm:grid-cols-2 gap-10 md:gap-5 sm:gap-5 max-w-[1300px] mx-auto items-center my-6">
           {footer_data.download_app.map((img) => {
             return (
-              <Link to={img.href}>
+              <a href={img.href}>
                 <img src={img.img} alt="" key={img.id} />
-              </Link>
+              </a>
             );
           })}
         </div>

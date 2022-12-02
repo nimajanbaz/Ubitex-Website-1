@@ -5,6 +5,7 @@ import about from "../assets/img/about-2.webp";
 import mobileApp from "../assets/img/5.webp";
 import { header_images, header_boxes, center_boxes } from "../data";
 import { Link } from "react-router-dom";
+import Header from "../components/header";
 
 export default function Home() {
   const [data, setData] = useState();
@@ -130,6 +131,7 @@ export default function Home() {
 
   return (
     <>
+      <Header title={"خانه"} />
       <div className="mx-auto">
         <div className="max-w-[1750px] flex justify-center items-center mx-auto">
           {/* Left Box */}
@@ -191,9 +193,9 @@ export default function Home() {
                 <div
                   className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl flex flex-col items-end space-y-4 md:mb-3 lg:-mt-16 z-30 cursor-pointer"
                   key={data.id}>
-                  <span
-                    className="text-3xl text-right dark:bg-[#062246] bg-gray-100 rounded-lg p-3 text-[#f39200]"
-                  >{data.icon}</span>
+                  <span className="text-3xl text-right dark:bg-[#062246] bg-gray-100 rounded-lg p-3 text-[#f39200]">
+                    {data.icon}
+                  </span>
                   <span className="text-gray-700 dark:text-gray-200 text-lg">
                     {data.title}
                   </span>
