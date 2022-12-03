@@ -12,7 +12,7 @@ const TradeHomePage = () => {
           توکن‌های لوریج‌دار به شما امکان می‌دهد با استفاده از اهرم، سود خود را
           در معاملات چند برابر کنید
         </p>
-        <div className="flex space-x-6"></div>
+        <div className="flex space-x-6">
           <Link to={"/redirect-to-platform"}>
             <button className="px-8 py-3 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200] flex space-x-2 justify-center items-center">
               <span>
