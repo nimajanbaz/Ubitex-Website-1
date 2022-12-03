@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // import MyDialog from "../../components/dialog";
 import { levraged_tokens_data } from "../../data/levragedTokenData";
 import AcardeonSlime from "./components/faqHomePage";
+import TradeHomePage from "./components/tradeHomePage";
 
 const LevragedToken = () => {
   //   const [dialogOpen, setDialogOpen] = useState(false);
@@ -26,30 +27,32 @@ const LevragedToken = () => {
       /> */}
       <Header title={"توکن‌های لوریج دار"} />
       <div className="px-4 sm:px-6 text-right max-w-[1400px] mx-auto my-10">
-        <div className="grid grid-cols-8 items-center my-10 space-y-5 bg-gray-100 dark:bg-[#051a36] rounded-lg p-16 rtl-grid">
+        <div className="grid grid-cols-9 items-center my-10 space-y-5 bg-gray-100 dark:bg-[#051a36] rounded-lg p-16 rtl-grid">
           <div className="flex flex-col space-y-5 col-span-3">
             <h1 className="text-[#f39200] text-4xl font-semibold">
-              توکن‌های لوریج دار
+              {levraged_tokens_data.header.title}
             </h1>
             <p className="leading-relaxed">
-              توکن‌‌های لوریج‌دار یوبیتکس یک محصول مشتقه است که ریسک لیکوئید شدن
-              ندارد. این برای شما اهرمی روی دارایی پایه قرار می‌دهد، که ممکن است
-              سودآوری و همچنین زیان را افزایش دهد.
+              {levraged_tokens_data.header.text}
             </p>
             <Link className="flex" to={"/redirect-to-platform"}>
               <button className="text-[#f39200] cursor-pointer transition-all px-8 py-4 bg-[#f39200] bg-opacity-10 rounded-md">
-                هم اکنون معامله کنید
+                {levraged_tokens_data.header.buttonText}
               </button>
             </Link>
           </div>
-          <div className="col-span-5">
-            <img src={LevragedTokenHeader} alt="" className="w-3/4 mx-auto" />
+          <div className="col-span-6 flex">
+            <img
+              src={LevragedTokenHeader}
+              alt="Levraged Token Header"
+              className="w-3/4 mx-auto"
+            />
           </div>
         </div>
         <div className="mb-10 flex justify-between items-center flex-row-reverse">
           <div className="flex flex-col space-y-3">
             <h1 className="text-[#f39200] text-3xl font-semibold">
-              توکن‌های لوریج‌دار چیست؟
+              {levraged_tokens_data.info.title}
             </h1>
           </div>
           {/* <button
@@ -73,24 +76,8 @@ const LevragedToken = () => {
             </div>
           </div>
           <div className="col-span-3 flex flex-col space-y-10 leading-relaxed bg-gray-100 dark:bg-[#051a36] rounded-lg p-7 text-[15px]">
-            <p>
-              توکن‌های لوریج‌دار با ارائه موقعیت اهرم‌دار در معاملات رمزارزها
-              سود و ضرر شما را چندین برابر می‌کند. توکن‌های لوریج‌دار را همانند
-              دیگر توکن‌ها در بازار می‌توان معامله کرد. قیمت یک توکن لوریج‌دار
-              همراه با تغییرات قیمت در بازار حرکت می‌کند و به نسبت اهرم آن، بالا
-              و پایین می‌رود. برخلاف معاملات مارجین، توکن‌های لوریج‌دار به شما
-              این امکان را می‌دهند که بدون نیاز به قرار دادن وثیقه و نگرانی
-              درباره ریسک لیکوئید شدن، معاملات لوریج‌دار را انجام دهید.
-            </p>
-            <p>
-              درواقع توکن‌های لوریج‌دار، حرکت قیمت رمزارزها را چندین برابر
-              می‌کند. به عنوان مثال، خرید BTC3L (یعنی معامله لانگ بیت‌کوین با
-              اهرم 3 برابری) به شما این امکان را می‌دهد که اگر قیمتBTCUSDT 10
-              درصد افزایش یابد، شما 30 درصد سود به دست آورید. همانطور که از
-              توضیحات مشخص است، توکن‌های لوریج‌دار ریسک خاص خود را دارند و شما
-              نباید بدون درک کامل از زیان‌های احتمالی روی آن‌ها سرمایه‌گذاری
-              کنید.
-            </p>
+            <p>{levraged_tokens_data.info.text_1}</p>
+            <p>{levraged_tokens_data.info.text_2}</p>
           </div>
         </div>
 
@@ -107,7 +94,7 @@ const LevragedToken = () => {
                     {item.icon}
                   </span>
                   <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="text-sm">{item.text}</p>
+                  <p className="text-sm">{item.text}</p>   
                 </div>
               );
             })}
@@ -115,6 +102,7 @@ const LevragedToken = () => {
         </div>
 
         <AcardeonSlime />
+        <TradeHomePage />
       </div>
     </>
   );

@@ -6,7 +6,7 @@ import { RiMoonClearFill, RiSunLine } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 import MyDialog from "./dialog";
 import { Badge } from "./badge";
-import OTC_PopUp from '../assets/img/otc-popup.png'
+import OTC_PopUp from "../assets/img/otc-popup.png";
 
 export default function Navbar() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -39,36 +39,49 @@ export default function Navbar() {
       title: "بازارها",
       href: "/redirect-to-markets",
       star: false,
+      isPopUp: false,
     },
     {
       id: 2,
       title: "تالار معاملات",
       href: "/redirect-to-platform",
       star: false,
+      isPopUp: false,
     },
     {
       id: 3,
       title: "معامله آنی",
       href: "/redirect-to-platform",
       star: true,
+      isPopUp: true,
     },
+    // {
+    //   id: 4,
+    //   title: "توکن‌های لوریج دار",
+    //   href: "/levraged-tokens",
+    //   star: true,
+    //   isPopUp: false,
+    // },
     {
-      id: 4,
+      id: 5,
       title: "راهنمای استفاده",
       href: "/support-center",
       star: false,
-    },
-    {
-      id: 5,
-      title: "بلاگ",
-      href: "/redirect-to-blog",
-      star: false,
+      isPopUp: false,
     },
     {
       id: 6,
+      title: "بلاگ",
+      href: "/redirect-to-blog",
+      star: false,
+      isPopUp: false,
+    },
+    {
+      id: 7,
       title: "اپلیکیشن",
       href: "/download",
       star: false,
+      isPopUp: false,
     },
   ];
   return (
@@ -77,7 +90,7 @@ export default function Navbar() {
         title="(OTC) معامله آنی"
         text="تبدیل سریع، یک ابزار آسان به منظور خرید و فروش رمزارزها با چند کلیک ساده بدون سفارش‌گذاری در تالار معاملات است. شما می توانید به سادگی و خیلی سریع دارایی‌های رمزارزی را در هر زمان با قیمت واقعی بر اساس شرایط فعلی بازار تبدیل کنید."
         buttonText="مشاهده صفحه معامله آنی"
-        buttonUrl='/redirect-to-platform'
+        buttonUrl="/redirect-to-platform"
         dialogOpen={dialogOpen}
         fullwidthButton
         image={OTC_PopUp}
@@ -111,16 +124,25 @@ export default function Navbar() {
                     <div
                       key={item.id}
                       className="cursor-pointer"
-                      onClick={() => (item.star ? handleDialog() : undefined)}>
-                      {item.star ? (
-                        <span className=" flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+                      onClick={() =>
+                        item.isPopUp ? handleDialog() : undefined
+                      }>
+                      {item.star && item.isPopUp ? (
+                        <span className=" flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
                           {item.title}
-                          <Badge text={'جدید'} />
+                          <Badge text={"جدید"} />
                         </span>
+                      ) : item.star && !item.isPopUp ? (
+                        <Link to={item.href}>
+                          <span className=" flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+                            {item.title}
+                            <Badge text={"جدید"} />
+                          </span>
+                        </Link>
                       ) : (
                         <Link
                           to={item.href}
-                          className=" flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+                          className=" flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
                           {item.title}
                         </Link>
                       )}
@@ -168,7 +190,7 @@ export default function Navbar() {
                       {item.star ? (
                         <span className="dark:bg-[#04162d] flex space-x-2 justify-center items-center text-base font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
                           {item.title}
-                          <Badge text={'جدید'} />
+                          <Badge text={"جدید"} />
                         </span>
                       ) : (
                         <Link

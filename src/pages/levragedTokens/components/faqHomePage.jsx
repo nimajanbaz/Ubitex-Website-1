@@ -1,7 +1,5 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
-import { Link } from "react-router-dom";
-import { HiArrowSmLeft } from "react-icons/hi";
 import { faq_data } from "../../../data/faq";
 
 const AcardeonSlime = () => {

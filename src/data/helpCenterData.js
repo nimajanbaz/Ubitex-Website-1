@@ -51,14 +51,24 @@ export const help_center_data = [
   {
     id: 5,
     img: guide_5,
+    title: "توکن‌های لوریج دار",
+    text: "آموزش نحوه معامله در بازار نزولی با توکن‌های لوریج دار",
+    videoLink:
+      "https://www.aparat.com/video/video/embed/videohash/yr1DC/vt/frame",
+    slug: "/support-center/guide/levraged-token",
+  },
+  {
+    id: 6,
+    img: guide_5,
     title: "گوگل اتنتیکیتور",
     text: "آموزش نحوه فعالسازی و استفاده از  تأیید دو مرحله ای",
     videoLink:
       "https://www.aparat.com/video/video/embed/videohash/yr1DC/vt/frame",
     slug: "/support-center/guide/google-authenticator",
   },
+  
   {
-    id: 6,
+    id: 7,
     img: guide_6,
     title: "بروزرسانی",
     text: "بررسی قابلیت های جدید پلتفرم یوبیتکس",
@@ -67,7 +77,7 @@ export const help_center_data = [
     slug: "/support-center/guide/ubitex-2022-update",
   },
   {
-    id: 7,
+    id: 8,
     img: guide_7,
     title: "ساخت کریپتوکارت",
     text: "در این ویدئو آموزش ساخت کریپتوکارت یوبیتکس را مشاهده میکنید",
@@ -76,7 +86,7 @@ export const help_center_data = [
     slug: "/support-center/guide/create-cryptocard",
   },
   {
-    id: 8,
+    id: 9,
     img: guide_8,
     title: "دریافت کریپتوکارت",
     text: "در این ویدئو آموزش دریافت کریپتوکارت یوبیتکس را مشاهده میکنید",
