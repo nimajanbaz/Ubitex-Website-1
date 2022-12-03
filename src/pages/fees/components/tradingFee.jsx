@@ -104,7 +104,7 @@ const TradingFee = () => {
               }`}>
               <div
                 className={`flex items-center space-x-1 space-x-reverse px-4 py-2 rounded-md bg-opacity-10 ${
-                    cryptoDeposit ? "bg-emerald-600" : "bg-red-600"
+                  cryptoDeposit ? "bg-emerald-600" : "bg-red-600"
                 }`}>
                 <span className="text-xl">
                   {cryptoDeposit ? <IoCheckmarkDone /> : <IoClose />}
@@ -125,33 +125,21 @@ const TradingFee = () => {
           const { tomanDeposit, tomanDepositDescripton } = props.row.original;
           return (
             <div
-            className={`flex flex-col justify-center items-center space-y-2 cursor-pointer text-sm ${
+              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer text-sm ${
                 tomanDeposit ? "text-emerald-600" : "text-red-600"
-            }`}>
-            <div
-              className={`flex items-center space-x-1 space-x-reverse px-4 py-2 rounded-md bg-opacity-10 ${
-                tomanDeposit ? "bg-emerald-600" : "bg-red-600"
               }`}>
-              <span className="text-xl">
-                {tomanDeposit ? <IoCheckmarkDone /> : <IoClose />}
+              <div
+                className={`flex items-center space-x-1 space-x-reverse px-4 py-2 rounded-md bg-opacity-10 ${
+                  tomanDeposit ? "bg-emerald-600" : "bg-red-600"
+                }`}>
+                <span className="text-xl">
+                  {tomanDeposit ? <IoCheckmarkDone /> : <IoClose />}
+                </span>
+                <span>{tomanDeposit ? "فعال" : "غیرفعال"}</span>
+              </div>
+              <span className="text-sm text-gray-600 dark:text-gray-400">
+                {tomanDepositDescripton}
               </span>
-              <span>{tomanDeposit ? "فعال" : "غیرفعال"}</span>
-            </div>
-            <span className="text-sm text-gray-600 dark:text-gray-400">
-              {tomanDepositDescripton}
-            </span>
-          </div>
-          );
-        },
-      },
-      {
-        Header: "بازار معاملاتی",
-        accessor: "pair",
-        Cell: (props) => {
-          const { pair } = props.row.original;
-          return (
-            <div className="flex items-center text-sm cursor-pointer flex-col">
-              <span>{pair}</span>
             </div>
           );
         },
@@ -168,6 +156,19 @@ const TradingFee = () => {
           );
         },
       },
+      {
+        Header: "کارمزد توکن‌های لوریج دار",
+        accessor: "pair",
+        Cell: (props) => {
+          const { levragedTokenFee } = props.row.original;
+
+          return (
+            <div className="flex items-center text-sm cursor-pointer flex-col">
+              <span>{levragedTokenFee}</span>
+            </div>
+          );
+        },
+      },
     ],
 
     []
@@ -176,7 +177,7 @@ const TradingFee = () => {
   return (
     <>
       <div className="my-10 p-10 rounded-lg dark:bg-[#051a36] bg-gray-50">
-        <Table columns={columns} data={trading_fee_data} titleCenter/>
+        <Table columns={columns} data={trading_fee_data} titleCenter />
       </div>
     </>
   );

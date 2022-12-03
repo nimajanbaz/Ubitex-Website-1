@@ -5,12 +5,14 @@ import { Link } from "react-router-dom";
 const MyDialog = ({
   title,
   text,
+  video,
   buttonText,
   buttonUrl,
   dialogOpen,
   onDialogClose,
   fullwidthButton,
   image,
+  width,
 }) => {
   return (
     <>
@@ -37,7 +39,10 @@ const MyDialog = ({
                 leave="ease-in duration-200"
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-90">
-                <Dialog.Panel className=" text-right w-full max-w-2xl transform overflow-hidden rounded-xl bg-gray-200 dark:bg-[#062042] p-10 align-middle shadow-xl transition-all rtl-grid">
+                <Dialog.Panel
+                  className={`text-right w-full transform overflow-hidden rounded-xl bg-gray-200 dark:bg-[#062042] p-10 align-middle shadow-xl transition-all rtl-grid ${
+                    width ? width : " max-w-2xl"
+                  }`}>
                   <Dialog.Title
                     as="h3"
                     className="text-2xl font-semibold leading-6 text-[#f39200]">
@@ -46,9 +51,22 @@ const MyDialog = ({
                   {image ? (
                     <img src={image} alt={title} className="w-full my-5" />
                   ) : null}
-                  <div className="mt-4">
-                    <p className="text-gray-600 dark:text-gray-300">{text}</p>
-                  </div>
+                  {video ? (
+                    <div className="xl:h-[600px] lg:h-[500px] md:h-[400px] sm:h-[400px] max-sm:h-[200px] w-full loading-animation rounded-2xl my-5">
+                      <iframe
+                        src={video}
+                        title={"Levraged Tokens"}
+                        allowFullScreen="true"
+                        webkitallowfullscreen="true"
+                        mozallowfullscreen="true"
+                        className="w-full h-full rounded-2xl"></iframe>
+                    </div>
+                  ) : null}
+                  {text ? (
+                    <div className="mt-4">
+                      <p className="text-gray-600 dark:text-gray-300">{text}</p>
+                    </div>
+                  ) : null}
 
                   <div className="mt-6">
                     {buttonUrl ? (

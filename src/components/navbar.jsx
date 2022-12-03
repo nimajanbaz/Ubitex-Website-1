@@ -105,7 +105,7 @@ export default function Navbar() {
             <div className="hidden items-center justify-end lg:flex">
               <Popover.Group
                 as="nav"
-                className="hidden space-x-3 lg:flex rtl-grid">
+                className="hidden space-x-1 lg:flex rtl-grid">
                 {menuItems.map((item) => {
                   return (
                     <div
@@ -113,14 +113,14 @@ export default function Navbar() {
                       className="cursor-pointer"
                       onClick={() => (item.star ? handleDialog() : undefined)}>
                       {item.star ? (
-                        <span className=" flex space-x-2 justify-center items-center text-base font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+                        <span className=" flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
                           {item.title}
                           <Badge text={'جدید'} />
                         </span>
                       ) : (
                         <Link
                           to={item.href}
-                          className=" flex space-x-2 justify-center items-center text-base font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+                          className=" flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
                           {item.title}
                         </Link>
                       )}
@@ -130,7 +130,7 @@ export default function Navbar() {
               </Popover.Group>
               <Link
                 to="/redirect-to-platform"
-                className="ml-8 rounded-md bg-opacity-10 bg-[#f39200] text-[#f39200] px-4 py-2 text-base">
+                className="ml-8 rounded-md bg-opacity-10 bg-[#f39200] text-[#f39200] px-4 py-2 text-sm">
                 ورود | ثبت نام
               </Link>
               <div className="ml-3">

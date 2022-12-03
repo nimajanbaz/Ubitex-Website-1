@@ -13,6 +13,7 @@ export const trading_fee_data = [
     tomanDepositDescripton: "",
     pair: "TMN / USDT",
     tradigFee: "0.25 درصد",
+    levragedTokenFee: "0.4 درصد",
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ export const trading_fee_data = [
     tomanDepositDescripton: "حداقل 200,000 تومان",
     pair: "TMN / USDT",
     tradigFee: "0.25 درصد",
+    levragedTokenFee: "0.4 درصد",
   },
   {
     id: 3,
@@ -43,5 +45,6 @@ export const trading_fee_data = [
     tomanDepositDescripton: "حداقل 200,000 تومان",
     pair: "TMN / USDT",
     tradigFee: "0.25 درصد",
+    levragedTokenFee: "0.4 درصد",
   },
 ];
