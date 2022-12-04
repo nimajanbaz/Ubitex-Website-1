@@ -7,6 +7,13 @@ import { Link, useLocation } from "react-router-dom";
 import MyDialog from "./dialog";
 import { Badge } from "./badge";
 import OTC_PopUp from "../assets/img/otc-popup.png";
+import Dropdown from "./dropdown";
+import {
+  ConvertDark,
+  ConvertLight,
+  PlatformDark,
+  PlatformLight,
+} from "./icons";
 
 export default function Navbar() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -37,37 +44,69 @@ export default function Navbar() {
     {
       id: 1,
       title: "بازارها",
-      href: "/redirect-to-markets",
+      href: "/markets",
       star: false,
       isPopUp: false,
+      isDropdown: false,
     },
     {
       id: 2,
-      title: "تالار معاملات",
-      href: "/redirect-to-platform",
-      star: false,
-      isPopUp: false,
-    },
-    {
-      id: 3,
-      title: "معامله آنی",
-      href: "/redirect-to-platform",
-      star: true,
-      isPopUp: true,
+      title: "معامله",
+      isDropdown: true,
+      items: [
+        {
+          id: 2,
+          title: "تالار معاملات",
+          href: "/redirect-to-platform",
+          star: false,
+          isPopUp: false,
+          isDropdown: false,
+          iconDark: <PlatformDark />,
+          iconLight: <PlatformLight />,
+        },
+        {
+          id: 3,
+          title: "معامله آنی",
+          href: "/redirect-to-convert",
+          star: true,
+          isPopUp: true,
+          isDropdown: false,
+          iconDark: <ConvertDark />,
+          iconLight: <ConvertLight />,
+        },
+      ],
     },
     // {
-    //   id: 4,
-    //   title: "توکن‌های لوریج دار",
-    //   href: "/levraged-tokens",
-    //   star: true,
+    //   id: 2,
+    //   title: "تالار معاملات",
+    //   href: "/redirect-to-platform",
+    //   star: false,
     //   isPopUp: false,
+    //   isDropdown: false,
     // },
+    // {
+    //   id: 3,
+    //   title: "معامله آنی",
+    //   href: "/redirect-to-convert",
+    //   star: true,
+    //   isPopUp: true,
+    //   isDropdown: false,
+    // },
+    {
+      id: 4,
+      title: "توکن‌های لوریج دار",
+      href: "/leveraged-tokens",
+      star: true,
+      isPopUp: false,
+      isDropdown: false,
+    },
     {
       id: 5,
       title: "راهنمای استفاده",
       href: "/support-center",
       star: false,
       isPopUp: false,
+      isDropdown: false,
     },
     {
       id: 6,
@@ -75,6 +114,7 @@ export default function Navbar() {
       href: "/redirect-to-blog",
       star: false,
       isPopUp: false,
+      isDropdown: false,
     },
     {
       id: 7,
@@ -82,6 +122,7 @@ export default function Navbar() {
       href: "/download",
       star: false,
       isPopUp: false,
+      isDropdown: false,
     },
   ];
   return (
@@ -110,7 +151,7 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="-my-2 -mr-2 lg:hidden">
-              <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white dark:bg-[#04162d] p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none">
+              <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white dark:bg-[#04162d] p-2 text-gray-400 hover:bg-gray-50 hover:text-gray-500 focus:outline-none">
                 <span className="sr-only">Open menu</span>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
@@ -119,8 +160,10 @@ export default function Navbar() {
               <Popover.Group
                 as="nav"
                 className="hidden space-x-1 lg:flex rtl-grid">
-                {menuItems.map((item) => {
-                  return (
+                {menuItems.map((item) =>
+                  item.isDropdown ? (
+                    <Dropdown data={item} />
+                  ) : (
                     <div
                       key={item.id}
                       className="cursor-pointer"
@@ -147,11 +190,11 @@ export default function Navbar() {
                         </Link>
                       )}
                     </div>
-                  );
-                })}
+                  )
+                )}
               </Popover.Group>
               <Link
-                to="/redirect-to-platform"
+                to="/redirect-to-login"
                 className="ml-8 rounded-md bg-opacity-10 bg-[#f39200] text-[#f39200] px-4 py-2 text-sm">
                 ورود | ثبت نام
               </Link>
@@ -205,7 +248,7 @@ export default function Navbar() {
               </div>
               <div className="mt-6 text-center text-base font-medium text-gray-500">
                 <Link
-                  href="/redirect-to-platform"
+                  href="/redirect-to-login"
                   className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-[#f39200] px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-[#ce7c00]">
                   ورود | ثبت نام
                 </Link>

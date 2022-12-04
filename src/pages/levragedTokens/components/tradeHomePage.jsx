@@ -4,7 +4,7 @@ import { HiArrowSmLeft } from "react-icons/hi";
 const TradeHomePage = () => {
   return (
     <>
-      <div className="p-16 mb-10 flex flex-col justify-center items-center bg-gray-100 dark:bg-[#051a36] rounded-lg space-y-5">
+      <div className="p-16 mb-10 flex flex-col justify-center items-center bg-gray-50 dark:bg-[#051a36] rounded-lg space-y-5">
         <h3 className="text-[#f39200] text-2xl font-semibold">
           هم اکنون معامله کنید
         </h3>

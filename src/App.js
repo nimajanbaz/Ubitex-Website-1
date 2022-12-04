@@ -16,6 +16,7 @@ import VideoGuide from "./pages/helpCenter/components/videoGuideFull";
 import Faq from "./pages/helpCenter/faq";
 import CommingSoon from "./pages/commingSoon";
 import LevragedToken from "./pages/levragedTokens";
+import Markets from "./pages/markets";
 
 const App = () => {
   return (
@@ -31,7 +32,8 @@ const App = () => {
             <Route path="/fees/dev" element={<Fees />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/download" element={<Application />} />
-            <Route path="/levraged-tokens" element={<LevragedToken />} />
+            <Route path="/markets" element={<Markets />} />
+            <Route path="/leveraged-tokens" element={<LevragedToken />} />
             <Route path="/support-center" element={<HelpCenter />} />
             <Route path="/support-center/faq" element={<Faq />} />
             <Route path="/support-center/guide" element={<VideoGuide />} />
@@ -43,6 +45,14 @@ const App = () => {
             <Route
               path="/redirect-to-platform"
               element={<Redirect href={"https://app.ubitex.io"} />}
+            />
+            <Route
+              path="/redirect-to-login"
+              element={<Redirect href={"https://app.ubitex.io/login"} />}
+            />
+            <Route
+              path="/redirect-to-convert"
+              element={<Redirect href={"https://app.ubitex.io/convert"} />}
             />
             <Route
               path="/redirect-to-markets"

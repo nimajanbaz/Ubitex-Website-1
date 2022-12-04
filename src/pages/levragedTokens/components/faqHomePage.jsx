@@ -24,7 +24,7 @@ const AcardeonSlime = () => {
                           <>
                             <Disclosure.Button
                               key={subItem.id}
-                              className="transition-all flex w-full justify-between rounded-lg bg-gray-100 dark:bg-[#062042] dark:hover:bg-[#07244b] p-4 font-medium text-gary-700 dark:text-gray-200 hover:bg-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                              className="transition-all flex w-full justify-between rounded-lg bg-gray-50 dark:bg-[#062042] dark:hover:bg-[#07244b] p-4 font-medium text-gary-700 dark:text-gray-200 hover:bg-gray-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
                               <span>{subItem.title}</span>
                               <ChevronUpIcon
                                 className={`${
@@ -39,7 +39,7 @@ const AcardeonSlime = () => {
                               leave="transition duration-75 ease-out"
                               leaveFrom="transform scale-100 opacity-100"
                               leaveTo="transform scale-95 opacity-0">
-                              <Disclosure.Panel className="transition-all p-4 mt-3 text-gray-700 dark:text-gray-400 bg-gray-100 dark:bg-[#062042] rounded-lg">
+                              <Disclosure.Panel className="transition-all p-4 mt-3 text-gray-700 dark:text-gray-400 bg-gray-50 dark:bg-[#062042] rounded-lg">
                                 {subItem.text}
                               </Disclosure.Panel>
                             </Transition>

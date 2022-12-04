@@ -232,7 +232,7 @@ const TransferFee = () => {
               <input
                 type="text"
                 onChange={handleDebounceFn}
-                className="w-1/4 px-3 py-2 pr-9 bg-gray-100 dark:bg-transparent border-2 border-gray-200 dark:border-[#072750] rounded-md appearance-none focus:border-[#f39200] dark:focus:border-[#f39200] focus:outline-none"
+                className="w-1/4 px-3 py-2 pr-9 bg-gray-50 dark:bg-transparent border-2 border-gray-200 dark:border-[#072750] rounded-md appearance-none focus:border-[#f39200] dark:focus:border-[#f39200] focus:outline-none"
                 placeholder="جستجو..."
               />
             </div>

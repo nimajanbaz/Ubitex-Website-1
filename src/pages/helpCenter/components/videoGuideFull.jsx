@@ -25,7 +25,7 @@ const VideoGuide = () => {
           <div className="grid lg:grid-cols-3 gap-5 md:grid-cols-3 grid-cols-1 mb-10 rtl-grid">
             {help_center_data.map((guide) => {
               return (
-                <div className="bg-gray-100 dark:bg-[#051a36] p-3 rounded-md flex flex-col space-y-4">
+                <div className="bg-gray-50 dark:bg-[#051a36] p-3 rounded-md flex flex-col space-y-4">
                   <img
                     src={guide.img}
                     alt=""

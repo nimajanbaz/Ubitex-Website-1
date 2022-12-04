@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/header";
 
 export default function Home() {
-  const [data, setData] = useState();
+  const [markets, setMarkets] = useState();
 
   const columns = useMemo(
     () => [
@@ -105,7 +105,7 @@ export default function Home() {
         accessor: "action",
         Cell: () => (
           <a href="https://app.ubitex.io">
-            <button className="px-4 py-2 border border-[#f39200] rounded-md text-[#f39200] transition-all hover:bg-[#f39200] hover:text-white">
+            <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
               خرید / فروش
             </button>
           </a>
@@ -122,7 +122,7 @@ export default function Home() {
         .get("https://api.ubitex.io/api/PublicApi/market")
         .then((res) => {
           const all = res.data.markets;
-          setData(all.filter((item) => item.srcName === "USDT"));
+          setMarkets(all.filter((item) => item.srcName === "USDT"));
         })
         .catch((err) => console.log(err));
     };
@@ -193,7 +193,7 @@ export default function Home() {
                 <div
                   className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl flex flex-col items-end space-y-4 md:mb-3 lg:-mt-16 z-30 cursor-pointer"
                   key={data.id}>
-                  <span className="text-3xl text-right dark:bg-[#062246] bg-gray-100 rounded-lg p-3 text-[#f39200]">
+                  <span className="text-3xl text-right dark:bg-[#062246] bg-gray-50 rounded-lg p-3 text-[#f39200]">
                     {data.icon}
                   </span>
                   <span className="text-gray-700 dark:text-gray-200 text-lg">
@@ -211,9 +211,9 @@ export default function Home() {
             <h3 className="text-2xl text-[#f39200] font-semibold text-right mb-10">
               ارزهای دیجیتال یوبیتکس
             </h3>
-            {data ? (
+            {markets ? (
               <div className="max-md:overflow-scroll">
-                <Table columns={columns} data={data.slice(0, 10)} />
+                <Table columns={columns} data={markets.slice(0, 10)} />
                 <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
                   <Link
                     to={"/redirect-to-platform"}

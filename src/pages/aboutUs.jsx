@@ -47,7 +47,7 @@ const AboutUs = () => {
             ارزش‌های یوبیتکس
           </h2>
           <div className="grid grid-cols-3 gap-8 mt-5 transition-all">
-            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-100 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
+            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-50 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
               <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                 <BsCurrencyDollar />
               </span>
@@ -58,7 +58,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-100 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
+            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-50 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
               <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                 <BiLineChart />
               </span>
@@ -69,7 +69,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-100 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
+            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-50 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
               <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                 <GrBitcoin />
               </span>

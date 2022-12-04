@@ -6,6 +6,7 @@ import guide_5 from "../assets/img/guide/5.png";
 import guide_6 from "../assets/img/guide/6.png";
 import guide_7 from "../assets/img/guide/7.png";
 import guide_8 from "../assets/img/guide/8.png";
+import guide_9 from "../assets/img/guide/9.png";
 
 import { HiArrowsUpDown } from "react-icons/hi2";
 import { ImMakeGroup } from "react-icons/im";
@@ -50,7 +51,7 @@ export const help_center_data = [
   },
   {
     id: 5,
-    img: guide_5,
+    img: guide_9,
     title: "توکن‌های لوریج دار",
     text: "آموزش نحوه معامله در بازار نزولی با توکن‌های لوریج دار",
     videoLink:

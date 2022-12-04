@@ -112,3 +112,7 @@ body {
       background-position: 100%;
   }
 }
+
+.crisp-client .cc-1m7s[dir=rtl] .cc-vwsc, .crisp-client .cc-1m7s[dir=rtl] .cc-vwsc * {
+  font-family: "IRANYekan-Ubitex"!important;
+}

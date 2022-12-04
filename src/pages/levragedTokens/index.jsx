@@ -27,7 +27,7 @@ const LevragedToken = () => {
       /> */}
       <Header title={"توکن‌های لوریج دار"} />
       <div className="px-4 sm:px-6 text-right max-w-[1400px] mx-auto my-10">
-        <div className="grid grid-cols-9 items-center my-10 space-y-5 bg-gray-100 dark:bg-[#051a36] rounded-lg p-16 rtl-grid">
+        <div className="grid grid-cols-9 items-center my-10 space-y-5 bg-gray-50 dark:bg-[#051a36] rounded-lg p-16 rtl-grid">
           <div className="flex flex-col space-y-5 col-span-3">
             <h1 className="text-[#f39200] text-4xl font-semibold">
               {levraged_tokens_data.header.title}
@@ -66,7 +66,7 @@ const LevragedToken = () => {
             <div className="xl:h-[450px] lg:h-[500px] md:h-[400px] sm:h-[400px] max-sm:h-[200px] w-full loading-animation rounded-2xl">
               <iframe
                 src={
-                  "https://www.aparat.com/video/video/embed/videohash/741ZI/vt/frame"
+                  "https://www.aparat.com/video/video/embed/videohash/Casub/vt/frame"
                 }
                 title={"Levraged Tokens"}
                 allowFullScreen="true"
@@ -75,13 +75,13 @@ const LevragedToken = () => {
                 className="w-full h-full rounded-2xl"></iframe>
             </div>
           </div>
-          <div className="col-span-3 flex flex-col space-y-10 leading-relaxed bg-gray-100 dark:bg-[#051a36] rounded-lg p-7 text-[15px]">
+          <div className="col-span-3 flex flex-col space-y-10 leading-relaxed bg-gray-50 dark:bg-[#051a36] rounded-lg p-7 text-[15px]">
             <p>{levraged_tokens_data.info.text_1}</p>
             <p>{levraged_tokens_data.info.text_2}</p>
           </div>
         </div>
 
-        <div className="my-10 flex flex-col justify-center items-center bg-gray-100 dark:bg-[#051a36] rounded-lg p-16">
+        <div className="my-10 flex flex-col justify-center items-center bg-gray-50 dark:bg-[#051a36] rounded-lg p-16">
           <h1 className="text-[#f39200] text-3xl font-semibold">
             {levraged_tokens_data.advantage.title}
           </h1>
