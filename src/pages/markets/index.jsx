@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { Table } from "../../components/table";
-import { Link } from "react-router-dom";
 import Header from "../../components/header";
 import MarketsHeader from "./components/header";
 import { RiSearch2Line } from "react-icons/ri";
+import { LongBadge, ShortBadge } from "../../components/badge";
 
 const Markets = () => {
   const [markets, setMarkets] = useState();
@@ -26,7 +26,14 @@ const Markets = () => {
                 <img src={destinationIcon} alt={desNameFa} />
               </div>
               <div className="flex flex-col">
-                <span>{desName}</span>
+                <div className="flex items-center space-x-2 space-x-reverse">
+                  <span>{desName}</span>
+                  {desName.endsWith("3L") ? (
+                    <LongBadge />
+                  ) : desName.endsWith("3S") ? (
+                    <ShortBadge />
+                  ) : null}
+                </div>
                 <span className="text-sm">{desNameFa}</span>
               </div>
             </div>

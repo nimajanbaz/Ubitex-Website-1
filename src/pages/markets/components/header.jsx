@@ -1,4 +1,5 @@
 import { HiArrowTrendingUp, HiArrowTrendingDown } from "react-icons/hi2";
+import { LongBadge, ShortBadge } from "../../../components/badge";
 
 const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
   return (
@@ -14,7 +15,14 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
                     <img src={item.icon} alt={item.nameFa} />
                   </div>
                   <div className="flex flex-col">
-                    <span>{item.symbol}</span>
+                    <div className="flex items-center space-x-2 space-x-reverse">
+                      <span>{item.symbol}</span>
+                      {item.symbol.endsWith("3L") ? (
+                        <LongBadge />
+                      ) : item.symbol.endsWith("3S") ? (
+                        <ShortBadge />
+                      ) : null}
+                    </div>
                     <span className="text-sm">{item.nameFa}</span>
                   </div>
                 </div>
@@ -39,7 +47,14 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
                     <img src={item.icon} alt={item.nameFa} />
                   </div>
                   <div className="flex flex-col">
-                    <span>{item.symbol}</span>
+                    <div className="flex items-center space-x-2 space-x-reverse">
+                      <span>{item.symbol}</span>
+                      {item.symbol.endsWith("3L") ? (
+                        <LongBadge />
+                      ) : item.symbol.endsWith("3S") ? (
+                        <ShortBadge />
+                      ) : null}
+                    </div>{" "}
                     <span className="text-sm">{item.nameFa}</span>
                   </div>
                 </div>
@@ -64,7 +79,14 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
                     <img src={item.icon} alt={item.nameFa} />
                   </div>
                   <div className="flex flex-col">
-                    <span>{item.symbol}</span>
+                    <div className="flex items-center space-x-2 space-x-reverse">
+                      <span>{item.symbol}</span>
+                      {item.symbol.endsWith("3L") ? (
+                        <LongBadge />
+                      ) : item.symbol.endsWith("3S") ? (
+                        <ShortBadge />
+                      ) : null}
+                    </div>{" "}
                     <span className="text-sm">{item.nameFa}</span>
                   </div>
                 </div>

@@ -5,3 +5,19 @@ export const Badge = ({text}) => {
     </span>
   );
 };
+
+export const LongBadge = () => {
+  return (
+    <div className="text-emerald-600 text-lg px-2 py-1 bg-emerald-600 bg-opacity-10 rounded-sm flex space-x-1 space-x-reverse">
+      <span className="text-xs">3X Long</span>
+    </div>
+  );
+};
+
+export const ShortBadge = () => {
+  return (
+    <div className="text-red-600 text-lg px-2 py-1 bg-red-600 bg-opacity-10 rounded-sm flex space-x-1 space-x-reverse">
+      <span className="text-xs">3X Short</span>
+    </div>
+  );
+};

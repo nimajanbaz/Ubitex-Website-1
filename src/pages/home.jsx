@@ -6,6 +6,7 @@ import mobileApp from "../assets/img/5.webp";
 import { header_images, header_boxes, center_boxes } from "../data";
 import { Link } from "react-router-dom";
 import Header from "../components/header";
+import { ShortBadge, LongBadge } from "../components/badge";
 
 export default function Home() {
   const [markets, setMarkets] = useState();
@@ -23,7 +24,14 @@ export default function Home() {
                 <img src={destinationIcon} alt={desNameFa} />
               </div>
               <div className="flex flex-col">
-                <span>{desName}</span>
+              <div className="flex items-center space-x-2 space-x-reverse">
+                  <span>{desName}</span>
+                  {desName.endsWith("3L") ? (
+                    <LongBadge />
+                  ) : desName.endsWith("3S") ? (
+                    <ShortBadge />
+                  ) : null}
+                </div>
                 <span className="text-sm">{desNameFa}</span>
               </div>
             </div>

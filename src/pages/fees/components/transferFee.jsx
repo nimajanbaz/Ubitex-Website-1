@@ -40,7 +40,7 @@ const TransferFee = () => {
     const getData = async () => {
       setLoading(true);
       await axios
-        .get("https://api.ubitextest.ir/api/PublicApi/WithdrawFee")
+        .get("https://api.ubitex.io/api/PublicApi/WithdrawFee")
         .then((res) => {
           setData(res.data);
           setTableFilter(res.data);
