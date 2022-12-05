@@ -12,7 +12,7 @@ const NotFound = () => {
         <h2 className="text-[#f39200] text-[140px] font-semibold">404</h2>
         <p className="text-3xl mb-10">!صفحه مورد نظر پیدا نشد</p>
         <button
-          className="px-6 py-3 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200]"
+          className="px-6 py-3 rounded-md bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 text-[#f39200] transition-all"
           onClick={() => navigate(-1)}>
           بازگشت
         </button>

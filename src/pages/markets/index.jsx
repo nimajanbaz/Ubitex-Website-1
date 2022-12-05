@@ -21,7 +21,7 @@ const Markets = () => {
         Cell: (props) => {
           const { desName, desNameFa, destinationIcon } = props.row.original;
           return (
-            <div className="flex cursor-pointer space-x-2 space-x-reverse">
+            <div className="flex space-x-2 space-x-reverse">
               <div className="w-10">
                 <img src={destinationIcon} alt={desNameFa} />
               </div>
@@ -39,7 +39,7 @@ const Markets = () => {
         Cell: (props) => {
           const { bestBuy } = props.row.original;
           return (
-            <div className="flex items-center text-sm cursor-pointer">
+            <div className="flex items-center text-sm">
               <span>${bestBuy}</span>
             </div>
           );
@@ -51,7 +51,7 @@ const Markets = () => {
         Cell: (props) => {
           const { bestSell } = props.row.original;
           return (
-            <div className="flex items-center text-sm cursor-pointer">
+            <div className="flex items-center text-sm">
               <span>${bestSell}</span>
             </div>
           );
@@ -63,7 +63,7 @@ const Markets = () => {
         Cell: (props) => {
           const { latestTrade } = props.row.original;
           return (
-            <div className="flex items-center text-sm cursor-pointer">
+            <div className="flex items-center text-sm">
               <span>${latestTrade}</span>
             </div>
           );
@@ -77,7 +77,7 @@ const Markets = () => {
           return (
             <div className="flex items-center">
               <span
-                className={`flex items-center text-sm cursor-pointer px-3 py-2 rounded bg-opacity-10 ${
+                className={`flex items-center text-sm px-3 py-2 rounded bg-opacity-10 ${
                   change > 0
                     ? "bg-emerald-600 text-emerald-600"
                     : "bg-red-600 text-red-600"
@@ -95,7 +95,7 @@ const Markets = () => {
           const { chartSvg, change, desNameFa } = props.row.original;
           return (
             <div
-              className={`flex items-center cursor-pointer ${
+              className={`flex items-center ${
                 change > 0 ? "filter-green" : "filter-red"
               }`}>
               <img src={chartSvg} alt={desNameFa} />
@@ -108,7 +108,7 @@ const Markets = () => {
         accessor: "action",
         Cell: () => (
           <a href="https://app.ubitex.io">
-            <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
+            <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md">
               خرید / فروش
             </button>
           </a>

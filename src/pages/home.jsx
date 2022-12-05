@@ -18,7 +18,7 @@ export default function Home() {
         Cell: (props) => {
           const { desName, desNameFa, destinationIcon } = props.row.original;
           return (
-            <div className="flex cursor-pointer space-x-2 space-x-reverse">
+            <div className="flex space-x-2 space-x-reverse">
               <div className="w-10">
                 <img src={destinationIcon} alt={desNameFa} />
               </div>
@@ -36,7 +36,7 @@ export default function Home() {
         Cell: (props) => {
           const { bestBuy } = props.row.original;
           return (
-            <div className="flex items-center text-sm cursor-pointer">
+            <div className="flex items-center text-sm">
               <span>${bestBuy}</span>
             </div>
           );
@@ -48,7 +48,7 @@ export default function Home() {
         Cell: (props) => {
           const { bestSell } = props.row.original;
           return (
-            <div className="flex items-center text-sm cursor-pointer">
+            <div className="flex items-center text-sm">
               <span>${bestSell}</span>
             </div>
           );
@@ -60,7 +60,7 @@ export default function Home() {
         Cell: (props) => {
           const { latestTrade } = props.row.original;
           return (
-            <div className="flex items-center text-sm cursor-pointer">
+            <div className="flex items-center text-sm">
               <span>${latestTrade}</span>
             </div>
           );
@@ -74,7 +74,7 @@ export default function Home() {
           return (
             <div className="flex items-center">
               <span
-                className={`flex items-center text-sm cursor-pointer px-3 py-2 rounded bg-opacity-10 ${
+                className={`flex items-center text-sm px-3 py-2 rounded bg-opacity-10 ${
                   change > 0
                     ? "bg-emerald-600 text-emerald-600"
                     : "bg-red-600 text-red-600"
@@ -92,7 +92,7 @@ export default function Home() {
           const { chartSvg, change, desNameFa } = props.row.original;
           return (
             <div
-              className={`flex items-center cursor-pointer ${
+              className={`flex items-center ${
                 change > 0 ? "filter-green" : "filter-red"
               }`}>
               <img src={chartSvg} alt={desNameFa} />
@@ -105,7 +105,7 @@ export default function Home() {
         accessor: "action",
         Cell: () => (
           <a href="https://app.ubitex.io">
-            <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
+            <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md">
               خرید / فروش
             </button>
           </a>
@@ -179,7 +179,7 @@ export default function Home() {
                 </button>
               </Link>
               <Link to="/download">
-                <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
+                <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md">
                   <span>دانلود اپلیکیشن</span>
                 </button>
               </Link>
@@ -216,8 +216,8 @@ export default function Home() {
                 <Table columns={columns} data={markets.slice(0, 10)} />
                 <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
                   <Link
-                    to={"/redirect-to-platform"}
-                    className="text-[#f39200] cursor-pointer transition-all text-lg px-6 py-3 bg-[#f39200] bg-opacity-10 rounded-md">
+                    to={"/markets"}
+                    className="text-[#f39200] cursor-pointer transition-all text-lg px-6 py-3 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md">
                     <span>مشاهده همه بازارهای یوبیتکس</span>
                   </Link>
                 </div>
@@ -287,7 +287,7 @@ export default function Home() {
                   ترید آسان، همه جا و همه وقت از طریق اپلیکیشن موبایل یوبیتکس
                 </p>
                 <Link to={"/download"} className="flex justify-end">
-                  <button className="text-[#f39200] cursor-pointer transition-all text-lg px-5 py-2 bg-[#f39200] bg-opacity-10 rounded-md">
+                  <button className="text-[#f39200] cursor-pointer transition-all text-lg px-5 py-2 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md">
                     دانلود اپلیکیشن
                   </button>
                 </Link>

@@ -73,7 +73,7 @@ const MyDialog = ({
                       <Link to={"/redirect-to-platform"}>
                         <button
                           type="button"
-                          className={`focus:outline-none text-[#f39200] cursor-pointer transition-all px-5 py-3 bg-[#f39200] bg-opacity-10 rounded-md focus:border-none focus:ring-0 focus-within:border-none focus-within:ring-0 ${
+                          className={`focus:outline-none text-[#f39200] cursor-pointer transition-all px-5 py-3 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md focus:border-none focus:ring-0 focus-within:border-none focus-within:ring-0 ${
                             fullwidthButton ? "w-full" : null
                           }`}>
                           {buttonText}
@@ -83,7 +83,7 @@ const MyDialog = ({
                       <button
                         type="button"
                         onClick={onDialogClose}
-                        className={`focus:outline-none text-[#f39200] cursor-pointer transition-all px-5 py-3 bg-[#f39200] bg-opacity-10 rounded-md focus:border-none focus:ring-0 focus-within:border-none focus-within:ring-0 ${
+                        className={`focus:outline-none text-[#f39200] cursor-pointer transition-all px-5 py-3 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md focus:border-none focus:ring-0 focus-within:border-none focus-within:ring-0 ${
                           fullwidthButton ? "w-full" : null
                         }`}>
                         {buttonText}

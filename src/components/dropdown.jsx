@@ -26,12 +26,12 @@ export default function Dropdown({ data }) {
         image={OTC_PopUp}
         onDialogClose={() => setDialogOpen(false)}
       />
-      <Menu as="div" className=" inline-block text-left">
+      <Menu as="div" className=" inline-block text-left mr-1">
         <div onClick={() => setTheme(localStorage.getItem("theme"))}>
-          <Menu.Button className="flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+          <Menu.Button className="flex space-x-1 justify-center items-center text-sm font-medium dark:text-gray-300 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
             {data.title}
             <ChevronDownIcon
-              className="mr-2 -ml-1 h-5 w-5"
+              className=" h-5 w-5"
               aria-hidden="true"
             />
           </Menu.Button>
@@ -56,38 +56,42 @@ export default function Dropdown({ data }) {
                         data.isPopUp ? handleDialog() : undefined
                       }>
                       {data.star && data.isPopUp ? (
-                        <div className="flex space-x-3 items-center space-x-reverse  hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+                        <div className="flex space-x-3 items-center space-x-reverse hover:!text-[#f39200] dark:!hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
                           <div>
                             {theme === "dark" ? data.iconDark : data.iconLight}
                           </div>
-                          <span className=" flex space-x-2 items-center text-sm font-medium dark:text-gray-300 text-gray-600">
+                          <span className=" flex space-x-2 items-center text-sm font-medium dark:text-gray-300 text-gray-600 ">
                             {data.title}
                             <Badge text={"جدید"} />
                           </span>
                         </div>
                       ) : data.star && !data.isPopUp ? (
-                        <div className="flex space-x-3 items-center space-x-reverse  hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
-                          <div>
-                            {theme === "dark" ? data.iconDark : data.iconLight}
-                          </div>
-                          <Link to={data.href}>
+                        <Link to={data.href}>
+                          <div className="flex space-x-3 items-center space-x-reverse  hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+                            <div>
+                              {theme === "dark"
+                                ? data.iconDark
+                                : data.iconLight}
+                            </div>
                             <span className=" flex space-x-2 items-center text-sm font-medium dark:text-gray-300 text-gray-600 ">
                               {data.title}
                               <Badge text={"جدید"} />
                             </span>
-                          </Link>
-                        </div>
-                      ) : (
-                        <div className="flex space-x-3 items-center space-x-reverse  hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
-                          <div>
-                            {theme === "dark" ? data.iconDark : data.iconLight}
                           </div>
-                          <Link
-                            to={data.href}
-                            className=" flex space-x-2 items-center text-sm font-medium dark:text-gray-300 text-gray-600">
-                            {data.title}
-                          </Link>
-                        </div>
+                        </Link>
+                      ) : (
+                        <Link
+                          to={data.href}
+                          className=" flex space-x-2 items-center text-sm font-medium dark:text-gray-300 text-gray-600">
+                          <div className="flex space-x-3 items-center space-x-reverse w-full hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-4 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
+                            <div>
+                              {theme === "dark"
+                                ? data.iconDark
+                                : data.iconLight}
+                            </div>
+                            <span>{data.title}</span>
+                          </div>
+                        </Link>
                       )}
                     </div>
                   </Menu.Item>

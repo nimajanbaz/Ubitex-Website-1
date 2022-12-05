@@ -62,7 +62,7 @@ const TransferFee = () => {
         Cell: (props) => {
           const { symbol, icon } = props.row.original;
           return (
-            <div className="flex cursor-pointer space-x-3 space-x-reverse items-center">
+            <div className="flex space-x-3 space-x-reverse items-center">
               <div className="w-9">
                 <img src={icon} alt={symbol} />
               </div>
@@ -80,7 +80,7 @@ const TransferFee = () => {
           const { chains: transferChain } = props.row.original;
           return (
             <div
-              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer`}>
+              className={`flex flex-col justify-center items-center space-y-2`}>
               {transferChain.map((chain) => {
                 return (
                   <>
@@ -101,7 +101,7 @@ const TransferFee = () => {
           const { chains: minWithdraw } = props.row.original;
           return (
             <div
-              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer`}>
+              className={`flex flex-col justify-center items-center space-y-2`}>
               {minWithdraw.map((chain) => {
                 return (
                   <>
@@ -122,7 +122,7 @@ const TransferFee = () => {
           const { chains: withdrawFee } = props.row.original;
           return (
             <div
-              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer`}>
+              className={`flex flex-col justify-center items-center space-y-2`}>
               {withdrawFee.map((chain) => {
                 return (
                   <>
@@ -142,7 +142,7 @@ const TransferFee = () => {
         Cell: () => {
           return (
             <div
-              className={`flex flex-col justify-center items-center space-y-2 cursor-pointer `}>
+              className={`flex flex-col justify-center items-center space-y-2`}>
               <span>رایگان</span>
             </div>
           );

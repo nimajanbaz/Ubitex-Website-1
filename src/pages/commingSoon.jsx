@@ -16,7 +16,7 @@ const CommingSoon = () => {
           صفحه مورد نظر به زودی در دسترس قرار میگیرد
         </p>
         <button
-          className="px-6 py-3 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200]"
+          className="px-6 py-3 rounded-md bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 text-[#f39200] transition-all"
           onClick={() => navigate(-1)}>
           بازگشت
         </button>

@@ -16,7 +16,7 @@ const Acardeon = ({ data }) => {
 
         <button
           onClick={() => navigate(-1)}
-          className="px-6 py-2 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200] flex space-x-2 space-x-reverse items-center justify-center flex-row-reverse">
+          className="px-6 py-2 rounded-md bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 text-[#f39200] flex space-x-2 space-x-reverse items-center justify-center flex-row-reverse transition-all">
           <span>بازگشت</span>
           <HiArrowSmLeft />
         </button>
