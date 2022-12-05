@@ -236,7 +236,13 @@ const TransferFee = () => {
                 placeholder="جستجو..."
               />
             </div>
-            <Table columns={columns} data={tableFilter} titleCenter />
+            <Table
+              columns={columns}
+              data={tableFilter
+                .filter((item) => !item.symbol.includes("3S"))
+                .filter((item) => !item.symbol.includes("3L"))}
+              titleCenter
+            />
           </>
         ) : (
           <div className="my-10 flex justify-center items-center">

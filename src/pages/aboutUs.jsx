@@ -10,7 +10,7 @@ const AboutUs = () => {
       <Header title={"درباره ما"} />
 
       <div className="px-4 sm:px-6 text-right max-w-[1200px] mx-auto my-20">
-        <div className="p-20 rounded-xl text-gray-700 dark:text-gray-400 bg-white dark:bg-[#051a36] dark:shadow-[0_0px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_0px_40px_0px_rgba(0,0,0,0.05)]">
+        <div className="p-20 rounded-xl text-gray-700 dark:text-gray-400 bg-gray-50 dark:bg-[#051a36] ">
           <h2 className="text-[#f39200] text-2xl font-semibold">
             درباره یوبیتکس
           </h2>
@@ -47,7 +47,7 @@ const AboutUs = () => {
             ارزش‌های یوبیتکس
           </h2>
           <div className="grid grid-cols-3 gap-8 mt-5 transition-all">
-            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-50 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
+            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-100 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
               <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                 <BsCurrencyDollar />
               </span>
@@ -58,7 +58,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-50 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
+            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-100 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
               <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                 <BiLineChart />
               </span>
@@ -69,7 +69,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-50 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
+            <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-100 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
               <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                 <GrBitcoin />
               </span>

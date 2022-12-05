@@ -76,22 +76,6 @@ export default function Navbar() {
         },
       ],
     },
-    // {
-    //   id: 2,
-    //   title: "تالار معاملات",
-    //   href: "/redirect-to-platform",
-    //   star: false,
-    //   isPopUp: false,
-    //   isDropdown: false,
-    // },
-    // {
-    //   id: 3,
-    //   title: "معامله آنی",
-    //   href: "/redirect-to-convert",
-    //   star: true,
-    //   isPopUp: true,
-    //   isDropdown: false,
-    // },
     {
       id: 4,
       title: "توکن‌های لوریج دار",
@@ -171,13 +155,13 @@ export default function Navbar() {
                         item.isPopUp ? handleDialog() : undefined
                       }>
                       {item.star && item.isPopUp ? (
-                        <span className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${pathname.includes(item.href) ? 'bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200]' : null}`}>
+                        <span className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${pathname.includes(item.href) ? 'bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200] hover:!bg-opacity-20' : null}`}>
                           {item.title}
                           <Badge text={"جدید"} />
                         </span>
                       ) : item.star && !item.isPopUp ? (
                         <Link to={item.href}>
-                          <span className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${pathname.includes(item.href) ? 'bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200]' : null}`}>
+                          <span className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${pathname.includes(item.href) ? 'bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200] hover:!bg-opacity-20' : null}`}>
                             {item.title}
                             <Badge text={"جدید"} />
                           </span>
@@ -185,7 +169,7 @@ export default function Navbar() {
                       ) : (
                         <Link
                           to={item.href}
-                          className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${pathname.includes(item.href) ? 'bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200]' : null}`}>
+                          className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${pathname.includes(item.href) ? 'bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200] hover:!bg-opacity-20' : null}`}>
                           {item.title}
                         </Link>
                       )}

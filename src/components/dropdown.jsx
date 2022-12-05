@@ -31,7 +31,7 @@ export default function Dropdown({ data }) {
           <Menu.Button className="flex space-x-1 justify-center items-center text-sm font-medium dark:text-gray-300 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md">
             {data.title}
             <ChevronDownIcon
-              className=" h-5 w-5"
+              className="-ml-1 h-5 w-5"
               aria-hidden="true"
             />
           </Menu.Button>

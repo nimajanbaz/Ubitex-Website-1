@@ -105,7 +105,7 @@ const Markets = () => {
               className={`flex items-center ${
                 change > 0 ? "filter-green" : "filter-red"
               }`}>
-              <img src={chartSvg} alt={desNameFa} />
+              {chartSvg ? <img src={chartSvg} alt={desNameFa} /> : <span>---</span>}
             </div>
           );
         },

@@ -8,7 +8,7 @@ const AboutUs = () => {
       <Header title={"قوانین و مقررات"} />
 
       <div className="px-4 sm:px-6 text-right max-w-[1200px] mx-auto my-20">
-        <div className="p-20 rounded-xl text-gray-700 dark:text-gray-400 bg-white dark:bg-[#051a36] dark:shadow-[0_0px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_0px_40px_0px_rgba(0,0,0,0.05)]">
+        <div className="p-20 rounded-xl text-gray-700 dark:text-gray-400 bg-white dark:bg-[#051a36]">
           <h2 className="text-[#f39200] text-2xl font-semibold">
             قوانین و شرایط استفاده از خدمات
           </h2>
