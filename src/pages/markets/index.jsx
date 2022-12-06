@@ -5,6 +5,7 @@ import Header from "../../components/header";
 import MarketsHeader from "./components/header";
 import { RiSearch2Line } from "react-icons/ri";
 import { LongBadge, ShortBadge } from "../../components/badge";
+import Categoris from "./components/categoris";
 
 const Markets = () => {
   const [markets, setMarkets] = useState();
@@ -12,6 +13,9 @@ const Markets = () => {
   const [gainer, setGainer] = useState();
   const [recentlyUpdated, setRecentlyUpdated] = useState();
   const [tableFilter, setTableFilter] = useState([]);
+
+  const [tableFilterQuery, setTableFilterQuery] = useState();
+  const [categoryFilter, setCategoryFilter] = useState("all");
 
   const columns = useMemo(
     () => [
@@ -105,7 +109,11 @@ const Markets = () => {
               className={`flex items-center ${
                 change > 0 ? "filter-green" : "filter-red"
               }`}>
-              {chartSvg ? <img src={chartSvg} alt={desNameFa} /> : <span>---</span>}
+              {chartSvg ? (
+                <img src={chartSvg} alt={desNameFa} />
+              ) : (
+                <span>---</span>
+              )}
             </div>
           );
         },
@@ -146,11 +154,28 @@ const Markets = () => {
   function handleDebounceFn(e) {
     const val = e.target.value;
     if (typeof val === "string" && (val.length >= 1 || val.length === 0)) {
-      setTableFilter(
-        markets.filter((d) => d.symbol.includes(val.toUpperCase()))
-      );
+      setTableFilterQuery(val);
     }
   }
+
+  useEffect(() => {
+    console.log(tableFilter);
+    if (markets) {
+      setTableFilter(
+        markets
+          .filter((d) =>
+            tableFilterQuery
+              ? d.symbol.includes(tableFilterQuery.toUpperCase())
+              : d
+          )
+          .filter((d) =>
+            categoryFilter != "all"
+              ? d.destinationCoinCategoryName == categoryFilter
+              : d
+          )
+      );
+    }
+  }, [tableFilterQuery, categoryFilter]);
 
   return (
     <>
@@ -165,7 +190,7 @@ const Markets = () => {
               recentlyUpdated={recentlyUpdated}
             />
             <div className="bg-gray-50 dark:bg-[#051a36] p-8 rounded-lg rtl-grid">
-              <div class="relative w-full mb-10">
+              <div class="relative w-full">
                 <div class="absolute right-0 flex items-center pr-3 pointer-events-none top-1/3">
                   <span className="w-5">
                     <RiSearch2Line />
@@ -178,7 +203,18 @@ const Markets = () => {
                   placeholder="جستجو..."
                 />
               </div>
-              <Table columns={columns} data={tableFilter} />
+              <Categoris
+                onSelect={(e) => {
+                  setCategoryFilter(e);
+                }}
+              />
+              {tableFilter !== [] ? (
+                <Table columns={columns} data={tableFilter} showIndex />
+              ) : (
+                <div className="my-10 flex justify-center items-center">
+                  <p>{'موردی وجود ندارد :('}</p>
+                </div>
+              )}
             </div>
           </>
         ) : (

@@ -1,5 +1,5 @@
 import React from "react";
-import { terms_data } from "../data";
+import { terms_data } from "../data/terms";
 import Header from "../components/header";
 
 const AboutUs = () => {

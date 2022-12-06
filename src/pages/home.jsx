@@ -24,7 +24,7 @@ export default function Home() {
                 <img src={destinationIcon} alt={desNameFa} />
               </div>
               <div className="flex flex-col">
-              <div className="flex items-center space-x-2 space-x-reverse">
+                <div className="flex items-center space-x-2 space-x-reverse">
                   <span>{desName}</span>
                   {desName.endsWith("3L") ? (
                     <LongBadge />
@@ -103,7 +103,11 @@ export default function Home() {
               className={`flex items-center ${
                 change > 0 ? "filter-green" : "filter-red"
               }`}>
-              {chartSvg ? <img src={chartSvg} alt={desNameFa} /> : <span>---</span>}
+              {chartSvg ? (
+                <img src={chartSvg} alt={desNameFa} />
+              ) : (
+                <span>---</span>
+              )}
             </div>
           );
         },
@@ -241,25 +245,23 @@ export default function Home() {
             <div>
               <div className="flex flex-col space-y-3 mb-3">
                 <h3 className="text-3xl font-semibold text-[#f39200]">
-                  امکانات
+                  {center_boxes.title}
                 </h3>
-                <span>برخی از امکانات پلتفرم یوبیتکس</span>
+                <span>{center_boxes.description} </span>
               </div>
               <div className="mx-auto grid lg:grid-cols-2 md:grid-cols-1 gap-7 rtl-grid cursor-pointer">
-                {center_boxes.map((data) => {
+                {center_boxes.items.map((data) => {
                   return (
                     <div
-                      className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-lg"
+                      className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl flex flex-col items-start space-y-3 md:mb-3 z-30 cursor-pointer"
                       key={data.id}>
-                      <img
-                        src={data.image}
-                        alt=""
-                        className="w-14 text-right bg-gray-200 dark:bg-[#07244b] rounded-lg p-3"
-                      />
-                      <span className="text-lg font-semibold mt-2 text-[#f39200]">
+                      <span className="text-3xl text-right dark:bg-[#062246] bg-gray-50 rounded-lg p-3 text-[#f39200]">
+                        {data.icon}
+                      </span>
+                      <span className="text-lg text-[#f39200]">
                         {data.title}
                       </span>
-                      <p className="text-xs mt-3 text-gray-700 dark:text-gray-200">
+                      <p className="text-sm text-right text-gray-700 dark:text-gray-300">
                         {data.description}
                       </p>
                     </div>
