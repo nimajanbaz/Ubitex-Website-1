@@ -14,9 +14,10 @@ import HelpCenter from "./pages/helpCenter";
 import HelpCenterItem from "./pages/helpCenter/helpCenterItem";
 import VideoGuide from "./pages/helpCenter/components/videoGuideFull";
 import Faq from "./pages/helpCenter/faq";
-import CommingSoon from "./pages/commingSoon";
+// import CommingSoon from "./pages/commingSoon";
 import LevragedToken from "./pages/levragedTokens";
 import Markets from "./pages/markets";
+import BlogHomePage from "./pages/blog";
 
 const App = () => {
   return (
@@ -34,6 +35,9 @@ const App = () => {
             <Route path="/download" element={<Application />} />
             <Route path="/markets" element={<Markets />} />
             <Route path="/leveraged-tokens" element={<LevragedToken />} />
+
+            <Route path="/blog" element={<BlogHomePage />} />
+
             <Route path="/support-center" element={<HelpCenter />} />
             <Route path="/support-center/faq" element={<Faq />} />
             <Route path="/support-center/guide" element={<VideoGuide />} />
