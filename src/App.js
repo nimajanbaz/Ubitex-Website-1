@@ -36,7 +36,7 @@ const App = () => {
             <Route path="/markets" element={<Markets />} />
             <Route path="/leveraged-tokens" element={<LevragedToken />} />
 
-            <Route path="/blog" element={<BlogHomePage />} />
+            {/* <Route path="/blog" element={<BlogHomePage />} /> */}
 
             <Route path="/support-center" element={<HelpCenter />} />
             <Route path="/support-center/faq" element={<Faq />} />

@@ -39,37 +39,37 @@ export default function Home() {
         },
       },
       {
-        Header: "خرید",
+        Header: "خرید (تومان)",
         accessor: "bestBuy",
         Cell: (props) => {
           const { bestBuy } = props.row.original;
           return (
             <div className="flex items-center text-sm">
-              <span>${bestBuy}</span>
+              <span>{bestBuy.toLocaleString(undefined,  { minimumFractionDigits: 0 })}</span>
             </div>
           );
         },
       },
       {
-        Header: "فروش",
+        Header: "فروش (تومان)",
         accessor: "bestSell",
         Cell: (props) => {
           const { bestSell } = props.row.original;
           return (
             <div className="flex items-center text-sm">
-              <span>${bestSell}</span>
+              <span>{bestSell.toLocaleString(undefined,  { minimumFractionDigits: 0 })}</span>
             </div>
           );
         },
       },
       {
-        Header: "آخرین معامله",
+        Header: "آخرین معامله (تومان)",
         accessor: "latestTrade",
         Cell: (props) => {
           const { latestTrade } = props.row.original;
           return (
             <div className="flex items-center text-sm">
-              <span>${latestTrade}</span>
+              <span>{latestTrade.toLocaleString(undefined,  { minimumFractionDigits: 0 })}</span>
             </div>
           );
         },
@@ -134,7 +134,7 @@ export default function Home() {
         .get("https://api.ubitex.io/api/PublicApi/market")
         .then((res) => {
           const all = res.data.markets;
-          setMarkets(all.filter((item) => item.srcName === "USDT"));
+          setMarkets(all.filter((item) => item.srcName === "TMN"));
         })
         .catch((err) => console.log(err));
     };
@@ -225,7 +225,22 @@ export default function Home() {
             </h3>
             {markets ? (
               <div className="max-md:overflow-scroll">
-                <Table columns={columns} data={markets.slice(0, 10)} />
+                <Table
+                  columns={columns}
+                  data={markets.filter(
+                    (item) =>
+                      item.desName === "BTC" ||
+                      item.desName === "ETH" ||
+                      item.desName === "USDT" ||
+                      item.desName === "SHIB" ||
+                      item.desName === "DOGE" ||
+                      item.desName === "BTC3S" ||
+                      item.desName === "ETH3L" ||
+                      item.desName === "DOT" ||
+                      item.desName === "ELON" ||
+                      item.desName === "DYDX"
+                  )}
+                />
                 <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
                   <Link
                     to={"/markets"}
