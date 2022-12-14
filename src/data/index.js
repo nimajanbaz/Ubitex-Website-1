@@ -21,9 +21,9 @@ import {
   FaMobile,
 } from "react-icons/fa";
 import { GrBitcoin } from "react-icons/gr";
-import { SiBlockchaindotcom } from "react-icons/si";
-import { TbFreeRights, TbChartCandle } from "react-icons/tb";
-
+import { AiTwotoneThunderbolt } from "react-icons/ai";
+import { IoWallet } from "react-icons/io5";
+import { TbChartCandle, TbChartDots3 } from "react-icons/tb";
 import { MdWaterfallChart } from "react-icons/md";
 
 const ver_class =
@@ -68,62 +68,63 @@ export const header_boxes = [
     icon: <FaMobile />,
     title: "اپلیکیشن موبایل",
     description:
-      "اپلیکیشن یوبیتکس در دو نسخه اندروید و آیفون با رابط کاربری ساده و حرفه ای",
+      "اپلیکیشن صرافی ارز دیجیتال یوبیتکس در نسخه‌های اندروید و IOS با رابط کاربری ساده",
   },
   {
     id: 2,
-    icon: <FaGift />,
-    title: "کارت هدیه ارزدیجیتال",
-    description:
-      "ساخت رایگان کارت هدیه رمزارزی با طرح دلخواه در مناسبت های مختلف",
-  },
-  {
-    id: 3,
-    icon: <FaHeadphonesAlt />,
-    title: "پشتیبانی 24 ساعته",
-    description:
-      "پشتیبانی آنلاین حرفه ای 24 ساعته در 7 روز هفته از طریق تیکت و چت آنلاین",
-  },
-  {
-    id: 4,
     icon: <MdWaterfallChart />,
     title: "تعیین حد سود / ضرر",
     description:
-      "امکان تعیین حد سود / ضرر به دو صورت عادی و استاپ با بهترین قیمت",
+      "امکان تعیین حد سود / ضرر به دو صورت عادی و استاپ با بهترین قیمت در بازار ارز دیجیتال",
+  },
+  {
+    id: 3,
+    icon: <TbChartDots3 />,
+    title: "توکن های لوریج دار",
+    description:
+      "برای اولین بار در ایران، امکان معاملات اهرم دار با قابلیت کسب سود در بازار نزولی ",
+  },
+  {
+    id: 4,
+    icon: <GrBitcoin />,
+    title: "پشتیبانی بیش از 200 رمزارز",
+    description:
+      "امکان خرید و فروش بیش از 200 ارزدیجیتال در یوبیتکس با قیمت و حجم دلخواه",
   },
 ];
 
 export const center_boxes = {
   id: 1,
-  title: "امکانات",
+  title: "امکانات حرفه ای یوبیتکس در بازار ارز دیجیتال",
   description: "برخی از امکانات پلتفرم یوبیتکس",
   items: [
     {
-      id: 1,
-      icon: <GrBitcoin />,
-      title: "پشتیبانی بیش از 100 رمزارز",
+      id: 4,
+      icon: <TbChartCandle />,
+      title: "معامله بدون واسطه",
       description:
-        "امکان سفارش گذاری بیش از 100 رمزارز در تالار معاملات یوبیتکس با قیمت و حجم دلخواه",
-    },
-    {
-      id: 2,
-      icon: <SiBlockchaindotcom />,
-      title: "پشتیبانی از شبکه های بلاکچین پر کاربرد",
-      description: "تنوع بسیار بالا در شبکه های بلاکچین مختلف و پرکاربرد",
+        "خرید و فروش ارزدیجیتال به صورت P2P در سه حالت لیمیت، سفارش سریع و سفارش های شرطی",
     },
     {
       id: 3,
-      icon: <TbFreeRights />,
-      title: "کارمزد رایگان واریز و برداشت",
+      icon: <AiTwotoneThunderbolt />,
+      title: "معامله آنی",
       description:
-        "امکان واریز و برداشت و نگهداری رمزارز به صورت رایگان و بدون کسر کارمزد",
+        "خرید و فروش سریع و آسان ارز دیجیتال در صرافی یوبیتکس بدون سفارش گذاری در تالار معاملات",
     },
     {
-      id: 4,
-      icon: <TbChartCandle />,
-      title: "پلتفرم معاملاتی ساده و حرفه ای",
+      id: 1,
+      icon: <IoWallet />,
+      title: "کیف پول اختصاصی",
       description:
-        "رابط کاربری آسان و حرفه ای با بهره گیری از پیشرفته ترین امکانات معاماتی",
+        "پشتیانی بیش از 30 شبکه بلاکچین مختلف و پرکاربرد به صورت فول نود با ضریب امنیت و سرعت بالا",
+    },
+    {
+      id: 2,
+      icon: <FaGift />,
+      title: "کارت هدیه",
+      description:
+        "ساخت رایگان کارت هدیه ارزدیجیتال در قالب کریپتوکارت با طرح دلخواه در مناسبت‌های مختلف",
     },
   ],
 };

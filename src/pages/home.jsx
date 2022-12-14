@@ -45,7 +45,11 @@ export default function Home() {
           const { bestBuy } = props.row.original;
           return (
             <div className="flex items-center text-sm">
-              <span>{bestBuy.toLocaleString(undefined,  { minimumFractionDigits: 0 })}</span>
+              <span>
+                {bestBuy.toLocaleString(undefined, {
+                  minimumFractionDigits: 0,
+                })}
+              </span>
             </div>
           );
         },
@@ -57,7 +61,11 @@ export default function Home() {
           const { bestSell } = props.row.original;
           return (
             <div className="flex items-center text-sm">
-              <span>{bestSell.toLocaleString(undefined,  { minimumFractionDigits: 0 })}</span>
+              <span>
+                {bestSell.toLocaleString(undefined, {
+                  minimumFractionDigits: 0,
+                })}
+              </span>
             </div>
           );
         },
@@ -69,7 +77,11 @@ export default function Home() {
           const { latestTrade } = props.row.original;
           return (
             <div className="flex items-center text-sm">
-              <span>{latestTrade.toLocaleString(undefined,  { minimumFractionDigits: 0 })}</span>
+              <span>
+                {latestTrade.toLocaleString(undefined, {
+                  minimumFractionDigits: 0,
+                })}
+              </span>
             </div>
           );
         },
@@ -164,30 +176,27 @@ export default function Home() {
           <div className="flex flex-col space-y-7 items-end lg:w-4/12 md:w-full text-right">
             <div className="flex flex-col space-y-7">
               <div className="flex flex-col space-y-2">
-                <h3 className="text-2xl dark:text-gray-100 text-gray-800">
-                  ...داستان پول عوض شد
+                <h3 className="text-xl dark:text-gray-100 text-gray-800 my-3">
+                  یوبیتکس، پلتفرم مبادلات رمزارزی شما
                 </h3>
                 <h1 className="text-[#f39200] text-4xl font-semibold">
-                  صرافی ارز دیجیتال یوبیتکس
+                  معتبرترین صرافی ارز دیجیتال ایرانی
                 </h1>
-                <h3 className="text-2xl dark:text-gray-100 text-gray-800">
-                  پلتفرم مبادلات رمزارزی شما
-                </h3>
               </div>
-              <div className="flex flex-col space-y-2">
+              <div className="flex flex-col">
                 <h2 className="text-xl dark:text-gray-100 text-gray-800">
-                  خرید و فروش بیش از 100 رمزارز
+                  ارئه دهنده خدمات امن و حرفه‌ای بازار ارز دیجیتال
                 </h2>
-                <h2 className="text-xl dark:text-gray-100 text-gray-800">
-                  در تالار معاملات با کارمزد ثابت 0.0025
-                </h2>
+                <h3 className="text-xl dark:text-gray-100 text-gray-800 mt-4">
+                  ...داستان پول عوض شد
+                </h3>
               </div>
             </div>
 
             <div className="flex space-x-3 space-x-reverse flex-row-reverse mt-3">
               <Link to="/redirect-to-platform">
                 <button className="px-5 py-2 bg-[#f39200] rounded-md">
-                  <span>ثبت نام</span>
+                  <span>ورود | ثبت‌نام</span>
                 </button>
               </Link>
               <Link to="/download">
@@ -203,14 +212,14 @@ export default function Home() {
             {header_boxes.map((data) => {
               return (
                 <div
-                  className="dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl flex flex-col items-end space-y-4 md:mb-3 lg:-mt-16 z-30 cursor-pointer"
+                  className="rtl-grid dark:shadow-[0_15px_40px_-15px_rgba(6,37,70,1)] shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] p-7 dark:hover:bg-[#07244b] backdrop-blur hover:backdrop-blur bg-gray-200 hover:bg-gray-300 dark:bg-[#051a36] bg-opacity-25 hover:bg-opacity-30 transition-all rounded-2xl flex flex-col items-start space-y-4 md:mb-3 lg:-mt-16 z-30 cursor-pointer"
                   key={data.id}>
-                  <span className="text-3xl text-right dark:bg-[#062246] bg-gray-50 rounded-lg p-3 text-[#f39200]">
+                  <span className="text-3xl dark:bg-[#062246] bg-gray-50 rounded-lg p-3 text-[#f39200]">
                     {data.icon}
                   </span>
-                  <span className="text-gray-700 dark:text-gray-200 text-lg">
+                  <h2 className="text-gray-700 dark:text-gray-200 text-lg">
                     {data.title}
-                  </span>
+                  </h2>
                   <p className="text-sm text-right text-gray-700 dark:text-gray-300">
                     {data.description}
                   </p>
@@ -258,11 +267,10 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 max-w-[1600px] mx-auto items-center text-right">
             <div>
-              <div className="flex flex-col space-y-3 mb-3">
+              <div className="flex flex-col space-y-3 mb-7">
                 <h3 className="text-3xl font-semibold text-[#f39200]">
                   {center_boxes.title}
                 </h3>
-                <span>{center_boxes.description} </span>
               </div>
               <div className="mx-auto grid lg:grid-cols-2 md:grid-cols-1 gap-7 rtl-grid cursor-pointer">
                 {center_boxes.items.map((data) => {
@@ -273,9 +281,7 @@ export default function Home() {
                       <span className="text-3xl text-right dark:bg-[#062246] bg-gray-50 rounded-lg p-3 text-[#f39200]">
                         {data.icon}
                       </span>
-                      <span className="text-lg text-[#f39200]">
-                        {data.title}
-                      </span>
+                      <h2 className="text-lg text-[#f39200]">{data.title}</h2>
                       <p className="text-sm text-right text-gray-700 dark:text-gray-300">
                         {data.description}
                       </p>
@@ -309,7 +315,7 @@ export default function Home() {
                   </span>
                 </div>
                 <p className="text-gray-700 dark:text-gray-200">
-                  ترید آسان، همه جا و همه وقت از طریق اپلیکیشن موبایل یوبیتکس
+                  معامله آسان، همه جا و همه وقت از طریق اپلیکیشن موبایل یوبیتکس
                 </p>
                 <Link to={"/download"} className="flex justify-end">
                   <button className="text-[#f39200] cursor-pointer transition-all text-lg px-5 py-2 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md">
