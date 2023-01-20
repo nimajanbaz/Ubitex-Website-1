@@ -6,7 +6,7 @@ import Header from "../../components/header";
 const Faq = () => {
   return (
     <>
-      <Header title={"سوالات متداول"} />
+      <Header title={"سوالات متداول | صرافی ارزدیجیتال یوبیتکس"} />
 
       <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
         <Acardeon data={faq_data} />

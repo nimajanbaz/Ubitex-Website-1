@@ -44,7 +44,7 @@ export default function Dropdown({ data }) {
           leave="transition ease-in duration-75"
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95">
-          <Menu.Items className="absolute mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-gray-50 dark:bg-[#04162d] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute mt-2 origin-top-right divide-y divide-gray-100 rounded-md bg-gray-50 dark:bg-[#04162d] shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
             <div className="p-3 flex flex-col space-y-3">
               {data.items.map((data) => {
                 return (

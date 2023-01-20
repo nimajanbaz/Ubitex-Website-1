@@ -6,7 +6,7 @@ const NotFound = () => {
 
   return (
     <>
-      <Header title={"404"} />
+      <Header title={"404 | صفحه مورد نظر پیدا نشد"} />
 
       <div className="h-screen flex justify-center items-center flex-col">
         <h2 className="text-[#f39200] text-[140px] font-semibold">404</h2>

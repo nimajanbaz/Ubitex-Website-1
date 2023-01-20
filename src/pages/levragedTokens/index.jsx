@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../../components/header";
 import LevragedTokenHeader from "../../assets/img/levraged-token-header.png";
 import { Link } from "react-router-dom";
@@ -9,7 +9,10 @@ import TradeHomePage from "./components/tradeHomePage";
 const LevragedToken = () => {
   return (
     <>
-      <Header title={"توکن‌های لوریج دار"} />
+      <Header
+        title={"توکن‌ های لوریج‌ دار یا اهرم دار | صرافی ارزدیجیتال یوبیتکس"}
+        description="یوبیتکس اولین صرافی ارز دیجیتال در ایران است که قابلیت معامله توکن‌ های لوریج‌ دار یا اهرم دار را فراهم کرده. امکان کسب سود حتی در ریزش بازار ارز دیجیتال"
+      />
       <div className="px-4 sm:px-6 text-right max-w-[1400px] mx-auto my-10">
         <div className="grid grid-cols-9 items-center my-10 space-y-5 bg-gray-50 dark:bg-[#051a36] rounded-lg p-16 rtl-grid">
           <div className="flex flex-col space-y-5 lg:col-span-3  col-span-9">

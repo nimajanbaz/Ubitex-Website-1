@@ -5,7 +5,7 @@ import Header from "../components/header";
 const AboutUs = () => {
   return (
     <>
-      <Header title={"قوانین و مقررات"} />
+      <Header title={"قوانین و مقررات | صرافی ارزدیجیتال یوبیتکس"} />
 
       <div className="px-4 sm:px-6 text-right max-w-[1200px] mx-auto my-20">
         <div className="p-20 rounded-xl text-gray-700 dark:text-gray-400 bg-white dark:bg-[#051a36]">

@@ -155,7 +155,7 @@ export default function Home() {
 
   return (
     <>
-      <Header title={"خانه"} />
+      <Header title={"یوبیتکس | معتبر ترین صرافی ارزدیجتال ایرانی | خرید و فروش ارز دیجیتال"} />
       <div className="mx-auto">
         <div className="max-w-[1750px] flex justify-center items-center mx-auto">
           {/* Left Box */}
@@ -185,7 +185,7 @@ export default function Home() {
               </div>
               <div className="flex flex-col">
                 <h2 className="text-xl dark:text-gray-100 text-gray-800">
-                  ارئه دهنده خدمات امن و حرفه‌ای بازار ارز دیجیتال
+                  ارائه دهنده خدمات امن و حرفه‌ای بازار ارز دیجیتال
                 </h2>
                 <h3 className="text-xl dark:text-gray-100 text-gray-800 mt-4">
                   ...داستان پول عوض شد

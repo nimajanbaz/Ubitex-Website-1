@@ -27,7 +27,7 @@ export const Table = ({ columns, data, titleCenter, showIndex }) => {
             {headerGroup.headers.map((column) => (
               <th
                 {...column.getHeaderProps()}
-                className={`dark:text-gray-400 text-gray-600 ${
+                className={`dark:text-gray-400 text-gray-600 text-sm ${
                   titleCenter ? "text-center" : "text-right"
                 }`}>
                 {column.render("Header")}

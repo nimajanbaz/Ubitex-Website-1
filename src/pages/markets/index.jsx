@@ -123,7 +123,7 @@ const Markets = () => {
         accessor: "action",
         Cell: () => (
           <a href="https://app.ubitex.io">
-            <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md">
+            <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md text-sm">
               خرید / فروش
             </button>
           </a>
@@ -169,8 +169,8 @@ const Markets = () => {
               : d
           )
           .filter((d) =>
-            categoryFilter != "all"
-              ? d.destinationCoinCategoryName == categoryFilter
+            categoryFilter !== "all"
+              ? d.destinationCoinCategoryName === categoryFilter
               : d
           )
       );
@@ -179,7 +179,7 @@ const Markets = () => {
 
   return (
     <>
-      <Header title={"بازارها"} />
+      <Header title={"بازارها | صرافی ارزدیجیتال یوبیتکس"} />
 
       <div className="px-4 sm:px-6 text-right max-w-[1400px] mx-auto my-10">
         {markets ? (

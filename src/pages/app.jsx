@@ -6,7 +6,7 @@ import Header from "../components/header";
 const Application = () => {
   return (
     <>
-      <Header title={'اپلیکیشن'}/>
+      <Header title={'اپلیکیشن | صرافی ارزدیجیتال یوبیتکس'}/>
       <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
         {/* Header */}
         <div className="flex flex-col justify-center items-center text-center my-10">

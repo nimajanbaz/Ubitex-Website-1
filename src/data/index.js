@@ -16,7 +16,6 @@ import {
   FaTwitter,
   FaLinkedin,
   FaYoutube,
-  FaHeadphonesAlt,
   FaGift,
   FaMobile,
 } from "react-icons/fa";
@@ -68,7 +67,7 @@ export const header_boxes = [
     icon: <FaMobile />,
     title: "اپلیکیشن موبایل",
     description:
-      "اپلیکیشن صرافی ارز دیجیتال یوبیتکس در نسخه‌های اندروید و IOS با رابط کاربری ساده",
+      "اپلیکیشن صرافی آنلاین یوبیتکس در نسخه‌های اندروید، IOS و PWA با رابط کاربری ساده",
   },
   {
     id: 2,

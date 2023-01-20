@@ -9,7 +9,7 @@ import AcardeonSlime from "./components/faqHomePage";
 const HelpCenter = () => {
   return (
     <>
-      <Header title={"مرکز پشتیبانی و راهنمای استفاده"} />
+      <Header title={"مرکز پشتیبانی و راهنمای استفاده | صرافی ارزدیجیتال یوبیتکس"} />
       {/* Header */}
       <div className="mb-10 w-full relative">
         <div className="w-full h-[350px] absolute top-0 dark:bg-[#04162d] bg-gray-800 dark:bg-opacity-80 bg-opacity-60 z-30 flex justify-center items-center text-center">
