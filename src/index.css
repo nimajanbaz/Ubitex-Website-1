@@ -117,3 +117,56 @@ body {
   font-family: "IRANYekan-Ubitex"!important;
 }
 
+.gTPjFA, .eqeAgc, .buVPmO, .dWbQzG, .lgCdjb, .fWYWWZ 
+{
+  direction: ltr!important;
+  @apply !px-2 !py-1 !text-sm max-sm:!text-xs !text-[#353535] !bg-gray-400 !bg-opacity-10 hover:!bg-gray-200 dark:!bg-[#062e66] dark:!text-gray-300 dark:hover:!bg-[#084292] !transition-all 
+}
+
+.cgeQjm
+{
+  @apply !fill-[#f39200]
+}
+
+.ubitex img
+{
+  @apply rounded-lg !w-full
+}
+
+.ubitex h1
+{
+  @apply text-3xl font-bold pt-8 pb-3
+}
+.ubitex h2 
+{
+  @apply text-xl font-semibold pt-5
+}
+
+.swiper-slide
+{
+  @apply rounded-3xl
+}
+
+.ub-fnt-fam_b77syt, .ub-fnt-fam_wm9v6k {
+  @apply !font-display
+}
+
+.ub-bg-clr_white {
+  @apply !bg-white dark:!bg-[#062144] !rounded-xl !z-50
+}
+
+ .ub-color_696f8c {
+  @apply !text-gray-500 dark:!text-gray-300 !text-right
+}
+
+.ub-color_101840 {
+  @apply !text-[#f39200] dark:!text-[#f39200] !text-right
+}
+
+.ub-dspl_flex {
+  @apply !flex-row-reverse
+}
+
+.ub-bs_kymczs {
+  @apply dark:shadow-[0_10px_30px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.1)]
+}

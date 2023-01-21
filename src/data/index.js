@@ -138,7 +138,7 @@ export const footer_data = {
     {
       id: 2,
       title: "بلاگ",
-      href: "/redirect-to-blog",
+      href: "/blog",
     },
     {
       id: 3,

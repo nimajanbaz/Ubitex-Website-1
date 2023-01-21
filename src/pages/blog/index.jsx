@@ -1,40 +1,30 @@
-import React, { useEffect, useState } from "react";
-// import { GET_ALL_CATEGORIES, GET_ALL_POSTS } from "./data/apiURLs";
-// import axios from "axios";
+import React from "react";
+import BlogHeaderSliderCard from "./components/homePageHeader/blogHeaderSliderCard";
+import BlogHeaderSliderIntro from "./components/homePageHeader/blogHeaderSliderIntro";
+import CategoryHomePage from "./components/categoryHomePage";
+import LastPostsHomePage from "./components/lastPostsHomePage";
 import Header from "../../components/header";
-// import { BlogHeaderSlider } from "./components/headerSlider-xx";
 
 const BlogHomePage = () => {
-  // const [categories, setCategories] = useState([]);
-  // const [posts, setPosts] = useState([]);
-
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     await axios
-  //       .get(GET_ALL_CATEGORIES)
-  //       .then((res) => setCategories(res.data.data));
-  //     await axios.get(GET_ALL_POSTS).then((res) => setPosts(res.data.data));
-  //   };
-  //   getData();
-  // }, []);
-
   return (
     <>
-      <Header title={"بلاگ"} />
+      <Header title={" یوبیتکس بلاگ "} />
 
-      <div className="text-right max-w-[1300px] mx-auto my-10">
-        <div className="flex flex-col space-y-5">
-          <h1 className="text-[#f39200] text-4xl font-semibold">
-            بلاگ یوبیتکس
-          </h1>
-          <p className="text-sm">
-            پلتفرم مبادلات رمزارزی یوبیتکس با هدف تسهیل معاملات و امنیت خاطر
-            کاربران، بر اساس سطوح احراز هویت و میزان فعالیت آن‌ها، کارمزد
-            دریافتی را مشخص می‌کند.
-          </p>
+      <div className="px-10 space-y-20 sm:px-10 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-4/5 ">
+        <div className=" flex w-full max-md:flex-col-reverse">
+          <div className="md:w-7/12 sm:w-full">
+            <BlogHeaderSliderCard />
+          </div>
+          <div className="md:w-5/12 sm:w-full">
+            <BlogHeaderSliderIntro />
+          </div>
         </div>
-
-        {/* <BlogHeaderSlider /> */}
+        <div className="p-14 rounded-xl bg-gray-50 dark:bg-[#051A36]">
+          <CategoryHomePage />
+        </div>
+        <div>
+          <LastPostsHomePage />
+        </div>
       </div>
     </>
   );

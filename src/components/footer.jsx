@@ -85,7 +85,7 @@ const Footer = () => {
       
       <div className="flex flex-col justify-center items-center">
         <span className="text-gray-400 dark:text-gray-500 text-sm mb-2">
-          2019-2022 UBITEX - v
+          2019-{new Date().getFullYear()} UBITEX - v
           {require("../../package.json").version.replace('"', "")}
         </span>
       </div>

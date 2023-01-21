@@ -14,10 +14,11 @@ import HelpCenter from "./pages/helpCenter";
 import HelpCenterItem from "./pages/helpCenter/helpCenterItem";
 import VideoGuide from "./pages/helpCenter/components/videoGuideFull";
 import Faq from "./pages/helpCenter/faq";
-// import CommingSoon from "./pages/commingSoon";
 import LevragedToken from "./pages/levragedTokens";
 import Markets from "./pages/markets";
 import BlogHomePage from "./pages/blog";
+import SinglePost from "./pages/blog/pages/singlePost";
+import SingleCategory from "./pages/blog/pages/singleCategory";
 
 const App = () => {
   return (
@@ -36,7 +37,10 @@ const App = () => {
             <Route path="/markets" element={<Markets />} />
             <Route path="/leveraged-tokens" element={<LevragedToken />} />
 
-            {/* <Route path="/blog" element={<BlogHomePage />} /> */}
+            <Route path="/blog" element={<BlogHomePage />} />
+            <Route path="/blog/posts/:slug" element={<SinglePost />} />
+            <Route path="/blog/category/:slug" element={<SingleCategory />} />
+            {/* <Route path="/blog/tags/:tags" element={<Tagsdata />} /> */}
 
             <Route path="/support-center" element={<HelpCenter />} />
             <Route path="/support-center/faq" element={<Faq />} />
@@ -61,10 +65,6 @@ const App = () => {
             <Route
               path="/redirect-to-markets"
               element={<Redirect href={"https://app.ubitex.io/markets"} />}
-            />
-            <Route
-              path="/redirect-to-blog"
-              element={<Redirect href={"https://ubitex.io/blog"} />}
             />
           </Routes>
         </div>

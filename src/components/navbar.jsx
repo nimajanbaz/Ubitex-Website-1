@@ -95,7 +95,7 @@ export default function Navbar() {
     {
       id: 6,
       title: "بلاگ",
-      href: "/redirect-to-blog",
+      href: "/blog",
       star: false,
       isPopUp: false,
       isDropdown: false,
