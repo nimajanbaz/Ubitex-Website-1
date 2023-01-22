@@ -1,6 +1,6 @@
 import { Formik, Field, Form } from "formik";
 import { BiLeftArrowAlt } from "react-icons/bi";
-import { MdOutlineComment } from "react-icons/md";
+import { MdAddComment } from "react-icons/md";
 import ReCAPTCHA from "react-google-recaptcha";
 import TitleBox from "./titleBox";
 import { createRef } from "react";
@@ -9,6 +9,8 @@ import Notification from "../../../components/notification";
 
 const AddComment = ({ postId }) => {
   const [openDialog, setOpenDialog] = useState(false);
+  const [dialogTitle, setDialogTitle] = useState(null);
+  const [dialogText, setDialogText] = useState(null);
 
   const recaptchaRef = createRef();
   const UBITEX_GOOGLE_CAPTCHA_KEY = "6Lcex7QhAAAAAEkpJYlRTWJ9aPOexgMtebNbSCWu";
@@ -24,10 +26,19 @@ const AddComment = ({ postId }) => {
       },
       body: JSON.stringify({
         postId: postId,
-        user: FormData.user,
+        userName: FormData.userName,
+        userPhoneNumber: FormData.userPhoneNumber,
         comment: FormData.comment,
       }),
-    });
+    })
+      .then((res) => res.json())
+      .then((response) => {
+        if (response.code === 201) {
+          setDialogTitle("موفق");
+          setDialogText('نظر شما با موفقیت ثبت شد و بعد از تایید نمایش داده خواهد شد');
+          setOpenDialog(true);
+        }
+      });
   };
 
   return (
@@ -35,21 +46,23 @@ const AddComment = ({ postId }) => {
       <div>
         <Notification
           isOpen={openDialog}
-          title={"خطا"}
-          text={"موارد مورد نیاز را تکمیل نمایید"}
+          title={dialogTitle}
+          text={dialogText}
           onClose={() => setOpenDialog(false)}
         />
 
         <Formik
           initialValues={{
-            user: "",
-            name: "",
+            userName: "",
+            userPhoneNumber: "",
             comment: "",
           }}
           onSubmit={(values) => {
             if (verifyCaptcha) {
               comment(values);
             } else {
+              setDialogTitle("خطا");
+              setDialogText("موارد مورد نیاز را تکمیل نمایید");
               setOpenDialog(true);
             }
           }}>
@@ -57,22 +70,22 @@ const AddComment = ({ postId }) => {
             <div className="mb-5">
               <TitleBox
                 title="نظر خود را با ما در میان بگذارید"
-                icon={<MdOutlineComment />}
+                icon={<MdAddComment />}
               />
             </div>
             <Form className="flex flex-col mx-auto space-y-6">
               <div className="flex justify-between items-center space-x-3 space-x-reverse">
                 <Field
-                  id="name"
-                  name="name"
+                  id="userName"
+                  name="userName"
                   placeholder="نام و نام خانوادگی"
-                  className="flex flex-auto bg-inherit border-gray-100 dark:bg-[#051A36] dark:border-[#092c59] p-5 outline-none text-sm rounded-md"
+                  className="flex flex-auto bg-inherit border-gray-100 dark:!bg-[#051A36] !bg-gray-50 dark:border-[#092c59] p-5 outline-none text-sm rounded-md"
                 />
                 <Field
-                  id="user"
-                  name="user"
+                  id="userPhoneNumber"
+                  name="userPhoneNumber"
                   placeholder="شماره موبایل (نمایش داده نخواهد شد)"
-                  className="flex flex-auto bg-inherit border-gray-100 dark:bg-[#051A36] dark:border-[#092c59] p-5 outline-none text-sm rounded-md"
+                  className="flex flex-auto bg-inherit border-gray-100 dark:!bg-[#051A36] !bg-gray-50 dark:border-[#092c59] p-5 outline-none text-sm rounded-md"
                 />
               </div>
               <Field
@@ -80,7 +93,7 @@ const AddComment = ({ postId }) => {
                 name="comment"
                 as="textarea"
                 placeholder="نظر خودتون رو بنویسید"
-                className="flex flex-auto h-36 bg-inherit bborder-gray-100 dark:bg-[#051A36] dark:border-[#092c59] p-5 outline-none text-sm rounded-md"
+                className="flex flex-auto h-36 bg-inherit bborder-gray-100 dark:!bg-[#051A36] !bg-gray-50 dark:border-[#092c59] p-5 outline-none text-sm rounded-md"
               />
               <div className="flex justify-between items-center">
                 <ReCAPTCHA

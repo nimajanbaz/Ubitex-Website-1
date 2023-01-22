@@ -9,6 +9,8 @@ import AddComment from "../components/addComment";
 import SuggestPosts from "../components/suggestPosts";
 import SocialShare from "../components/socialShare";
 import TitleBox from "../components/titleBox";
+import UserCommentBox from "../components/userCommentBox";
+import BlogSinglePostSkeleton from "../../../components/skeleton/blogSinglePostSkeleton";
 
 const SinglePost = () => {
   const [data, setdata] = useState();
@@ -37,7 +39,7 @@ const SinglePost = () => {
               );
             })}
           </div>
-          <div className="  mx-auto mt-5 ">
+          <div className="mx-auto mt-5">
             <img
               className="object-cover mx-auto rounded-xl h-auto w-full"
               src={data.thumbnail}
@@ -66,13 +68,13 @@ const SinglePost = () => {
           <div className="my-5 text-[#353535] dark:text-gray-300 text-justify flex flex-col space-y-2 ubitex">
             {ReactHtmlParser(data.content)}
           </div>
-          <div >
+          <div>
             <ul className="flex mx-auto space-x-3 space-x-reverse">
               {data.tags.map((tag) => {
                 return (
                   <Link to={"/tags/" + tag} key={tag}>
                     <li className="px-3 py-1 transition-all text-center text-[#f39200] bg-[#f39200] bg-opacity-10 rounded-md hover:bg-[#f39200] hover:bg-opacity-20">
-                      #{tag.replace(/ /g, '_')}
+                      #{tag.replace(/ /g, "_")}
                     </li>
                   </Link>
                 );
@@ -83,31 +85,17 @@ const SinglePost = () => {
             <SocialShare />
           </div>
           <div className="mb-20">
-            <div>
-              <TitleBox icon={<MdOutlineFiberNew />} title={"جدیدترین مطالب"} />
-            </div>
+            <TitleBox icon={<MdOutlineFiberNew />} title={"جدیدترین مطالب"} />
             <SuggestPosts />
           </div>
           <div>
             <AddComment postId={data._id} />
-            <div className="mb-20">
-              <ul className="flex mx-auto space-x-3 space-x-reverse ">
-                {data.comments
-                  ? data.comments.map((item) => {
-                      return (
-                        <li
-                          key={item._id}
-                          className="mt-3 px-3 text-center text-[#f39200] bg-[#f392002a] rounded-md hover:bg-[#f3920040]">
-                          {item.comment}
-                        </li>
-                      );
-                    })
-                  : null}
-              </ul>
-            </div>
+            <UserCommentBox data={data.comments} />
           </div>
         </div>
-      ) : null}
+      ) : (
+        <BlogSinglePostSkeleton />
+      )}
     </>
   );
 };
