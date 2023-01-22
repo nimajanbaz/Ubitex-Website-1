@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HttpsRedirect from "react-https-redirect";
 import NotFound from "./pages/404";
 import Redirect from "./components/redirect";
 import Navbar from "./components/navbar";
@@ -22,7 +21,6 @@ import SingleCategory from "./pages/blog/pages/singleCategory";
 
 const App = () => {
   return (
-    <HttpsRedirect>
       <Router>
         <Navbar />
         <div className="font-display text-right xl:px-10 lg:px-12 md:px-12 sm:px-8 px-4">
@@ -70,7 +68,6 @@ const App = () => {
         </div>
         <Footer />
       </Router>
-    </HttpsRedirect>
   );
 };
 

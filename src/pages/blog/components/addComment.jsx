@@ -35,7 +35,9 @@ const AddComment = ({ postId }) => {
       .then((response) => {
         if (response.code === 201) {
           setDialogTitle("موفق");
-          setDialogText('نظر شما با موفقیت ثبت شد و بعد از تایید نمایش داده خواهد شد');
+          setDialogText(
+            "نظر شما با موفقیت ثبت شد و بعد از تایید نمایش داده خواهد شد"
+          );
           setOpenDialog(true);
         }
       });
@@ -103,6 +105,9 @@ const AddComment = ({ postId }) => {
                     setVerifyCaptcha(true);
                   }}
                   size="normal"
+                  theme={
+                    localStorage.getItem("theme") === "dark" ? "dark" : "light"
+                  }
                 />
                 <button
                   type="submit"

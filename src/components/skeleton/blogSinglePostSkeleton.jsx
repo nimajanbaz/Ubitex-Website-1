@@ -17,7 +17,8 @@ const BlogSinglePostSkeleton = () => {
           <div className="loading-animation rounded-md px-10 py-6"></div>
         </div>
 
-        <div className="mt-3 w-4/12 flex space-x-3 space-x-reverse justify-start">
+        <div className="mt-3 w-5/12 flex space-x-3 space-x-reverse justify-start">
+          <div className="loading-animation rounded-md px-10 py-5"></div>
           <div className="loading-animation rounded-md px-10 py-5"></div>
           <div className="loading-animation rounded-md px-10 py-5"></div>
           <div className="loading-animation rounded-md px-10 py-5"></div>

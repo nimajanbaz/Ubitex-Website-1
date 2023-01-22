@@ -4,6 +4,7 @@ import { BsClockHistory } from "react-icons/bs";
 import PostLevel from "../components/postLevel";
 import ReactHtmlParser from "react-html-parser";
 import { MdOutlineFiberNew } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import AddComment from "../components/addComment";
 import SuggestPosts from "../components/suggestPosts";
@@ -11,12 +12,14 @@ import SocialShare from "../components/socialShare";
 import TitleBox from "../components/titleBox";
 import UserCommentBox from "../components/userCommentBox";
 import BlogSinglePostSkeleton from "../../../components/skeleton/blogSinglePostSkeleton";
+import { HiOutlineCalendar } from "react-icons/hi2";
 
 const SinglePost = () => {
-  const [data, setdata] = useState();
+  const [data, setdata] = useState(null);
   const { slug } = useParams();
 
   useEffect(() => {
+    setdata(null);
     fetch(`https://bapi.ubitex.io/v1.0/posts/${slug}`)
       .then((response) => response.json())
       .then((data) => setdata(data));
@@ -52,13 +55,19 @@ const SinglePost = () => {
             </h1>
             <div className=" text-[#9e9e9e] text-sm max-sm:text-xs dark:text-[#a3a3a3] flex  space-x-3 space-x-reverse ">
               <PostLevel level={data.level} />
-              <div className="space-x-1 space-x-reverse px-4 py-2 rounded-md bg-gray-400 bg-opacity-10">
-                <span>تاریخ انتشار:</span>
+              <div className="space-x-2 space-x-reverse px-4 py-2 rounded-md bg-gray-400 bg-opacity-10 flex items-center">
+              <HiOutlineCalendar />
+                {/* <span>تاریخ انتشار:</span> */}
                 <span>
                   {new Date(data.createDateTime).toLocaleDateString("fa-IR")}
                 </span>
               </div>
-              <div className="flex items-center space-x-1 space-x-reverse px-4 py-2 rounded-md bg-gray-400 bg-opacity-10">
+              <div className="flex items-center space-x-2 space-x-reverse px-4 py-2 rounded-md bg-gray-400 bg-opacity-10">
+                <FaEye />
+                <span>{data.views}</span>
+                <span>بازدید</span>
+              </div>
+              <div className="flex items-center space-x-2 space-x-reverse px-4 py-2 rounded-md bg-gray-400 bg-opacity-10">
                 <BsClockHistory />
                 <span>{Math.round(data.content.length / 10 / 200)}</span>
                 <span>دقیقه</span>
