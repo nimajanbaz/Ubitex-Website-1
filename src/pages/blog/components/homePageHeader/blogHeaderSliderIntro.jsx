@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import BlogHeaderSliderIntroSkeleton from "../../../../components/skeleton/BlogHeaderSliderIntroSkeleton";
 
 const BlogHeaderSliderIntro = () => {
   const [data, setdata] = useState(null);
@@ -38,7 +39,7 @@ const BlogHeaderSliderIntro = () => {
             </ul> */}
           </div>
         </div>
-      ) : null}
+      ) : <BlogHeaderSliderIntroSkeleton />}
     </>
   );
 };

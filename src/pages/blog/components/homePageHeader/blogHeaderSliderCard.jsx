@@ -11,9 +11,10 @@ import "swiper/css/effect-cards";
 // import required modules
 import { Link } from "react-router-dom";
 import { EffectCards } from "swiper";
+import BlogHomePageCardHeaderSkeleton from "../../../../components/skeleton/blogHomePageHeaderCardSkeleton";
 
 const BlogHeaderSliderCard = () => {
-  const [data, setdata] = useState([]);
+  const [data, setdata] = useState(null);
 
   useEffect(() => {
     fetch("https://bapi.ubitex.io/v1.0/posts")
@@ -28,21 +29,25 @@ const BlogHeaderSliderCard = () => {
         grabCursor={true}
         modules={[EffectCards]}
         className="mySwiper">
-        {data.map((sliderImage) => {
-          return (
-            <>
-              <SwiperSlide>
-                <Link to={"/blog/posts/" + sliderImage.slug}>
-                  <img
-                    className="p-1 border border-gray-300 rounded-3xl dark:border-[#092c59] dark:hover:bg-[#061f41] "
-                    src={sliderImage.thumbnail}
-                    alt=""
-                  />
-                </Link>
-              </SwiperSlide>
-            </>
-          );
-        })}
+        {data ? (
+          data.map((sliderImage) => {
+            return (
+              <>
+                <SwiperSlide>
+                  <Link to={"/blog/posts/" + sliderImage.slug}>
+                    <img
+                      className="p-1 border border-gray-300 rounded-3xl dark:border-[#092c59] dark:hover:bg-[#061f41] "
+                      src={sliderImage.thumbnail}
+                      alt=""
+                    />
+                  </Link>
+                </SwiperSlide>
+              </>
+            );
+          })
+        ) : (
+          <BlogHomePageCardHeaderSkeleton />
+        )}
       </Swiper>
     </>
   );
