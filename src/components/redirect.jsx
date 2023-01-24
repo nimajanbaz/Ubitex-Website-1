@@ -1,11 +1,7 @@
-import { useEffect } from "react";
-
 const Redirect = (props) => {
-  useEffect(() => {
-    setTimeout(() => {
-      window.location.href = props.href;
-    }, 1000);
-  }, []);
+  setTimeout(() => {
+    window.location.href = props.href;
+  }, 1000);
 
   return (
     <>

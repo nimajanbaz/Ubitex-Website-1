@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Header from "../../components/header";
 import { useParams } from "react-router-dom";
 import { help_center_data } from "../../data/helpCenterData";

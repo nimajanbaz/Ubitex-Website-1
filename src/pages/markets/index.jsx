@@ -159,7 +159,6 @@ const Markets = () => {
   }
 
   useEffect(() => {
-    console.log(tableFilter);
     if (markets) {
       setTableFilter(
         markets
@@ -175,7 +174,7 @@ const Markets = () => {
           )
       );
     }
-  }, [tableFilterQuery, categoryFilter]);
+  }, [tableFilterQuery, categoryFilter, markets]);
 
   return (
     <>

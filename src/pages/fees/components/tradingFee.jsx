@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { Table } from "../../../components/table";
 import { trading_fee_data } from "../../../data/fee";
 import { FaUserTimes, FaUserCheck, FaGem } from "react-icons/fa";
@@ -15,16 +15,16 @@ const TradingFee = () => {
           return (
             <div
               className={`flex flex-col cursor-pointer justify-center items-center text-sm ${
-                level == 1
+                level === 1
                   ? "text-emerald-600"
-                  : level == 2
+                  : level === 2
                   ? "text-red-600"
                   : "text-amber-400"
               }`}>
               <span className="text-xl">
-                {level == 1 ? (
+                {level === 1 ? (
                   <FaUserCheck />
-                ) : level == 2 ? (
+                ) : level === 2 ? (
                   <FaUserTimes />
                 ) : (
                   <FaGem />
