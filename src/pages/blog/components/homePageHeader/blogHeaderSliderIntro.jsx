@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import BlogHeaderSliderIntroSkeleton from "../../../../components/skeleton/BlogHeaderSliderIntroSkeleton";
+import { GET_BLOG_HEADER_DATA_URL } from "../../../../config/api.config";
 
 const BlogHeaderSliderIntro = () => {
-  const [data, setdata] = useState(null);
+  const [data, setDate] = useState(null);
 
   useEffect(() => {
-    fetch("https://bapi.ubitex.io/v1.0/posts")
+    fetch(GET_BLOG_HEADER_DATA_URL)
       .then((response) => response.json())
-      .then((data) => setdata(data));
+      .then((data) => setDate(data));
   }, []);
 
   return (
@@ -22,21 +23,21 @@ const BlogHeaderSliderIntro = () => {
                 alt=""
               />
             </div>
-            <h1 className="text-5xl  font-bold">یوبیتکس بلاگ</h1>
-            <span>متن تست</span>
+            <h1 className="text-5xl font-bold">{data.title}</h1>
+            <span>{data.subtitle}</span>
           </div>
           <div className="mt-5">
-            {/* <ul className="flex mx-auto space-x-3 space-x-reverse ">
-              {data.tags.map((item, index) => {
+            <ul className="flex mx-auto space-x-3 space-x-reverse ">
+              {data.favoriteTags.map((item, index) => {
                 return (
                   <li
                     key={index}
-                    className="mt-3 px-4 py-2 text-center text-[#f39200] rounded-md hover:bg-[#f39200] hover:bg-opacity-20 cursor-pointer transition-all">
-                    {item}
+                    className="mt-3 px-4 py-2 text-center text-[#f39200] rounded-md bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 cursor-pointer transition-all">
+                    #{item.replace(/ /g, "_")}
                   </li>
                 );
               })}
-            </ul> */}
+            </ul>
           </div>
         </div>
       ) : <BlogHeaderSliderIntroSkeleton />}

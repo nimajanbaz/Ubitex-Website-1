@@ -12,14 +12,15 @@ import "swiper/css/effect-cards";
 import { Link } from "react-router-dom";
 import { EffectCards } from "swiper";
 import BlogHomePageCardHeaderSkeleton from "../../../../components/skeleton/blogHomePageHeaderCardSkeleton";
+import { GET_BLOG_HEADER_SLIDER_URL } from "../../../../config/api.config";
 
 const BlogHeaderSliderCard = () => {
-  const [data, setdata] = useState(null);
+  const [data, setDate] = useState(null);
 
   useEffect(() => {
-    fetch("https://bapi.ubitex.io/v1.0/posts")
+    fetch(GET_BLOG_HEADER_SLIDER_URL)
       .then((response) => response.json())
-      .then((data) => setdata(data));
+      .then((data) => setDate(data));
   }, []);
 
   return (

@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import { BiCategoryAlt } from "react-icons/bi";
 import TitleBox from "./titleBox";
 import BlogCategoryHomePageSkeleton from "../../../components/skeleton/BlogCategoryHomePageSkeleton";
+import { GET_BLOG_CATEGORIES_URL } from "../../../config/api.config";
 
 const CategoryHomePage = () => {
-  const [data, setdata] = useState(null);
+  const [data, setDate] = useState(null);
 
   useEffect(() => {
-    fetch("https://bapi.ubitex.io/v1.0/categories")
+    fetch(GET_BLOG_CATEGORIES_URL)
       .then((response) => response.json())
-      .then((data) => setdata(data));
+      .then((data) => setDate(data));
   }, []);
 
   return (

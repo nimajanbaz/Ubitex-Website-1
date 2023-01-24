@@ -3,14 +3,15 @@ import { MdOutlineFiberNew } from "react-icons/md";
 import TitleBox from "./titleBox";
 import PostCard from "./postCard";
 import PostCardSkeleton from "../../../components/skeleton/blogSingleCategorySkeleton";
+import { GET_BLOG_POST_URL } from "../../../config/api.config";
 
 const LastPostsHomePage = () => {
-  const [data, setdata] = useState(null);
+  const [data, setDate] = useState(null);
 
   useEffect(() => {
-    fetch("https://bapi.ubitex.io/v1.0/posts")
+    fetch(GET_BLOG_POST_URL)
       .then((response) => response.json())
-      .then((res) => setdata(res.slice(0, 6)));
+      .then((res) => setDate(res.slice(0, 6)));
   }, []);
 
   return (

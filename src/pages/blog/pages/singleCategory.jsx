@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PostCardSkeleton from "../../../components/skeleton/blogSingleCategorySkeleton";
+import { GET_BLOG_CATEGORIES_URL } from "../../../config/api.config";
 import PostCard from "../components/postCard";
 
 const SingleCategory = () => {
-  const [data, setdata] = useState(null);
+  const [data, setDate] = useState(null);
   const { slug } = useParams();
 
   useEffect(() => {
-    fetch(`https://bapi.ubitex.io/v1.0/categories/${slug}`)
+    fetch(`${GET_BLOG_CATEGORIES_URL}/${slug}`)
       .then((response) => response.json())
-      .then((data) => setdata(data));
+      .then((data) => setDate(data));
   }, [slug]);
 
   return (

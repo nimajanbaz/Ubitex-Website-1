@@ -13,16 +13,17 @@ import TitleBox from "../components/titleBox";
 import UserCommentBox from "../components/userCommentBox";
 import BlogSinglePostSkeleton from "../../../components/skeleton/blogSinglePostSkeleton";
 import { HiOutlineCalendar } from "react-icons/hi2";
+import { GET_BLOG_POST_URL } from "../../../config/api.config";
 
 const SinglePost = () => {
-  const [data, setdata] = useState(null);
+  const [data, setDate] = useState(null);
   const { slug } = useParams();
 
   useEffect(() => {
-    setdata(null);
-    fetch(`https://bapi.ubitex.io/v1.0/posts/${slug}`)
+    setDate(null);
+    fetch(`${GET_BLOG_POST_URL}/${slug}`)
       .then((response) => response.json())
-      .then((data) => setdata(data));
+      .then((data) => setDate(data));
   }, [slug]);
 
   return (

@@ -11,6 +11,7 @@ import {
 
 const SocialShare = () => {
   const link = window.location.href;
+  
   return (
     <div className="mt-10 p-14 rounded-xl bg-gray-50 dark:bg-[#051A36]">
       {/* <div className="flex justify-center items-center mb-5">

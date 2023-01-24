@@ -6,6 +6,7 @@ import TitleBox from "./titleBox";
 import { createRef } from "react";
 import { useState } from "react";
 import Notification from "../../../components/notification";
+import { GET_BLOG_ADD_COMMENT_URL } from "../../../config/api.config";
 
 const AddComment = ({ postId }) => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -18,7 +19,7 @@ const AddComment = ({ postId }) => {
   const [verifyCaptcha, setVerifyCaptcha] = useState(false);
 
   const comment = async (FormData) => {
-    await fetch(`https://bapi.ubitex.io/v1.0/comments/addComment`, {
+    await fetch(GET_BLOG_ADD_COMMENT_URL, {
       method: "POST",
       headers: {
         Accept: "application/json",
