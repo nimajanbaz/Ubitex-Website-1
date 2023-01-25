@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from "../../../../components/header";
 import BlogHeaderSliderIntroSkeleton from "../../../../components/skeleton/BlogHeaderSliderIntroSkeleton";
 import { GET_BLOG_HEADER_DATA_URL } from "../../../../config/api.config";
 
@@ -15,6 +16,8 @@ const BlogHeaderSliderIntro = () => {
     <>
       {data ? (
         <div className="rtl-grid">
+          <Header title={data.title} />
+
           <div className="flex flex-col space-y-10 mt-10">
             <div className="w-1/2">
               <img
@@ -40,7 +43,9 @@ const BlogHeaderSliderIntro = () => {
             </ul>
           </div>
         </div>
-      ) : <BlogHeaderSliderIntroSkeleton />}
+      ) : (
+        <BlogHeaderSliderIntroSkeleton />
+      )}
     </>
   );
 };

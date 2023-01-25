@@ -176,3 +176,11 @@ body {
 .ub-bs_kymczs {
   @apply dark:shadow-[0_10px_30px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.1)]
 }
+
+:where(.css-dev-only-do-not-override-1n7nwfa).ant-breadcrumb .ant-breadcrumb-separator {
+  @apply !text-gray-500 dark:!text-gray-400
+}
+
+.ant-breadcrumb-link {
+  @apply px-2 py-1 rounded bg-gray-500 bg-opacity-0 hover:bg-opacity-10 transition-all
+}

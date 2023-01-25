@@ -16,16 +16,43 @@ const SingleCategory = () => {
 
   return (
     <>
-      <div className=" gap-8 font-display mt-10 mx-auto my-20 w-3/5 ">
-        <div className="rtl-grid grid 2xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 space-x-reverse mt-10">
-          {data
-            ? data.posts.map((item) => {
-                return <PostCard item={item} showCategory={false} />;
-              })
-            : <PostCardSkeleton />}
+    {data ? (
+      <>
+        <div className="mt-10 mx-auto w-4/5">
+          <div className="relative w-full sm:h-[200px] md:h-[400px]">
+            <img
+              className="loading-animation object-cover rounded-3xl "
+              src={data.banner}
+              alt={data.label}
+            />
+            <div className="absolute flex space-y-5 flex-col justify-center rounded-3xl items-center  top-0 left-0 bg-black dark:bg-[#04162D] bg-opacity-30 dark:bg-opacity-40  text-white w-full h-full">
+              <h2 className="text-5xl font-semibold">{data.label}</h2>
+              <div className="flex flex-row space-x-1">
+                <span>مقاله</span>
+                <span> {data.posts.length} </span>
+              </div>
+            </div>
+          </div>
+          <div className="relative w-[144px] h-[144px] rtl-grid mx-auto p-1 -mt-20 bg-white dark:bg-[#051A36] border border-gray-100 dark:border-[#092c59] rounded-full shadow-2xl flex flex-col justify-center items-center">
+            <img
+              className=" object-cover rounded-full "
+              src={data.profilePhoto}
+              alt={data.label}
+            />
+          </div>
         </div>
-      </div>
-    </>
+        <div className="px-10 sm:px-10 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-4/5 ">
+          <div className="rtl-grid grid 2xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 space-x-reverse mt-10">
+            {data.posts.map((item) => {
+              return <PostCard item={item} showCategory={false} />;
+            })}
+          </div>
+        </div>
+      </>
+    ) : (
+      <PostCardSkeleton />
+    )}
+  </>
   );
 };
 

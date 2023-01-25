@@ -13,11 +13,14 @@ import HelpCenter from "./pages/helpCenter";
 import HelpCenterItem from "./pages/helpCenter/helpCenterItem";
 import VideoGuide from "./pages/helpCenter/components/videoGuideFull";
 import Faq from "./pages/helpCenter/faq";
-import LevragedToken from "./pages/levragedTokens";
+import LeveragedToken from "./pages/levragedTokens";
 import Markets from "./pages/markets";
 import BlogHomePage from "./pages/blog";
 import SinglePost from "./pages/blog/pages/singlePost";
 import SingleCategory from "./pages/blog/pages/singleCategory";
+import AllPosts from "./pages/blog/pages/allPosts";
+import Search from "./pages/blog/pages/search";
+import CreatorPage from "./pages/blog/pages/writer";
 
 const App = () => {
   return (
@@ -29,13 +32,15 @@ const App = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/fees" element={<Fees />} />
-            <Route path="/fees/dev" element={<Fees />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/download" element={<Application />} />
             <Route path="/markets" element={<Markets />} />
-            <Route path="/leveraged-tokens" element={<LevragedToken />} />
+            <Route path="/leveraged-tokens" element={<LeveragedToken />} />
 
             <Route path="/blog" element={<BlogHomePage />} />
+            <Route path="/blog/search" element={<Search />} />
+            <Route path="/blog/writers/:slug" element={<CreatorPage />} />
+            <Route path="/blog/posts" element={<AllPosts />} />
             <Route path="/blog/posts/:slug" element={<SinglePost />} />
             <Route path="/blog/category/:slug" element={<SingleCategory />} />
             {/* <Route path="/blog/tags/:tags" element={<Tagsdata />} /> */}

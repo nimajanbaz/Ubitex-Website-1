@@ -3,13 +3,10 @@ import BlogHeaderSliderCard from "./components/homePageHeader/blogHeaderSliderCa
 import BlogHeaderSliderIntro from "./components/homePageHeader/blogHeaderSliderIntro";
 import CategoryHomePage from "./components/categoryHomePage";
 import LastPostsHomePage from "./components/lastPostsHomePage";
-import Header from "../../components/header";
 
 const BlogHomePage = () => {
   return (
     <>
-      <Header title={" یوبیتکس بلاگ "} />
-
       <div className="px-10 space-y-20 sm:px-10 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-4/5 ">
         <div className=" flex w-full max-md:flex-col-reverse">
           <div className="md:w-7/12 sm:w-full">
