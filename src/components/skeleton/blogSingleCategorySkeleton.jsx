@@ -8,7 +8,7 @@ const PostCardSkeleton = () => {
       test.push(
         <div className=" grow h-full relative border border-gray-100 dark:bg-[#051A36] dark:border-[#092c59] dark:hover:bg-[#061f41] pb-3 rounded-xl hover:shadow-xl transition-all dark:hover:shadow-2xl rtl-grid">
           <div className="relative">
-            <div className="loading-animation rounded-md px-10 py-[95px]"></div>
+            <div className="loading-animation rounded-xl px-10 py-[95px]"></div>
           </div>
 
           <div className="flex flex-col px-4">

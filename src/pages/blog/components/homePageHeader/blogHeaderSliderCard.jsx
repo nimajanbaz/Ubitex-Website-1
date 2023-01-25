@@ -10,7 +10,7 @@ import "swiper/css/effect-cards";
 
 // import required modules
 import { Link } from "react-router-dom";
-import { EffectCards } from "swiper";
+import { Autoplay, EffectCards, Navigation, Pagination } from "swiper";
 import BlogHomePageCardHeaderSkeleton from "../../../../components/skeleton/blogHomePageHeaderCardSkeleton";
 import { GET_BLOG_HEADER_SLIDER_URL } from "../../../../config/api.config";
 
@@ -28,7 +28,11 @@ const BlogHeaderSliderCard = () => {
       <Swiper
         effect={"cards"}
         grabCursor={true}
-        modules={[EffectCards]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectCards, Autoplay, Pagination, Navigation]}
         className="mySwiper">
         {data ? (
           data.map((sliderImage) => {

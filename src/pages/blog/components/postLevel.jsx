@@ -7,7 +7,7 @@ const PostLevel = ({ level }) => {
         level === 0
           ? "text-emerald-600 bg-emerald-600"
           : level === 1
-          ? "text-[#f39200] bg-[#f39200]"
+          ? "text-yellow-400 bg-yellow-400"
           : level === 2
           ? "text-red-600 bg-red-600"
           : null

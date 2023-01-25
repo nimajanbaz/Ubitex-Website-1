@@ -26,7 +26,7 @@ const Categories = ({ onSelect }) => {
 
   return (
     <div>
-      <ul className="flex my-5 space-x-3 space-x-reverse">
+      <ul className="flex flex-wrap my-5 gap-3">
         {!loading ? (
           <>
             <li onChange={(e) => onSelect(e.target.value)}>

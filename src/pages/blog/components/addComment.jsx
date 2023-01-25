@@ -77,18 +77,18 @@ const AddComment = ({ postId }) => {
               />
             </div>
             <Form className="flex flex-col mx-auto space-y-6">
-              <div className="flex justify-between items-center space-x-3 space-x-reverse">
+              <div className="md:flex-row flex justify-between max-sm:flex-col sm:flex-col items-center gap-3">
                 <Field
                   id="userName"
                   name="userName"
                   placeholder="نام و نام خانوادگی"
-                  className="flex flex-auto bg-inherit border-gray-100 dark:!bg-[#051A36] !bg-gray-50 dark:border-[#092c59] p-5 outline-none text-sm rounded-md"
+                  className="flex flex-auto bg-inherit border-gray-100 dark:!bg-[#051A36] !bg-gray-50 dark:border-[#092c59] p-5 w-full outline-none text-sm rounded-md"
                 />
                 <Field
                   id="userPhoneNumber"
                   name="userPhoneNumber"
                   placeholder="شماره موبایل (نمایش داده نخواهد شد)"
-                  className="flex flex-auto bg-inherit border-gray-100 dark:!bg-[#051A36] !bg-gray-50 dark:border-[#092c59] p-5 outline-none text-sm rounded-md"
+                  className="flex flex-auto bg-inherit border-gray-100 dark:!bg-[#051A36] !bg-gray-50 dark:border-[#092c59] p-5 w-full outline-none text-sm rounded-md"
                 />
               </div>
               <Field
@@ -98,7 +98,7 @@ const AddComment = ({ postId }) => {
                 placeholder="نظر خودتون رو بنویسید"
                 className="flex flex-auto h-36 bg-inherit bborder-gray-100 dark:!bg-[#051A36] !bg-gray-50 dark:border-[#092c59] p-5 outline-none text-sm rounded-md"
               />
-              <div className="flex justify-between items-center">
+              <div className="md:flex-row flex justify-between max-sm:flex-col sm:flex-col items-center gap-3">
                 <ReCAPTCHA
                   ref={recaptchaRef}
                   sitekey={UBITEX_GOOGLE_CAPTCHA_KEY}
@@ -112,7 +112,7 @@ const AddComment = ({ postId }) => {
                 />
                 <button
                   type="submit"
-                  className="bg-[#f39200] w-1/5 bg-opacity-10 hover:bg-opacity-20 transition-all text-[#f39200] py-3 my-auto rounded-md flex space-x-1 space-x-reverse justify-center items-center">
+                  className="bg-[#f39200] md:w-1/5 w-full bg-opacity-10 hover:bg-opacity-20 transition-all text-[#f39200] py-3 my-auto rounded-md flex space-x-1 space-x-reverse justify-center items-center">
                   <span>ارسال نظر</span>
                   <span className="text-2xl">
                     <BiLeftArrowAlt />

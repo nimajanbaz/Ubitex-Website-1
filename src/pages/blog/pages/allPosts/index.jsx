@@ -45,8 +45,8 @@ const AllPosts = () => {
 
   return (
     <>
-      <div className="sm:w-full md:w-full lg:w-4/5 xl:w-4/5 2xl:w-3/4 mx-auto rtl-grid leading-7 p-10">
-        <Breadcrumb2 items={breadcrumbItems} className='mb-5' />
+      <div className="sm:w-full md:w-full lg:w-4/5 xl:w-4/5 2xl:w-3/4 mx-auto rtl-grid leading-7">
+        <Breadcrumb2 items={breadcrumbItems} className='mb-5 mt-10' />
 
         <div className="flex flex-col space-y-3">
           <h2 className="font-semibold text-2xl text-[#f39200]">

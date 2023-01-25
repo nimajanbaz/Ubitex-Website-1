@@ -3,7 +3,7 @@ import React from "react";
 const BlogSinglePostSkeleton = () => {
   return (
     <>
-      <div className="sm:w-full md:w-2/3 lg:w-2/3 xl:w-2/3 2xl:w-2/3 mx-auto rtl-grid leading-7 p-10">
+      <div className="sm:w-full md:w-2/3 lg:w-2/3 xl:w-2/3 2xl:w-2/3 mx-auto rtl-grid leading-7">
 
         <div className="flex space-x-3 space-x-reverse mt-8 justify-start w-2/12">
           <div className="loading-animation rounded-md px-10 py-4"></div>

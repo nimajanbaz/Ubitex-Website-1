@@ -94,7 +94,7 @@ body {
 .loading-animation {
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg,
+  background: linear-gradient(45deg,
           #b4b4b475 0%, #b4b4b475 35%,
           #a5a5a5c9 45%, #a5a5a5c9 55%,
           #b4b4b475 65%, #b4b4b475 100%);

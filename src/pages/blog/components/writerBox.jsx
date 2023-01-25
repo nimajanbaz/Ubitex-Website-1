@@ -7,7 +7,7 @@ const WriterBox = ({ item }) => {
       <div className=" rtl-grid mx-auto p-10 bg-gray-50 dark:bg-[#051A36] border border-gray-100 dark:border-[#092c59] rounded-3xl flex flex-col justify-center items-center">
         <div className="w-full flex items-center space-x-8 space-x-reverse">
           <img
-            className="w-[100px] h-[100px] object-cover rounded-full"
+            className="!w-[100px] !h-[100px] object-cover rounded-full loading-animation"
             src={item.profilePhoto}
             alt={item.name}
           />

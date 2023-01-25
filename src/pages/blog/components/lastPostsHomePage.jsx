@@ -18,9 +18,9 @@ const LastPostsHomePage = () => {
 
   return (
     <div className="flex flex-col space-y-10">
-      <div className="flex justify-between items-center">
+      <div className="flex md:flex-row max-sm:flex-col-reverse sm:flex-col-reverse justify-between items-center">
         <Link to={'/blog/posts'}>
-          <button className="px-6 py-2 rounded-md bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 transition-all text-[#f39200] flex space-x-2 space-x-reverse items-center justify-center flex-row-reverse">
+          <button className="px-6 py-2 rounded-md bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 transition-all text-[#f39200] flex space-x-2 space-x-reverse items-center justify-center flex-row-reverse sm:mt-5 max-sm:mt-5">
             <span>مشاهده همه</span>
             <HiArrowSmLeft />
           </button>

@@ -19,7 +19,7 @@ const Levels = ({ onSelect }) => {
     },
   ];
   return (
-    <ul className="flex space-x-3 space-x-reverse">
+    <ul className="flex flex-wrap gap-3">
       <li onChange={(e) => onSelect(e.target.value)}>
         <input
           type="radio"

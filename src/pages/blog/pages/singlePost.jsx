@@ -46,7 +46,7 @@ const SinglePost = () => {
   return (
     <>
       {data ? (
-        <div className="sm:w-full md:w-2/3 lg:w-2/3 xl:w-2/3 2xl:w-2/3 mx-auto rtl-grid leading-7 p-10">
+        <div className="sm:w-full md:w-2/3 lg:w-2/3 xl:w-2/3 2xl:w-2/3 mx-auto rtl-grid leading-7">
           <div className="flex space-x-3 space-x-reverse mt-10">
             {data.categories.map((item) => {
               return (
@@ -74,7 +74,7 @@ const SinglePost = () => {
             <h1 className="rtl-grid text-[#454545] dark:text-gray-300 font-bold text-3xl">
               {data.title}
             </h1>
-            <div className=" text-[#9e9e9e] text-sm max-sm:text-xs dark:text-[#a3a3a3] flex  space-x-3 space-x-reverse ">
+            <div className=" text-[#9e9e9e] text-sm max-sm:text-xs dark:text-[#a3a3a3] flex flex-wrap gap-3 space-x-reverse ">
               <PostLevel level={data.level} />
               <div className="space-x-2 space-x-reverse px-4 py-2 rounded-md bg-gray-400 bg-opacity-10 flex items-center">
                 <HiOutlineCalendar />
@@ -121,7 +121,7 @@ const SinglePost = () => {
             <TitleBox icon={<MdOutlineFiberNew />} title={"جدیدترین مطالب"} />
             <SuggestPosts />
           </div>
-          <div>
+          <div className="mb-20">
             <AddComment postId={data._id} />
             <UserCommentBox data={data.comments} />
           </div>
