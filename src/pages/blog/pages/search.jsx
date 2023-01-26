@@ -13,7 +13,6 @@ const Search = () => {
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log(res);
         if (res.code === 404) {
           setDate("NULL_RES");
         } else {

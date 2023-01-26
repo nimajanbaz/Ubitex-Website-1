@@ -7,17 +7,33 @@ import TitleBox from "../components/titleBox";
 import { FaPenNib } from "react-icons/fa";
 import { GET_BLOG_WRITERS_URL } from "../../../config/api.config";
 import BlogWriterHeaderSkeleton from "../../../components/skeleton/blogWriterHeaderSkeleton";
+import Breadcrumb2 from "../../../components/breadcrumb";
 
 const CreatorPage = () => {
   const [data, setDate] = useState(null);
+  const [title, setTitle] = useState(null);
   const { slug } = useParams();
 
   useEffect(() => {
     setDate(null);
     fetch(`${GET_BLOG_WRITERS_URL}/${slug}`)
       .then((response) => response.json())
-      .then((data) => setDate(data));
+      .then((data) => {
+        setDate(data);
+        setTitle(data.name);
+      });
   }, [slug]);
+
+  const breadcrumbItems = [
+    {
+      href: "/blog/writers",
+      label: "نویسندگان",
+    },
+    {
+      href: `/blog/writers/${slug}`,
+      label: title,
+    },
+  ];
 
   return (
     <>
@@ -50,7 +66,10 @@ const CreatorPage = () => {
               </div>
             </div>
           </div>
-          <div className="px-10 sm:px-0 max-sm:px-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-4/5 ">
+
+          <div className="px-10 sm:px-0 max-sm:px-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-4/5 rtl-grid">
+            <Breadcrumb2 items={breadcrumbItems} className="mb-10" />
+
             <TitleBox icon={<FaPenNib />} title={"مطالب این نویسنده"} />
 
             <div className=" rtl-grid grid 2xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 font-display mt-10">
@@ -63,7 +82,10 @@ const CreatorPage = () => {
       ) : (
         <>
           <BlogWriterHeaderSkeleton />
-          <div className="px-10 sm:px-0 max-sm:px-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-4/5 ">
+          <div className="px-10 sm:px-0 max-sm:px-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-4/5 rtl-grid">
+            <div className="w-1/4 mb-10">
+              <div className="loading-animation rounded-md px-10 py-4"></div>
+            </div>
             <TitleBox icon={<FaPenNib />} title={"مطالب این نویسنده"} />
             <div className=" rtl-grid grid 2xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 font-display mt-10">
               <PostCardSkeleton />

@@ -6,6 +6,8 @@ import MarketsHeader from "./components/header";
 import { RiSearch2Line } from "react-icons/ri";
 import { LongBadge, ShortBadge } from "../../components/badge";
 import Categories from "./components/categoris";
+import MarketsHeaderSkeleton from "../../components/skeleton/marketsHeaderSkeleton";
+import { Link } from "react-router-dom";
 
 const Markets = () => {
   const [markets, setMarkets] = useState();
@@ -23,24 +25,26 @@ const Markets = () => {
         Header: "نام / نماد	",
         accessor: "name",
         Cell: (props) => {
-          const { name, nameFa, logo } = props.row.original;
+          const { name, nameFa, logo, slug } = props.row.original;
           return (
-            <div className="flex space-x-2 space-x-reverse">
-              <div className="w-10">
-                <img src={logo} alt={nameFa} />
-              </div>
-              <div className="flex flex-col">
-                <div className="flex items-center space-x-2 space-x-reverse">
-                  <span>{name}</span>
-                  {name.endsWith("3L") ? (
-                    <LongBadge />
-                  ) : name.endsWith("3S") ? (
-                    <ShortBadge />
-                  ) : null}
+            <Link to={`/markets/${slug}`}>
+              <div className="flex space-x-2 space-x-reverse">
+                <div className="w-10">
+                  <img src={logo} alt={nameFa} />
                 </div>
-                <span className="text-sm">{nameFa}</span>
+                <div className="flex flex-col">
+                  <div className="flex items-center space-x-2 space-x-reverse">
+                    <span>{name}</span>
+                    {name.endsWith("3L") ? (
+                      <LongBadge />
+                    ) : name.endsWith("3S") ? (
+                      <ShortBadge />
+                    ) : null}
+                  </div>
+                  <span className="text-sm">{nameFa}</span>
+                </div>
               </div>
-            </div>
+            </Link>
           );
         },
       },
@@ -109,11 +113,7 @@ const Markets = () => {
               className={`flex items-center ${
                 change > 0 ? "filter-green" : "filter-red"
               }`}>
-              {chart ? (
-                <img src={chart} alt={nameFa} />
-              ) : (
-                <span>---</span>
-              )}
+              {chart ? <img src={chart} alt={nameFa} /> : <span>---</span>}
             </div>
           );
         },
@@ -147,17 +147,17 @@ const Markets = () => {
 
     const getData2 = async () => {
       await axios
-      .get("https://bapi.ubitex.io/v1.0/static/crypto/getGainerLoserFavorite")
-      .then((res) => {
-        setLoser(res.data.losers);
-        setGainer(res.data.gainers);
-        setRecentlyUpdated(res.data.favorite);
-      })
-      .catch((err) => console.log(err));
-    }
+        .get("https://bapi.ubitex.io/v1.0/static/crypto/getGainerLoserFavorite")
+        .then((res) => {
+          setLoser(res.data.losers.slice(0, 3));
+          setGainer(res.data.gainers.slice(0, 3));
+          setRecentlyUpdated(res.data.favorite);
+        })
+        .catch((err) => console.log(err));
+    };
 
     getData();
-    getData2()
+    getData2();
   }, []);
 
   function handleDebounceFn(e) {
@@ -177,9 +177,7 @@ const Markets = () => {
               : d
           )
           .filter((d) =>
-            categoryFilter !== "all"
-              ? d.category === categoryFilter
-              : d
+            categoryFilter !== "all" ? d.category === categoryFilter : d
           )
       );
     }
@@ -189,42 +187,45 @@ const Markets = () => {
     <>
       <Header title={"بازارها | صرافی ارزدیجیتال یوبیتکس"} />
 
-      <div className="px-4 sm:px-6 text-right max-w-[1400px] mx-auto my-10">
+      <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-5/6">
+        {loser ? (
+          <MarketsHeader
+            loser={loser}
+            gainer={gainer}
+            recentlyUpdated={recentlyUpdated}
+          />
+        ) : (
+          <MarketsHeaderSkeleton />
+        )}
+
         {markets ? (
-          <>
-            <MarketsHeader
-              loser={loser}
-              gainer={gainer}
-              recentlyUpdated={recentlyUpdated}
-            />
-            <div className="bg-gray-50 dark:bg-[#051a36] p-8 rounded-lg rtl-grid">
-              <div class="relative w-full">
-                <div class="absolute right-0 flex items-center pr-3 pointer-events-none top-1/3">
-                  <span className="w-5">
-                    <RiSearch2Line />
-                  </span>
-                </div>
-                <input
-                  type="text"
-                  onChange={handleDebounceFn}
-                  className="w-1/4 px-3 py-2 pr-9 bg-gray-50 dark:bg-transparent border-2 border-gray-200 dark:border-[#072750] rounded-md appearance-none focus:border-[#f39200] dark:focus:border-[#f39200] focus:outline-none"
-                  placeholder="جستجو..."
-                />
+          <div className="bg-gray-50 dark:bg-[#051a36] p-8 rounded-lg rtl-grid">
+            <div class="relative w-full">
+              <div class="absolute right-0 flex items-center pr-3 pointer-events-none top-1/3">
+                <span className="w-5">
+                  <RiSearch2Line />
+                </span>
               </div>
-              <Categories
-                onSelect={(e) => {
-                  setCategoryFilter(e);
-                }}
+              <input
+                type="text"
+                onChange={handleDebounceFn}
+                className="w-1/4 px-3 py-2 pr-9 bg-gray-50 dark:bg-transparent border-2 border-gray-200 dark:border-[#072750] rounded-md appearance-none focus:border-[#f39200] dark:focus:border-[#f39200] focus:outline-none"
+                placeholder="جستجو..."
               />
-              {tableFilter !== [] ? (
-                <Table columns={columns} data={tableFilter} showIndex />
-              ) : (
-                <div className="my-10 flex justify-center items-center">
-                  <p>{'موردی وجود ندارد :('}</p>
-                </div>
-              )}
             </div>
-          </>
+            <Categories
+              onSelect={(e) => {
+                setCategoryFilter(e);
+              }}
+            />
+            {tableFilter !== [] ? (
+              <Table columns={columns} data={tableFilter} showIndex />
+            ) : (
+              <div className="my-10 flex justify-center items-center">
+                <p>{"موردی وجود ندارد :("}</p>
+              </div>
+            )}
+          </div>
         ) : (
           <div className="my-10 flex justify-center items-center">
             <p>...درحال بارگزاری</p>

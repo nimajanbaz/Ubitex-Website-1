@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { GET_BLOG_HEADER_SLIDER_URL } from "../../../config/api.config";
-import { Link } from "react-social-sharing/dist-modules/common";
+import { Link } from "react-router-dom";
 
 const BlogPostsHomePageSlider = () => {
   const [data, setData] = useState();
@@ -28,12 +28,13 @@ const BlogPostsHomePageSlider = () => {
     <>
       <Swiper
         slidesPerView={3}
-        spaceBetween={5}
+        spaceBetween={10}
         grabCursor={true}
+        loop={true}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
-          reverseDirection: true
+          reverseDirection: true,
         }}
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper">

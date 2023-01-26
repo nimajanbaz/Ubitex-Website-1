@@ -35,11 +35,11 @@ const BlogHeaderSliderIntro = () => {
             <ul className="flex mx-auto space-x-3 space-x-reverse ">
               {data.favoriteTags.map((item, index) => {
                 return (
-                  <li
-                    key={index}
-                    className="mt-3 px-4 py-2 text-center text-[#f39200] rounded-md bg-[#f39200] bg-opacity-0 hover:bg-opacity-20 cursor-pointer transition-all">
-                    #{item.replace(/ /g, "_")}
-                  </li>
+                  <Link to={`/blog/tags/${item}`} key={index}>
+                    <li className="mt-3 px-4 py-2 text-center text-[#f39200] rounded-md bg-[#f39200] bg-opacity-0 hover:bg-opacity-20 cursor-pointer transition-all">
+                      #{item.replace(/ /g, "_")}
+                    </li>
+                  </Link>
                 );
               })}
             </ul>
