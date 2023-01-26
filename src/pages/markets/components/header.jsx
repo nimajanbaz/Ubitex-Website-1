@@ -76,7 +76,7 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
               <div className="flex justify-between">
                 <div className="flex cursor-pointer space-x-2 space-x-reverse">
                   <div className="w-10">
-                    <img src={item.icon} alt={item.nameFa} />
+                    <img src={item.logo} alt={item.nameFa} />
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center space-x-2 space-x-reverse">
@@ -94,17 +94,17 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
                 <div className="flex items-center space-x-2 space-x-reverse">
                   <span
                     className={
-                      item.change > 0 ? "text-emerald-600" : "text-red-600"
+                      item.chart7d > 0 ? "text-emerald-600" : "text-red-600"
                     }>
-                    %{item.change}
+                    %{item.chart7d}
                   </span>
                   <span
                     className={`bg-opacity-10 rounded-md text-lg p-2 ${
-                      item.change > 0
+                      item.chart7d > 0
                         ? "text-emerald-600 bg-emerald-600"
                         : "text-red-600 bg-red-600"
                     }`}>
-                    {item.change > 0 ? (
+                    {item.chart7d > 0 ? (
                       <HiArrowTrendingUp />
                     ) : (
                       <HiArrowTrendingDown />

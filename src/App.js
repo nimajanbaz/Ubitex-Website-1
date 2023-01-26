@@ -7,7 +7,7 @@ import Footer from "./components/footer";
 import AboutUs from "./pages/aboutUs";
 import Terms from "./pages/terms";
 import Fees from "./pages/fees";
-import HomePage from "./pages/home";
+import HomePage from "./pages/homePage";
 import Application from "./pages/app";
 import HelpCenter from "./pages/helpCenter";
 import HelpCenterItem from "./pages/helpCenter/helpCenterItem";
@@ -21,6 +21,7 @@ import SingleCategory from "./pages/blog/pages/singleCategory";
 import AllPosts from "./pages/blog/pages/allPosts";
 import Search from "./pages/blog/pages/search";
 import CreatorPage from "./pages/blog/pages/writer";
+import Tags from "./pages/blog/pages/tags";
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
 
             <Route path="/blog" element={<BlogHomePage />} />
             <Route path="/blog/search" element={<Search />} />
+            <Route path="/blog/tags/:tag" element={<Tags />} />
             <Route path="/blog/writers/:slug" element={<CreatorPage />} />
             <Route path="/blog/posts" element={<AllPosts />} />
             <Route path="/blog/posts/:slug" element={<SinglePost />} />

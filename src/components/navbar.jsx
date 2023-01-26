@@ -14,6 +14,7 @@ import {
   PlatformDark,
   PlatformLight,
 } from "./icons";
+import ScrollToTop from "./backToTop";
 
 export default function Navbar() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
@@ -122,6 +123,8 @@ export default function Navbar() {
         onDialogClose={() => setDialogOpen(false)}
       />
 
+      <ScrollToTop />
+
       <div className="w-full dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.1)]">
         <div className="mx-auto max-w-7xl px-4 sm:px-6">
           <div className="flex items-center justify-between py-4 lg:justify-start md:space-x-10">
@@ -155,13 +158,23 @@ export default function Navbar() {
                         item.isPopUp ? handleDialog() : undefined
                       }>
                       {item.star && item.isPopUp ? (
-                        <span className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${pathname.includes(item.href) ? 'bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200] hover:!bg-opacity-20' : null}`}>
+                        <span
+                          className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${
+                            pathname.includes(item.href)
+                              ? "bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200] hover:!bg-opacity-20"
+                              : null
+                          }`}>
                           {item.title}
                           <Badge text={"جدید"} />
                         </span>
                       ) : item.star && !item.isPopUp ? (
                         <Link to={item.href}>
-                          <span className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${pathname.includes(item.href) ? 'bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200] hover:!bg-opacity-20' : null}`}>
+                          <span
+                            className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${
+                              pathname.includes(item.href)
+                                ? "bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200] hover:!bg-opacity-20"
+                                : null
+                            }`}>
                             {item.title}
                             <Badge text={"جدید"} />
                           </span>
@@ -169,7 +182,11 @@ export default function Navbar() {
                       ) : (
                         <Link
                           to={item.href}
-                          className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${pathname.includes(item.href) ? 'bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200] hover:!bg-opacity-20' : null}`}>
+                          className={`flex space-x-2 justify-center items-center text-sm font-medium dark:text-gray-300 hover text-gray-600 hover:text-[#f39200] dark:hover:text-[#f39200] transition-all px-3 py-2 hover:bg-[#f39200] hover:bg-opacity-10 rounded-md ${
+                            pathname.includes(item.href)
+                              ? "bg-[#f39200] bg-opacity-10 !text-[#f39200] dark:!text-[#f39200] hover:!bg-opacity-20"
+                              : null
+                          }`}>
                           {item.title}
                         </Link>
                       )}

@@ -102,7 +102,7 @@ const SinglePost = () => {
             <ul className="flex mx-auto space-x-3 space-x-reverse">
               {data.tags.map((tag) => {
                 return (
-                  <Link to={"/tags/" + tag} key={tag}>
+                  <Link to={"/blog/tags/" + tag} key={tag}>
                     <li className="px-3 py-1 transition-all text-center text-[#f39200] bg-[#f39200] bg-opacity-10 rounded-md hover:bg-[#f39200] hover:bg-opacity-20">
                       #{tag.replace(/ /g, "_")}
                     </li>

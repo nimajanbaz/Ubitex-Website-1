@@ -27,7 +27,7 @@ const AcardeonSlime = () => {
             <>
               <div
                 key={item.id}
-                className="my-10 mx-auto w-full rounded-xl bg-gray-200 bg-opacity-70 dark:bg-[#051a36] py-4 px-4 grid grid-cols-2 max-lg:grid-cols-1 gap-4 items-start rtl-grid">
+                className="my-10 mx-auto w-full rounded-3xl bg-gray-200 bg-opacity-70 dark:bg-[#051a36] p-6 grid grid-cols-2 max-lg:grid-cols-1 gap-4 items-start rtl-grid">
                 {item.items.map((subItem) => {
                   return (
                     <div>

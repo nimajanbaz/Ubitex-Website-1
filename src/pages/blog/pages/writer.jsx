@@ -6,6 +6,7 @@ import PostCard from "../components/postCard";
 import TitleBox from "../components/titleBox";
 import { FaPenNib } from "react-icons/fa";
 import { GET_BLOG_WRITERS_URL } from "../../../config/api.config";
+import BlogWriterHeaderSkeleton from "../../../components/skeleton/blogWriterHeaderSkeleton";
 
 const CreatorPage = () => {
   const [data, setDate] = useState(null);
@@ -31,7 +32,7 @@ const CreatorPage = () => {
             <div className="relative rtl-grid mx-auto p-14 -mt-32 bg-white dark:bg-[#051A36] border border-gray-100 dark:border-[#092c59] rounded-3xl w-4/5 shadow-2xl flex flex-col justify-center items-center">
               <div className="w-full flex md:flex-row flex-col items-center justify-center md:justify-start gap-8">
                 <img
-                  className="w-[150px] h-[150px] object-cover rounded-full"
+                  className="!w-[150px] !h-[150px] object-cover rounded-full loading-animation"
                   src={data.profilePhoto}
                   alt={data.name}
                 />
@@ -53,17 +54,23 @@ const CreatorPage = () => {
             <TitleBox icon={<FaPenNib />} title={"مطالب این نویسنده"} />
 
             <div className=" rtl-grid grid 2xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 font-display mt-10">
-              {data ? (
-                data.posts.map((item) => {
-                  return <PostCard item={item} showCategory />;
-                })
-              ) : (
-                <PostCardSkeleton />
-              )}
+              {data.posts.map((item) => {
+                return <PostCard item={item} showCategory />;
+              })}
             </div>
           </div>
         </>
-      ) : null}
+      ) : (
+        <>
+          <BlogWriterHeaderSkeleton />
+          <div className="px-10 sm:px-0 max-sm:px-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-4/5 ">
+            <TitleBox icon={<FaPenNib />} title={"مطالب این نویسنده"} />
+            <div className=" rtl-grid grid 2xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 font-display mt-10">
+              <PostCardSkeleton />
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 };

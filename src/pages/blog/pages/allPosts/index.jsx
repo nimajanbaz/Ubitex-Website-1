@@ -76,7 +76,7 @@ const AllPosts = () => {
           </div>
         </div>
 
-        <div className=" rtl-grid grid 2xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5 font-display mt-10">
+        <div className=" rtl-grid grid 2xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5 font-display mt-10 mb-20">
           {dataFilter ? (
             dataFilter.map((item) => {
               return <PostCard item={item} showCategory />;

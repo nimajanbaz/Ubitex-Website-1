@@ -2,7 +2,7 @@ import { BsCurrencyDollar } from "react-icons/bs";
 import LevragedTokenSymbol1 from '../assets/img/levraged-token-symbol-01.png'
 import LevragedTokenSymbol2 from '../assets/img/levraged-token-symbol-02.png'
 
-export const levraged_tokens_data = {
+export const leveraged_tokens_data = {
   header: {
     id: 1,
     title: "توکن‌ های لوریج دار",

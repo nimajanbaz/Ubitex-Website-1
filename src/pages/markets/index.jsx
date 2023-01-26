@@ -5,7 +5,7 @@ import Header from "../../components/header";
 import MarketsHeader from "./components/header";
 import { RiSearch2Line } from "react-icons/ri";
 import { LongBadge, ShortBadge } from "../../components/badge";
-import Categoris from "./components/categoris";
+import Categories from "./components/categoris";
 
 const Markets = () => {
   const [markets, setMarkets] = useState();
@@ -21,24 +21,24 @@ const Markets = () => {
     () => [
       {
         Header: "نام / نماد	",
-        accessor: "desName",
+        accessor: "name",
         Cell: (props) => {
-          const { desName, desNameFa, destinationIcon } = props.row.original;
+          const { name, nameFa, logo } = props.row.original;
           return (
             <div className="flex space-x-2 space-x-reverse">
               <div className="w-10">
-                <img src={destinationIcon} alt={desNameFa} />
+                <img src={logo} alt={nameFa} />
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center space-x-2 space-x-reverse">
-                  <span>{desName}</span>
-                  {desName.endsWith("3L") ? (
+                  <span>{name}</span>
+                  {name.endsWith("3L") ? (
                     <LongBadge />
-                  ) : desName.endsWith("3S") ? (
+                  ) : name.endsWith("3S") ? (
                     <ShortBadge />
                   ) : null}
                 </div>
-                <span className="text-sm">{desNameFa}</span>
+                <span className="text-sm">{nameFa}</span>
               </div>
             </div>
           );
@@ -46,36 +46,36 @@ const Markets = () => {
       },
       {
         Header: "خرید",
-        accessor: "bestBuy",
+        accessor: "buyPriceUSDT",
         Cell: (props) => {
-          const { bestBuy } = props.row.original;
+          const { buyPriceUSDT } = props.row.original;
           return (
             <div className="flex items-center text-sm">
-              <span>${bestBuy}</span>
+              <span>${buyPriceUSDT}</span>
             </div>
           );
         },
       },
       {
         Header: "فروش",
-        accessor: "bestSell",
+        accessor: "sellPriceUSDT",
         Cell: (props) => {
-          const { bestSell } = props.row.original;
+          const { sellPriceUSDT } = props.row.original;
           return (
             <div className="flex items-center text-sm">
-              <span>${bestSell}</span>
+              <span>${sellPriceUSDT}</span>
             </div>
           );
         },
       },
       {
         Header: "آخرین معامله",
-        accessor: "latestTrade",
+        accessor: "lastTradeUSDT",
         Cell: (props) => {
-          const { latestTrade } = props.row.original;
+          const { lastTradeUSDT } = props.row.original;
           return (
             <div className="flex items-center text-sm">
-              <span>${latestTrade}</span>
+              <span>${lastTradeUSDT}</span>
             </div>
           );
         },
@@ -101,16 +101,16 @@ const Markets = () => {
       },
       {
         Header: "نمودار 7 روز گذشته",
-        accessor: "chartSvg",
+        accessor: "chart",
         Cell: (props) => {
-          const { chartSvg, change, desNameFa } = props.row.original;
+          const { chart, change, nameFa } = props.row.original;
           return (
             <div
               className={`flex items-center ${
                 change > 0 ? "filter-green" : "filter-red"
               }`}>
-              {chartSvg ? (
-                <img src={chartSvg} alt={desNameFa} />
+              {chart ? (
+                <img src={chart} alt={nameFa} />
               ) : (
                 <span>---</span>
               )}
@@ -137,18 +137,27 @@ const Markets = () => {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get("https://api.ubitex.io/api/PublicApi/market")
+        .get("https://bapi.ubitex.io/v1.0/cryptoInfo")
         .then((res) => {
-          const all = res.data.markets;
-          setMarkets(all.filter((item) => item.srcName === "USDT"));
-          setTableFilter(all.filter((item) => item.srcName === "USDT"));
-          setLoser(res.data.loser);
-          setGainer(res.data.gainer);
-          setRecentlyUpdated(res.data.recentlyUpdated);
+          setMarkets(res.data);
+          setTableFilter(res.data);
         })
         .catch((err) => console.log(err));
     };
+
+    const getData2 = async () => {
+      await axios
+      .get("https://bapi.ubitex.io/v1.0/static/crypto/getGainerLoserFavorite")
+      .then((res) => {
+        setLoser(res.data.losers);
+        setGainer(res.data.gainers);
+        setRecentlyUpdated(res.data.favorite);
+      })
+      .catch((err) => console.log(err));
+    }
+
     getData();
+    getData2()
   }, []);
 
   function handleDebounceFn(e) {
@@ -169,7 +178,7 @@ const Markets = () => {
           )
           .filter((d) =>
             categoryFilter !== "all"
-              ? d.destinationCoinCategoryName === categoryFilter
+              ? d.category === categoryFilter
               : d
           )
       );
@@ -202,7 +211,7 @@ const Markets = () => {
                   placeholder="جستجو..."
                 />
               </div>
-              <Categoris
+              <Categories
                 onSelect={(e) => {
                   setCategoryFilter(e);
                 }}

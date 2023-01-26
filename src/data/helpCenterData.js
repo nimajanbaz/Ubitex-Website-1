@@ -97,7 +97,7 @@ export const help_center_data = [
   },
 ];
 
-export const quik_access_data = [
+export const quick_access_data = [
   {
     id: 1,
     icon: <FaUserPlus />,
