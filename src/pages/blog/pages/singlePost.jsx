@@ -115,7 +115,7 @@ const SinglePost = () => {
             <SocialShare />
           </div>
           <div>
-            <WriterBox item={data.writer}/>
+            <WriterBox item={data.writer[0]}/>
           </div>
           <div className="my-20">
             <TitleBox icon={<MdOutlineFiberNew />} title={"جدیدترین مطالب"} />

@@ -15,9 +15,9 @@ const BlogPostsHomePageSlider = () => {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get(GET_BLOG_HEADER_SLIDER_URL)
+        .get('https://bapi.ubitex.io/v1.0/categories/news')
         .then((res) => {
-          setData(res.data);
+          setData(res.data.posts);
         })
         .catch((err) => console.log(err));
     };
@@ -28,7 +28,7 @@ const BlogPostsHomePageSlider = () => {
     <>
       <Swiper
         slidesPerView={3}
-        spaceBetween={10}
+        spaceBetween={20}
         grabCursor={true}
         loop={true}
         autoplay={{

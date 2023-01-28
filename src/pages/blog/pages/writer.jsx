@@ -8,6 +8,7 @@ import { FaPenNib } from "react-icons/fa";
 import { GET_BLOG_WRITERS_URL } from "../../../config/api.config";
 import BlogWriterHeaderSkeleton from "../../../components/skeleton/blogWriterHeaderSkeleton";
 import Breadcrumb2 from "../../../components/breadcrumb";
+import ReactHtmlParser from "react-html-parser";
 
 const CreatorPage = () => {
   const [data, setDate] = useState(null);
@@ -56,7 +57,7 @@ const CreatorPage = () => {
                   <div className="font-semibold text-3xl text-[#f39200]">
                     {data.name}
                   </div>
-                  <div className=" text-sm">{data.description}</div>
+                  <div className=" text-sm">{ReactHtmlParser(data.description)}</div>
                   <div className=" flex gap-2 text-lg">
                     {data.socialMedia.map((item) => {
                       return <SocialIcons item={item} />;

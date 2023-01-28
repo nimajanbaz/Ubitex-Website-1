@@ -4,7 +4,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LongBadge, ShortBadge } from "../../../components/badge";
+import MarketsTableSkeleton from "../../../components/skeleton/marketsTableSkeleton";
 import { Table } from "../../../components/table";
+import { GET_MARKETS_HEADER_DATA_URL } from "../../../config/api.config";
 
 const CoinsTable = () => {
     const [markets, setMarkets] = useState();
@@ -13,24 +15,24 @@ const CoinsTable = () => {
       () => [
         {
           Header: "نام / نماد	",
-          accessor: "desName",
+          accessor: "info",
           Cell: (props) => {
-            const { desName, desNameFa, destinationIcon } = props.row.original;
+            const { coin: info, logo } = props.row.original;
             return (
               <div className="flex space-x-2 space-x-reverse">
                 <div className="w-10">
-                  <img src={destinationIcon} alt={desNameFa} />
+                  <img src={logo} alt={info.nameFa} />
                 </div>
                 <div className="flex flex-col">
                   <div className="flex items-center space-x-2 space-x-reverse">
-                    <span>{desName}</span>
-                    {desName.endsWith("3L") ? (
+                    <span>{info.symbol}</span>
+                    {info.symbol.endsWith("3L") ? (
                       <LongBadge />
-                    ) : desName.endsWith("3S") ? (
+                    ) : info.symbol.endsWith("3S") ? (
                       <ShortBadge />
                     ) : null}
                   </div>
-                  <span className="text-sm">{desNameFa}</span>
+                  <span className="text-sm">{info.nameFa}</span>
                 </div>
               </div>
             );
@@ -38,13 +40,13 @@ const CoinsTable = () => {
         },
         {
           Header: "خرید (تومان)",
-          accessor: "bestBuy",
+          accessor: "buyPriceTMN",
           Cell: (props) => {
-            const { bestBuy } = props.row.original;
+            const { buyPriceTMN } = props.row.original;
             return (
               <div className="flex items-center text-sm">
                 <span>
-                  {bestBuy.toLocaleString(undefined, {
+                  {buyPriceTMN.toLocaleString(undefined, {
                     minimumFractionDigits: 0,
                   })}
                 </span>
@@ -54,13 +56,13 @@ const CoinsTable = () => {
         },
         {
           Header: "فروش (تومان)",
-          accessor: "bestSell",
+          accessor: "sellPriceTMN",
           Cell: (props) => {
-            const { bestSell } = props.row.original;
+            const { sellPriceTMN } = props.row.original;
             return (
               <div className="flex items-center text-sm">
                 <span>
-                  {bestSell.toLocaleString(undefined, {
+                  {sellPriceTMN.toLocaleString(undefined, {
                     minimumFractionDigits: 0,
                   })}
                 </span>
@@ -70,13 +72,13 @@ const CoinsTable = () => {
         },
         {
           Header: "آخرین معامله (تومان)",
-          accessor: "latestTrade",
+          accessor: "lastPriceTMN",
           Cell: (props) => {
-            const { latestTrade } = props.row.original;
+            const { lastPriceTMN } = props.row.original;
             return (
               <div className="flex items-center text-sm">
                 <span>
-                  {latestTrade.toLocaleString(undefined, {
+                  {lastPriceTMN.toLocaleString(undefined, {
                     minimumFractionDigits: 0,
                   })}
                 </span>
@@ -88,16 +90,16 @@ const CoinsTable = () => {
           Header: "تغییرات 24 ساعت",
           accessor: "change",
           Cell: (props) => {
-            const { change } = props.row.original;
+            const { changePercentage } = props.row.original;
             return (
               <div className="flex items-center">
                 <span
                   className={`flex items-center text-sm px-3 py-2 rounded bg-opacity-10 ${
-                    change > 0
+                    changePercentage > 0
                       ? "bg-emerald-600 text-emerald-600"
                       : "bg-red-600 text-red-600"
                   }`}>
-                  %{change}
+                  %{changePercentage}
                 </span>
               </div>
             );
@@ -105,16 +107,16 @@ const CoinsTable = () => {
         },
         {
           Header: "نمودار 7 روز گذشته",
-          accessor: "chartSvg",
+          accessor: "chart7d",
           Cell: (props) => {
-            const { chartSvg, change, desNameFa } = props.row.original;
+            const { chart7d, changePercentage } = props.row.original;
             return (
               <div
                 className={`flex items-center ${
-                  change > 0 ? "filter-green" : "filter-red"
+                  changePercentage > 0 ? "filter-green" : "filter-red"
                 }`}>
-                {chartSvg ? (
-                  <img src={chartSvg} alt={desNameFa} />
+                {chart7d ? (
+                  <img src={chart7d} alt={'---'} />
                 ) : (
                   <span>---</span>
                 )}
@@ -125,13 +127,23 @@ const CoinsTable = () => {
         {
           Header: "",
           accessor: "action",
-          Cell: () => (
-            <a href="https://app.ubitex.io">
-              <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md">
-                خرید / فروش
-              </button>
-            </a>
-          ),
+          Cell: (props) => {
+            const { slug } = props.row.original;
+            return (
+              <div className="flex space-x-3 space-x-reverse">
+                <Link to="/redirect-to-platform">
+                  <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-0 hover:bg-opacity-20 rounded-md text-sm">
+                    معامله
+                  </button>
+                </Link>
+                <Link to={`/price/${slug}`}>
+                  <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-0 hover:bg-opacity-20 rounded-md text-sm">
+                    اطلاعات بیشتر
+                  </button>
+                </Link>
+              </div>
+            );
+          },
         },
       ],
   
@@ -141,10 +153,10 @@ const CoinsTable = () => {
     useEffect(() => {
       const getData = async () => {
         await axios
-          .get("https://api.ubitex.io/api/PublicApi/market")
+          .get(GET_MARKETS_HEADER_DATA_URL)
           .then((res) => {
-            const all = res.data.markets;
-            setMarkets(all.filter((item) => item.srcName === "TMN"));
+            const all = res.data.favorite;
+            setMarkets(all);
           })
           .catch((err) => console.log(err));
       };
@@ -162,19 +174,8 @@ const CoinsTable = () => {
           <div className="max-md:overflow-scroll">
             <Table
               columns={columns}
-              data={markets.filter(
-                (item) =>
-                  item.desName === "BTC" ||
-                  item.desName === "ETH" ||
-                  item.desName === "USDT" ||
-                  item.desName === "SHIB" ||
-                  item.desName === "DOGE" ||
-                  item.desName === "BTC3S" ||
-                  item.desName === "ETH3L" ||
-                  item.desName === "DOT" ||
-                  item.desName === "ELON" ||
-                  item.desName === "DYDX"
-              )}
+              data={markets}
+              showIndex
             />
             <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
               <Link
@@ -185,9 +186,7 @@ const CoinsTable = () => {
             </div>
           </div>
         ) : (
-          <div className="my-10 flex justify-center items-center">
-            <p>...درحال بارگزاری</p>
-          </div>
+          <MarketsTableSkeleton />
         )}
       </div>
     </>

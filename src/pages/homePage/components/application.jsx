@@ -5,8 +5,16 @@ const Application = () => {
   return (
     <>
       <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 mx-auto items-center text-right">
-        <div>
-          <img src={mobileApp} alt="" className="mx-auto animate-ver_5s" />
+        <div className="xl:h-[350px] lg:h-[400px] md:h-[400px] sm:h-[400px] max-sm:h-[200px] w-full loading-animation rounded-3xl">
+          <iframe
+            src={
+              "https://www.aparat.com/video/video/embed/videohash/I2rGC/vt/frame"
+            }
+            title={"Levraged Tokens"}
+            allowFullScreen="true"
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true"
+            className="w-full h-full rounded-2xl"></iframe>
         </div>
 
         <div>

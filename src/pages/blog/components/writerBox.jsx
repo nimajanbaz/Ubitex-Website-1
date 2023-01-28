@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SocialIcons from "../../../components/socialIcons";
+import ReactHtmlParser from "react-html-parser";
 
 const WriterBox = ({ item }) => {
   return (
@@ -15,7 +16,7 @@ const WriterBox = ({ item }) => {
             <Link to={`/blog/writers/${item.slug}`}>
               <div className="flex text-2xl text-[#f39200]">{item.name}</div>
             </Link>
-            <div className=" text-sm">{item.description}</div>
+            <div className=" text-sm">{ReactHtmlParser(item.description)}</div>
             <div className=" flex space-x-reverse space-x-3 text-lg">
               {item.socialMedia.map((item) => {
                 return <SocialIcons item={item} />;
