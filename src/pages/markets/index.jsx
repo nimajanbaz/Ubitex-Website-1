@@ -8,6 +8,9 @@ import { LongBadge, ShortBadge } from "../../components/badge";
 import Categories from "./components/categoris";
 import MarketsHeaderSkeleton from "../../components/skeleton/marketsHeaderSkeleton";
 import { Link } from "react-router-dom";
+import MarketsTableSkeleton from "../../components/skeleton/marketsTableSkeleton";
+import { GET_CRYPTO_INFO_URL, GET_MARKETS_HEADER_DATA_URL } from "../../config/api.config";
+import LeveragedTokensAds from "./components/leveragedTokensAds";
 
 const Markets = () => {
   const [markets, setMarkets] = useState();
@@ -121,13 +124,23 @@ const Markets = () => {
       {
         Header: "",
         accessor: "action",
-        Cell: () => (
-          <a href="https://app.ubitex.io">
-            <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md text-sm">
-              خرید / فروش
-            </button>
-          </a>
-        ),
+        Cell: (props) => {
+          const { slug } = props.row.original;
+          return (
+            <div className="flex space-x-3 space-x-reverse">
+              <Link to="/redirect-to-platform">
+                <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-0 hover:bg-opacity-20 rounded-md text-sm">
+                  معامله
+                </button>
+              </Link>
+              <Link to={`/price/${slug}`}>
+                <button className="text-[#f39200] cursor-pointer transition-all px-5 py-2 bg-[#f39200] bg-opacity-0 hover:bg-opacity-20 rounded-md text-sm">
+                  اطلاعات بیشتر
+                </button>
+              </Link>
+            </div>
+          );
+        },
       },
     ],
 
@@ -137,7 +150,7 @@ const Markets = () => {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get("https://bapi.ubitex.io/v1.0/cryptoInfo")
+        .get(GET_CRYPTO_INFO_URL)
         .then((res) => {
           setMarkets(res.data);
           setTableFilter(res.data);
@@ -147,17 +160,26 @@ const Markets = () => {
 
     const getData2 = async () => {
       await axios
-        .get("https://bapi.ubitex.io/v1.0/static/crypto/getGainerLoserFavorite")
+        .get('https://api.ubitex.io/api/PublicApi/market')
         .then((res) => {
-          setLoser(res.data.losers.slice(0, 3));
-          setGainer(res.data.gainers.slice(0, 3));
-          setRecentlyUpdated(res.data.favorite);
+          setLoser(res.data.loser.slice(0, 3));
+          setGainer(res.data.gainer.slice(0, 3));
         })
         .catch((err) => console.log(err));
     };
 
+    const getData3 = async () => {
+      await axios
+      .get(GET_MARKETS_HEADER_DATA_URL)
+      .then((res) => {
+        setRecentlyUpdated(res.data.favorite);
+      })
+      .catch((err) => console.log(err));
+    }
+
     getData();
     getData2();
+    getData3();
   }, []);
 
   function handleDebounceFn(e) {
@@ -188,7 +210,7 @@ const Markets = () => {
       <Header title={"بازارها | صرافی ارزدیجیتال یوبیتکس"} />
 
       <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-5/6">
-        {loser ? (
+        {recentlyUpdated ? (
           <MarketsHeader
             loser={loser}
             gainer={gainer}
@@ -198,8 +220,10 @@ const Markets = () => {
           <MarketsHeaderSkeleton />
         )}
 
+        <LeveragedTokensAds />
+
         {markets ? (
-          <div className="bg-gray-50 dark:bg-[#051a36] p-8 rounded-lg rtl-grid">
+          <div className="bg-gray-50 dark:bg-[#051a36] p-8 rounded-2xl rtl-grid">
             <div class="relative w-full">
               <div class="absolute right-0 flex items-center pr-3 pointer-events-none top-1/3">
                 <span className="w-5">
@@ -227,9 +251,7 @@ const Markets = () => {
             )}
           </div>
         ) : (
-          <div className="my-10 flex justify-center items-center">
-            <p>...درحال بارگزاری</p>
-          </div>
+          <MarketsTableSkeleton />
         )}
       </div>
     </>

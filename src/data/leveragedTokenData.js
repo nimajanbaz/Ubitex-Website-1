@@ -1,6 +1,6 @@
 import { BsCurrencyDollar } from "react-icons/bs";
-import LevragedTokenSymbol1 from '../assets/img/levraged-token-symbol-01.png'
-import LevragedTokenSymbol2 from '../assets/img/levraged-token-symbol-02.png'
+import LeveragedTokenSymbol1 from '../assets/img/levraged-token-symbol-01.png'
+import LeveragedTokenSymbol2 from '../assets/img/levraged-token-symbol-02.png'
 
 export const leveraged_tokens_data = {
   header: {
@@ -17,12 +17,12 @@ export const leveraged_tokens_data = {
       {
         id: 2.1,
         title: "لانگ",
-        image: LevragedTokenSymbol1,
+        image: LeveragedTokenSymbol1,
       },
       {
         id: 2.2,
         title: "شورت",
-        image: LevragedTokenSymbol2,
+        image: LeveragedTokenSymbol2,
       },
     ],
   },

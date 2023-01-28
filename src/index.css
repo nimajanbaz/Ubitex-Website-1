@@ -44,7 +44,7 @@ body {
 }
 
 .filter-green {
-  filter: invert(42%) sepia(56%) saturate(3755%) hue-rotate(110deg) brightness(95%) contrast(100%);
+  filter: invert(42%) sepia(66%) saturate(755%) hue-rotate(110deg) brightness(75%) contrast(100%);
 }
 
 .filter-red {
