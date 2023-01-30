@@ -17,3 +17,4 @@ jobs:
         context: .
         push: true
         tags: ubitex/blogapi:latest, ubitex/blogapi:${{ github.run_number }}
+
