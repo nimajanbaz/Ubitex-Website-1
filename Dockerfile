@@ -9,3 +9,4 @@ EXPOSE 8065
 # RUN chown -R node /app
 # USER node
 CMD ["npm", "start"]
+
