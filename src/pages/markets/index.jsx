@@ -158,27 +158,18 @@ const Markets = () => {
         .catch((err) => console.log(err));
     };
 
-    const getData2 = async () => {
-      await axios
-        .get('https://api.ubitex.io/api/PublicApi/market')
-        .then((res) => {
-          setLoser(res.data.loser.slice(0, 3));
-          setGainer(res.data.gainer.slice(0, 3));
-        })
-        .catch((err) => console.log(err));
-    };
-
     const getData3 = async () => {
       await axios
       .get(GET_MARKETS_HEADER_DATA_URL)
       .then((res) => {
         setRecentlyUpdated(res.data.favorite);
+        setLoser(res.data.losers.slice(0, 3));
+        setGainer(res.data.gainers.slice(0, 3));
       })
       .catch((err) => console.log(err));
     }
 
     getData();
-    getData2();
     getData3();
   }, []);
 
@@ -210,7 +201,7 @@ const Markets = () => {
       <Header title={"بازارها | صرافی ارزدیجیتال یوبیتکس"} />
 
       <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-5/6">
-        {recentlyUpdated ? (
+        {gainer ? (
           <MarketsHeader
             loser={loser}
             gainer={gainer}

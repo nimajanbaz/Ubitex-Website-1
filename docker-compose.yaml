@@ -1,0 +1,9 @@
+version: '1.4.0'
+services:
+  ubitexwebsite:
+    build: ./
+    container_name: ubitexwebsite_c
+    ports:
+      - '8065:8065'
+    stdin_open: true
+    tty: true

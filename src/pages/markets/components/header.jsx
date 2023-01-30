@@ -13,7 +13,7 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
               <div className="flex justify-between">
                 <div className="flex cursor-pointer space-x-2 space-x-reverse">
                   <div className="w-10">
-                    <img src={item.icon} alt={item.nameFa} />
+                    <img src={item.destinationIcon} alt={item.desNameFa} />
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center space-x-2 space-x-reverse">
@@ -24,7 +24,7 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
                         <ShortBadge />
                       ) : null}
                     </div>
-                    <span className="text-sm">{item.nameFa}</span>
+                    <span className="text-sm">{item.desNameFa}</span>
                   </div>
                 </div>
 
@@ -45,7 +45,7 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
               <div className="flex justify-between">
                 <div className="flex cursor-pointer space-x-2 space-x-reverse">
                   <div className="w-10">
-                    <img src={item.icon} alt={item.nameFa} />
+                    <img src={item.destinationIcon} alt={item.desNameFa} />
                   </div>
                   <div className="flex flex-col">
                     <div className="flex items-center space-x-2 space-x-reverse">
@@ -56,7 +56,7 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
                         <ShortBadge />
                       ) : null}
                     </div>{" "}
-                    <span className="text-sm">{item.nameFa}</span>
+                    <span className="text-sm">{item.desNameFa}</span>
                   </div>
                 </div>
 

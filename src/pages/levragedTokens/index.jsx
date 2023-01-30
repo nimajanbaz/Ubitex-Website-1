@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { leveraged_tokens_data } from "../../data/leveragedTokenData";
 import AcardeonSlime from "./components/faqHomePage";
 import TradeHomePage from "./components/tradeHomePage";
+import LeveragedCoinsTable from "./components/coinsTable";
 
 const LeveragedToken = () => {
   return (
@@ -36,6 +37,7 @@ const LeveragedToken = () => {
             />
           </div>
         </div>
+        <LeveragedCoinsTable />
         <div className="mb-10 flex justify-between items-center flex-row-reverse">
           <div className="flex flex-col space-y-3">
             <h2 className="text-[#f39200] text-3xl font-semibold">

@@ -13,6 +13,7 @@ export const GET_BLOG_ADD_COMMENT_URL = `${BASE_URL}/comments/addComment` //POST
 
 //markets
 export const GET_CRYPTO_INFO_URL = `${BASE_URL}/cryptoInfo` //GET
+export const GET_LEVERAGED_CRYPTO_INFO_URL = `${BASE_URL}/cryptoLeveraged` //GET
 
 //markets static
 export const GET_MARKETS_HEADER_DATA_URL = `${BASE_URL}/static/crypto/getGainerLoserFavorite` //GET
