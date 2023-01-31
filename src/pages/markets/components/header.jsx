@@ -5,8 +5,8 @@ import { GiFire } from "react-icons/gi";
 const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
   return (
     <>
-      <div className="grid grid-cols-3 gap-8 rtl-grid">
-        <div className="flex flex-col space-y-5 bg-gray-50 dark:bg-[#051a36] p-8 rounded-2xl mb-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-8 rtl-grid">
+        <div className="flex flex-col space-y-5 bg-gray-50 dark:bg-[#051a36] p-8 rounded-2xl lg:mb-10">
           <h3 className="text-[#f39200] text-lg">بیشترین سود</h3>
           {gainer.slice(0, 3).map((item) => {
             return (
@@ -38,7 +38,7 @@ const MarketsHeader = ({ loser, gainer, recentlyUpdated }) => {
             );
           })}
         </div>
-        <div className="flex flex-col space-y-5 bg-gray-50 dark:bg-[#051a36] p-8 rounded-2xl mb-10">
+        <div className="flex flex-col space-y-5 bg-gray-50 dark:bg-[#051a36] p-8 rounded-2xl lg:mb-10">
           <h3 className="text-[#f39200] text-lg">بیشترین ضرر</h3>
           {loser.slice(0, 3).map((item) => {
             return (

@@ -9,7 +9,7 @@ const UserCommentBox = ({ data }) => {
     <div className="flex flex-col space-y-5 mt-14">
       <TitleBox icon={<MdOutlineComment />} title={"جدیدترین نظرات"} />
 
-      {data !== null ? (
+      {data ? (
         data
           .reverse()
           .slice(0, 12)

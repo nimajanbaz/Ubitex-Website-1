@@ -25,7 +25,7 @@ const Categoris = ({ onSelect }) => {
 
   return (
     <div classNameName="">
-      <ul className="flex my-5 space-x-3 space-x-reverse">
+      <ul className="flex my-5 gap-3 flex-wrap">
         {!loading ? (
           <>
             <li onChange={(e) => onSelect(e.target.value)}>

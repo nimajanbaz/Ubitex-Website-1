@@ -9,6 +9,7 @@ export const GET_BLOG_POST_URL = `${BASE_URL}/posts` //GET
 export const GET_BLOG_CATEGORIES_URL = `${BASE_URL}/categories` //GET
 export const GET_BLOG_TAGS_URL = `${BASE_URL}/tags` //GET
 export const GET_BLOG_WRITERS_URL = `${BASE_URL}/writers` //GET
+export const GET_BLOG_NEWS_URL = `${BASE_URL}/categories/news` //GET
 export const GET_BLOG_ADD_COMMENT_URL = `${BASE_URL}/comments/addComment` //POST
 
 //markets

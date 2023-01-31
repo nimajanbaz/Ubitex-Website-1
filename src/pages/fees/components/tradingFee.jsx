@@ -176,7 +176,7 @@ const TradingFee = () => {
 
   return (
     <>
-      <div className="my-10 p-10 rounded-lg dark:bg-[#051a36] bg-gray-50">
+      <div className="my-10 p-10 rounded-lg dark:bg-[#051a36] bg-gray-50 max-md:overflow-scroll">
         <Table columns={columns} data={trading_fee_data} titleCenter />
       </div>
     </>

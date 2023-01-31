@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
-import { GET_BLOG_HEADER_SLIDER_URL } from "../../../config/api.config";
+import { GET_BLOG_NEWS_URL } from "../../../config/api.config";
 import { Link } from "react-router-dom";
 
 const BlogPostsHomePageSlider = () => {
@@ -15,7 +15,7 @@ const BlogPostsHomePageSlider = () => {
   useEffect(() => {
     const getData = async () => {
       await axios
-        .get('https://bapi.ubitex.io/v1.0/categories/news')
+        .get(GET_BLOG_NEWS_URL)
         .then((res) => {
           setData(res.data.posts);
         })
@@ -28,7 +28,7 @@ const BlogPostsHomePageSlider = () => {
     <>
       <Swiper
         slidesPerView={3}
-        spaceBetween={20}
+        spaceBetween={30}
         grabCursor={true}
         loop={true}
         autoplay={{

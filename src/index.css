@@ -129,7 +129,7 @@ body {
 
 .ubitex img
 {
-  @apply rounded-lg !w-full
+  @apply rounded-lg !w-3/4 mx-auto my-2
 }
 
 .ubitex h1

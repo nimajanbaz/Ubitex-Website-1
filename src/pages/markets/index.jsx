@@ -9,7 +9,10 @@ import Categories from "./components/categoris";
 import MarketsHeaderSkeleton from "../../components/skeleton/marketsHeaderSkeleton";
 import { Link } from "react-router-dom";
 import MarketsTableSkeleton from "../../components/skeleton/marketsTableSkeleton";
-import { GET_CRYPTO_INFO_URL, GET_MARKETS_HEADER_DATA_URL } from "../../config/api.config";
+import {
+  GET_CRYPTO_INFO_URL,
+  GET_MARKETS_HEADER_DATA_URL,
+} from "../../config/api.config";
 import LeveragedTokensAds from "./components/leveragedTokensAds";
 
 const Markets = () => {
@@ -160,14 +163,14 @@ const Markets = () => {
 
     const getData3 = async () => {
       await axios
-      .get(GET_MARKETS_HEADER_DATA_URL)
-      .then((res) => {
-        setRecentlyUpdated(res.data.favorite);
-        setLoser(res.data.losers.slice(0, 3));
-        setGainer(res.data.gainers.slice(0, 3));
-      })
-      .catch((err) => console.log(err));
-    }
+        .get(GET_MARKETS_HEADER_DATA_URL)
+        .then((res) => {
+          setRecentlyUpdated(res.data.favorite);
+          setLoser(res.data.losers.slice(0, 3));
+          setGainer(res.data.gainers.slice(0, 3));
+        })
+        .catch((err) => console.log(err));
+    };
 
     getData();
     getData3();
@@ -200,7 +203,7 @@ const Markets = () => {
     <>
       <Header title={"بازارها | صرافی ارزدیجیتال یوبیتکس"} />
 
-      <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-5/6">
+      <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto my-20 sm:w-full md:w-full xl:w-5/6">
         {gainer ? (
           <MarketsHeader
             loser={loser}
@@ -234,7 +237,9 @@ const Markets = () => {
               }}
             />
             {tableFilter !== [] ? (
-              <Table columns={columns} data={tableFilter} showIndex />
+              <div className="max-md:overflow-scroll">
+                <Table columns={columns} data={tableFilter} showIndex />
+              </div>
             ) : (
               <div className="my-10 flex justify-center items-center">
                 <p>{"موردی وجود ندارد :("}</p>

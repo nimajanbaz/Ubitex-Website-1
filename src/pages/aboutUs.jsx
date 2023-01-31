@@ -21,7 +21,7 @@ const AboutUs = () => {
           <h2 className="text-[#f39200] text-2xl font-semibold">
             {aboutus_data.values.title}
           </h2>
-          <div className="grid grid-cols-3 gap-8 mt-5 transition-all">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-8 mt-5 transition-all">
             {aboutus_data.values.items.map((item) => {
               return (
                 <div

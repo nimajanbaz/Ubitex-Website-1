@@ -232,17 +232,19 @@ const TransferFee = () => {
               <input
                 type="text"
                 onChange={handleDebounceFn}
-                className="w-1/4 px-3 py-2 pr-9 bg-gray-50 dark:bg-transparent border-2 border-gray-200 dark:border-[#072750] rounded-md appearance-none focus:border-[#f39200] dark:focus:border-[#f39200] focus:outline-none"
+                className="md:w-1/4 w-full px-3 py-2 pr-9 bg-gray-50 dark:bg-transparent border-2 border-gray-200 dark:border-[#072750] rounded-md appearance-none focus:border-[#f39200] dark:focus:border-[#f39200] focus:outline-none"
                 placeholder="جستجو..."
               />
             </div>
-            <Table
-              columns={columns}
-              data={tableFilter
-                .filter((item) => !item.symbol.includes("3S"))
-                .filter((item) => !item.symbol.includes("3L"))}
-              titleCenter
-            />
+            <div className="max-md:overflow-scroll">
+              <Table
+                columns={columns}
+                data={tableFilter
+                  .filter((item) => !item.symbol.includes("3S"))
+                  .filter((item) => !item.symbol.includes("3L"))}
+                titleCenter
+              />
+            </div>
           </>
         ) : (
           <div className="my-10 flex justify-center items-center">

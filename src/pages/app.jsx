@@ -21,7 +21,7 @@ const Application = () => {
         </div>
 
         {/* links */}
-        <div className="grid lg:grid-cols-6 md:grid-cols-2 sm:grid-cols-2 gap-10 md:gap-5 sm:gap-5 max-w-[1300px] mx-auto items-center my-6">
+        <div className="grid lg:grid-cols-6 grid-cols-2 gap-3 md:gap-10 max-w-[1300px] mx-auto items-center my-6">
           {footer_data.download_app.map((img) => {
             return (
               <a href={img.href}>
