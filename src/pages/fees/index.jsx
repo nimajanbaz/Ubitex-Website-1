@@ -7,7 +7,7 @@ const Fees = () => {
   return (
     <>
       <Header title={'کارمزدها و سطوح کاربری | صرافی ارزدیجیتال یوبیتکس'}/>
-      <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto my-10 rtl-grid">
+      <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-5/6 space-y-10 rtl-grid">
         {/* Header */}
         <div className="flex flex-col space-y-5">
           <h1 className="text-[#f39200] text-2xl font-semibold">

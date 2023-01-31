@@ -30,7 +30,7 @@ const Markets = () => {
         Cell: (props) => {
           const { name, nameFa, logo, slug } = props.row.original;
           return (
-            <Link to={`/markets/${slug}`}>
+            <Link to={`/price/${slug}`}>
               <div className="flex space-x-2 space-x-reverse">
                 <div className="w-10">
                   <img src={logo} alt={nameFa} />

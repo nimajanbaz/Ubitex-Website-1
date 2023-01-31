@@ -1,6 +1,6 @@
 {
   "name": "ubi-site-alpha",
-  "version": "1.4.0.21012023",
+  "version": "1.4.0.31012023",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.4",

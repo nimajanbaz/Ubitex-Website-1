@@ -1,6 +1,7 @@
 import { Empty } from "antd";
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Breadcrumb2 from "../../../components/breadcrumb";
 import BlogSingleCategoryHeaderSkeleton from "../../../components/skeleton/blogSingleCategoryHeaderSkeleton";
 import PostCardSkeleton from "../../../components/skeleton/blogSingleCategorySkeleton";
 import { GET_BLOG_CATEGORIES_URL } from "../../../config/api.config";
@@ -8,13 +9,28 @@ import PostCard from "../components/postCard";
 
 const SingleCategory = () => {
   const [data, setDate] = useState(null);
+  const [title, setTitle] = useState(null);
   const { slug } = useParams();
 
   useEffect(() => {
     fetch(`${GET_BLOG_CATEGORIES_URL}/${slug}`)
       .then((response) => response.json())
-      .then((data) => setDate(data));
+      .then((data) => {
+        setDate(data);
+        setTitle(data.label);
+      });
   }, [slug]);
+
+  const breadcrumbItems = [
+    {
+      href: "/blog/category",
+      label: "دسته بندی‌ها",
+    },
+    {
+      href: `/blog/category/${slug}`,
+      label: title,
+    },
+  ];
 
   return (
     <>
@@ -42,7 +58,13 @@ const SingleCategory = () => {
                 alt={data.label}
               />
             </div>
+
+            <div className="rtl-grid">
+            <Breadcrumb2 items={breadcrumbItems} />
           </div>
+          </div>
+
+
           {data.posts ? (
             <div className="px-10 sm:px-10 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-4/5 ">
               <div className="rtl-grid grid 2xl:grid-cols-3 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 space-x-reverse mt-10">

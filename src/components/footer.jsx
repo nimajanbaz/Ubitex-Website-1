@@ -13,7 +13,7 @@ const Footer = () => {
           <span className="text-[#f39200] text-xl font-semibold mb-3">
             یوبیتکس
           </span>
-          {footer_data.support.map((item) => {
+          {footer_data.ubitex.map((item) => {
             return (
               <Link
                 to={item.href}
@@ -47,7 +47,7 @@ const Footer = () => {
           <span className="text-[#f39200] text-xl font-semibold mb-3">
             پشتیبانی
           </span>
-          {footer_data.ubitex.map((item) => {
+          {footer_data.support.map((item) => {
             return (
               <Link
                 to={item.href}
@@ -62,7 +62,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="flex space-x-3 justify-center items-center">
+      <div className="flex space-x-3 justify-center items-center mt-5">
         {footer_data.social.map((item) => {
           return (
             <a href={item.href} key={item.id}>

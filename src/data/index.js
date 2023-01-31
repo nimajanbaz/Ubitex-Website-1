@@ -137,13 +137,18 @@ export const footer_data = {
     },
     {
       id: 2,
+      title: "قوانین و مقررات",
+      href: "/terms",
+    },
+    {
+      id: 3,
       title: "بلاگ",
       href: "/blog",
     },
     {
-      id: 3,
-      title: "قوانین و مقررات",
-      href: "/terms",
+      id: 4,
+      title: "برند متریال",
+      href: "/brand-material",
     },
   ],
   services: [
@@ -159,8 +164,13 @@ export const footer_data = {
     },
     {
       id: 3,
-      title: "اپلیکیشن",
+      title: "اپلیکیشن‌ها",
       href: "/download",
+    },
+    {
+      id: 4,
+      title: "توکن‌ های لوریج دار",
+      href: "/leveraged-tokens",
     },
   ],
   support: [
