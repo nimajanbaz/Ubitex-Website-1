@@ -7,7 +7,7 @@ const BrandLogoList = () => {
     <>
       <TitleBox icon={<FaPaintBrush />} title={"لوگو‌های یوبیتکس"} />
 
-      <div className="grid items-center grid-cols-4 gap-5">
+      <div className="grid items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5">
         {brand_logo_list.light.map((item) => {
           return (
             <>

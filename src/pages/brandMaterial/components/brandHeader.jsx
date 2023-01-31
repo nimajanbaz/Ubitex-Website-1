@@ -8,7 +8,7 @@ const BrandHeader = () => {
           <h1 className="text-6xl text-[#f39200] font-semibold">UBITEX | یوبیتکس</h1>
           <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
         </div>
-        <div className="w-1/2">
+        <div className="w-1/2 max-md:hidden">
           <img src={headerImage} alt="" className="w-3/4" />
         </div>
       </div>

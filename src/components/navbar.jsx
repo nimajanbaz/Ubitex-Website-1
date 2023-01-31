@@ -138,10 +138,10 @@ export default function Navbar() {
               </Link>
             </div>
             <div className="-my-2 -mr-2 lg:hidden">
-              <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white dark:bg-[#04162d] p-2 text-gray-400 hover:bg-gray-50 hover:text-gray-500 focus:outline-none">
+              <button className="inline-flex items-center justify-center rounded-md bg-white dark:bg-[#04162d] p-2 text-gray-400 hover:bg-gray-50 hover:text-gray-500 focus:outline-none">
                 <span className="sr-only">Open menu</span>
                 <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-              </Popover.Button>
+              </button>
             </div>
             <div className="hidden items-center justify-end lg:flex">
               <Popover.Group
@@ -211,7 +211,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      <Transition
+      {/* <Transition
         as={Fragment}
         enter="duration-200 ease-out"
         enterFrom="opacity-0 scale-95"
@@ -257,7 +257,7 @@ export default function Navbar() {
             </div>
           </div>
         </Popover.Panel>
-      </Transition>
+      </Transition> */}
     </Popover>
   );
 }

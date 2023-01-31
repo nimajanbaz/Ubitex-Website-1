@@ -6,7 +6,7 @@ const BrandColors = () => {
     <>
       <TitleBox icon={<IoMdColorPalette />} title={"رنگ‌های سازمانی یوبیتکس"} />
 
-      <div className="flex justify-between items-center w-1/2 mx-auto gap-10">
+      <div className="flex flex-col md:flex-row md:flex justify-between items-center w-full xl:w-3/4 2xl:w-1/2 mx-auto gap-10">
         <div className="flex justify-between items-center rtl-grid w-full">
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2 flex-row-reverse">

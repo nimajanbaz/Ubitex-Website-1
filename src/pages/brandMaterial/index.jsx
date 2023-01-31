@@ -1,5 +1,5 @@
 import Header from "../../components/header";
-import BrandBook from "./components/brandBook";
+// import BrandBook from "./components/brandBook";
 import BrandHeader from "./components/brandHeader";
 import BrandColors from "./components/colors";
 import BrandLogoList from "./components/logos";
@@ -12,7 +12,7 @@ const BrandMaterial = () => {
         <BrandHeader />
         <BrandLogoList />
         <BrandColors />
-        <BrandBook />
+        {/* <BrandBook /> */}
       </div>
     </>
   );
