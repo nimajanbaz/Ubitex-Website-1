@@ -1,5 +1,7 @@
 import { center_boxes } from "../../../data";
 import about from "../../../assets/img/about-2.webp";
+import TitleBox from "../../../components/titleBox";
+import { BsStars } from "react-icons/bs";
 
 const Feature = () => {
   return (
@@ -7,9 +9,7 @@ const Feature = () => {
       <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-10 mx-auto items-center text-right">
         <div>
           <div className="flex flex-col space-y-3 mb-7">
-            <h3 className="text-3xl font-semibold text-[#f39200]">
-              {center_boxes.title}
-            </h3>
+            <TitleBox icon={<BsStars />} title={center_boxes.title} />
           </div>
           <div className="mx-auto grid lg:grid-cols-2 md:grid-cols-1 gap-7 rtl-grid cursor-pointer">
             {center_boxes.items.map((data) => {

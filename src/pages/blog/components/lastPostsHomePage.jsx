@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { MdOutlineFiberNew } from "react-icons/md";
-import TitleBox from "./titleBox";
 import PostCard from "./postCard";
 import PostCardSkeleton from "../../../components/skeleton/blogSingleCategorySkeleton";
 import { GET_BLOG_POST_URL } from "../../../config/api.config";
 import { HiArrowSmLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import TitleBox from "../../../components/titleBox";
 
 const LastPostsHomePage = () => {
   const [data, setDate] = useState(null);

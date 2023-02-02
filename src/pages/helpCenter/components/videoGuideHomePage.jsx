@@ -1,15 +1,16 @@
 import { help_center_data } from "../../../data/helpCenterData";
 import { Link } from "react-router-dom";
 import { HiArrowSmLeft } from "react-icons/hi";
+import TitleBox from "../../../components/titleBox";
+import { HiLightBulb } from "react-icons/hi2";
 
 const VideoGuideHomePage = () => {
   return (
     <>
       <div className="mb-10 flex justify-between items-center flex-row-reverse max-sm:flex-col max-sm:space-y-10">
         <div className="flex flex-col space-y-3">
-          <h3 className="text-[#f39200] text-3xl font-semibold">
-            راهنمای تصویری
-          </h3>
+        <TitleBox icon={<HiLightBulb />} title={"راهنمای تصویری"} />
+
         </div>
         <Link to={"/support-center/guide"} className='max-sm:w-full'>
           <button className="max-sm:w-full max-sm:py-4 px-6 py-2 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200] flex space-x-2 space-x-reverse items-center justify-center flex-row-reverse">

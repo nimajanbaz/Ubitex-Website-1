@@ -220,7 +220,7 @@ const TransferFee = () => {
         }
         fullwidthButton
       />
-      <div className="my-10 p-10 rounded-lg dark:bg-[#051a36] bg-gray-50">
+      <div className="!my-10 p-10 rounded-lg dark:bg-[#051a36] bg-gray-50">
         {!loading ? (
           <>
             <div class="relative w-full mb-10">

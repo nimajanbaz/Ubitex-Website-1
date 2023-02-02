@@ -1,5 +1,7 @@
+import { TbDeviceMobile } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import mobileApp from "../../../assets/img/5.webp";
+import TitleBox from "../../../components/titleBox";
 
 const Application = () => {
   return (
@@ -17,7 +19,11 @@ const Application = () => {
             className="w-full h-full rounded-2xl"></iframe>
         </div>
 
-        <div>
+        <div className="flex gap-5 flex-col">
+        <TitleBox
+            icon={<TbDeviceMobile />}
+            title={"اپلیکیشن موبایل یوبیتکس"}
+          />
           <div className="flex flex-col space-y-5 mb-3">
             <div className="flex flex-col space-y-2">
               <span className="text-2xl text-gray-700 dark:text-gray-200">

@@ -22,8 +22,9 @@ import {
 import { GrBitcoin } from "react-icons/gr";
 import { AiTwotoneThunderbolt } from "react-icons/ai";
 import { IoWallet } from "react-icons/io5";
-import { TbChartCandle, TbChartDots3 } from "react-icons/tb";
+import { TbChartCandle } from "react-icons/tb";
 import { MdWaterfallChart } from "react-icons/md";
+import { RiScalesLine } from "react-icons/ri";
 
 const ver_class =
   "absolute p-2 cursor-pointer rounded-lg border dark:border-[#072349] border-gray-300 dark:shadow-[0_15px_40px_0px_rgba(6,37,70,0.7)] shadow-[0_15px_40px_0px_rgba(0,0,0,0.2)] dark:hover:bg-[#07244b] dark:backdrop-blur backdrop-blur hover:backdrop-blur dark:hover:backdrop-blur dark:bg-[#051a36] bg-gray-200 bg-opacity-25 dark:bg-opacity-25 hover:bg-opacity-30 dark:hover:bg-opacity-40 transition-all";
@@ -78,7 +79,7 @@ export const header_boxes = [
   },
   {
     id: 3,
-    icon: <TbChartDots3 />,
+    icon: <RiScalesLine />,
     title: "توکن های لوریج دار",
     description:
       "برای اولین بار در ایران، امکان معاملات اهرم دار با قابلیت کسب سود در بازار نزولی ",

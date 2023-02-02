@@ -2,7 +2,7 @@ import { Empty } from "antd";
 import React from "react";
 import { MdOutlineComment } from "react-icons/md";
 import { CommentUserDark } from "../../../components/icons";
-import TitleBox from "./titleBox";
+import TitleBox from "../../../components/titleBox";
 
 const UserCommentBox = ({ data }) => {
   return (

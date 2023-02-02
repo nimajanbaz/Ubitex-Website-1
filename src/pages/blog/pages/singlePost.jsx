@@ -9,13 +9,13 @@ import { Link } from "react-router-dom";
 import AddComment from "../components/addComment";
 import SuggestPosts from "../components/suggestPosts";
 import SocialShare from "../components/socialShare";
-import TitleBox from "../components/titleBox";
 import UserCommentBox from "../components/userCommentBox";
 import BlogSinglePostSkeleton from "../../../components/skeleton/blogSinglePostSkeleton";
 import { HiOutlineCalendar } from "react-icons/hi2";
 import { GET_BLOG_POST_URL } from "../../../config/api.config";
 import Breadcrumb2 from "../../../components/breadcrumb";
 import WriterBox from "../components/writerBox";
+import TitleBox from "../../../components/titleBox";
 
 const SinglePost = () => {
   const [data, setDate] = useState(null);

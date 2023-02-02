@@ -3,12 +3,12 @@ import React, { useEffect, useState } from "react";
 import SocialIcons from "../../../components/socialIcons";
 import PostCardSkeleton from "../../../components/skeleton/blogSingleCategorySkeleton";
 import PostCard from "../components/postCard";
-import TitleBox from "../components/titleBox";
 import { FaPenNib } from "react-icons/fa";
 import { GET_BLOG_WRITERS_URL } from "../../../config/api.config";
 import BlogWriterHeaderSkeleton from "../../../components/skeleton/blogWriterHeaderSkeleton";
 import Breadcrumb2 from "../../../components/breadcrumb";
 import ReactHtmlParser from "react-html-parser";
+import TitleBox from "../../../components/titleBox";
 
 const CreatorPage = () => {
   const [data, setDate] = useState(null);

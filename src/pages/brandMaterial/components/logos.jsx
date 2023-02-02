@@ -1,5 +1,5 @@
-import TitleBox from "../../blog/components/titleBox";
 import { FaPaintBrush } from "react-icons/fa";
+import TitleBox from "../../../components/titleBox";
 import { brand_logo_list } from "../../../data/brandLogos";
 
 const BrandLogoList = () => {

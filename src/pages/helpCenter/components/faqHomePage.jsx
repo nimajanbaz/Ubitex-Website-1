@@ -3,15 +3,15 @@ import { ChevronUpIcon } from "@heroicons/react/20/solid";
 import { Link } from "react-router-dom";
 import { HiArrowSmLeft } from "react-icons/hi";
 import { faq_data } from "../../../data/faq";
+import TitleBox from "../../../components/titleBox";
+import { BsQuestionLg } from "react-icons/bs";
 
 const AcardeonSlime = () => {
   return (
     <>
       <div className="my-10 flex justify-between items-center flex-row-reverse">
         <div className="flex flex-col space-y-3">
-          <h3 className="text-[#f39200] text-3xl font-semibold">
-            سوالات متداول
-          </h3>
+          <TitleBox icon={<BsQuestionLg />} title={"سوالات متداول"} />
         </div>
         <Link to={"/support-center/faq"}>
           <button className="px-6 py-2 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200] flex space-x-2 space-x-reverse items-center justify-center flex-row-reverse">

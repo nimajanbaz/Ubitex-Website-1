@@ -26,7 +26,7 @@ const HelpCenter = () => {
         </div>
       </div>
       {/* Contents */}
-      <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto my-20 sm:w-full md:w-full lg:w-4/5 xl:w-5/6 space-y-10">
+      <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto mb-20 mt-10 sm:w-full md:w-full lg:w-4/5 xl:w-5/6 space-y-10">
         <QuickAccessHomePage />
         <VideoGuideHomePage />
         <AcardeonSlime />

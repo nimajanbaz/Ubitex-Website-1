@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { MdOutlineFiberNew } from "react-icons/md";
-import TitleBox from "../../blog/components/titleBox";
+import { ImBlog } from "react-icons/im";
 import { HiArrowSmLeft } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { GET_BLOG_POST_URL } from "../../../config/api.config";
 import PostCard from "../../blog/components/postCard";
 import PostCardSkeleton from "../../../components/skeleton/blogSingleCategorySkeleton";
+import TitleBox from "../../../components/titleBox";
 
 const LastBlogPosts = () => {
   const [data, setDate] = useState(null);
@@ -32,7 +32,7 @@ const LastBlogPosts = () => {
           </button>
         </Link>
         <TitleBox
-          icon={<MdOutlineFiberNew />}
+          icon={<ImBlog />}
           title={"جدیدترین مطالب بلاگ یوبیتکس"}
         />
       </div>

@@ -1,5 +1,5 @@
-import TitleBox from "../../blog/components/titleBox";
 import { IoMdColorPalette } from "react-icons/io";
+import TitleBox from "../../../components/titleBox";
 
 const BrandColors = () => {
   return (

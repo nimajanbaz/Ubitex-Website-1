@@ -2,11 +2,11 @@ import { Formik, Field, Form } from "formik";
 import { BiLeftArrowAlt } from "react-icons/bi";
 import { MdAddComment } from "react-icons/md";
 import ReCAPTCHA from "react-google-recaptcha";
-import TitleBox from "./titleBox";
 import { createRef } from "react";
 import { useState } from "react";
 import Notification from "../../../components/notification";
 import { GET_BLOG_ADD_COMMENT_URL } from "../../../config/api.config";
+import TitleBox from "../../../components/titleBox";
 
 const AddComment = ({ postId }) => {
   const [openDialog, setOpenDialog] = useState(false);

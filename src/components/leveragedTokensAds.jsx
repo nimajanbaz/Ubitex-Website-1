@@ -4,7 +4,7 @@ import LeveragedTokenSymbol2 from "../assets/img/trusted-section.webp";
 const LeveragedTokensAds = () => {
   return (
     <>
-      <div className="p-10 rounded-2xl bg-gray-50 dark:bg-[#051a36] rtl-grid flex max-md:flex max-md:flex-col gap-20 items-center mb-10">
+      <div className="p-14 rounded-2xl bg-gray-50 dark:bg-[#051a36] rtl-grid flex max-md:flex max-md:flex-col gap-20 items-center mb-10">
         <div>
           <img
             src={LeveragedTokenSymbol2}

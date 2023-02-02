@@ -9,6 +9,8 @@ import MarketsTableSkeleton from "../../../components/skeleton/marketsTableSkele
 import { Table } from "../../../components/table";
 import { GET_LEVERAGED_CRYPTO_INFO_URL } from "../../../config/api.config";
 import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import TitleBox from "../../../components/titleBox";
+import { RiScalesLine } from "react-icons/ri";
 
 function PaginatedItems({ itemsPerPage, items }) {
 
@@ -192,11 +194,10 @@ const LeveragedCoinsTable = () => {
   return (
     <>
       <div className="flex flex-col mx-auto mt-10">
-        <h3 className="text-2xl text-[#f39200] font-semibold text-right mb-10">
-          توکن‌های لوریج دار یوبیتکس
-        </h3>
+      <TitleBox icon={<RiScalesLine />} title={"توکن‌های لوریج دار یوبیتکس"} />
+
         {markets ? (
-          <div className="max-md:overflow-scroll">
+          <div className="max-md:overflow-scroll mt-10">
             <PaginatedItems itemsPerPage={8} items={markets} />
             <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
               <Link

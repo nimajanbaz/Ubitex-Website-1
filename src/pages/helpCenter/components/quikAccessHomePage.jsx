@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
+import TitleBox from "../../../components/titleBox";
 import { quick_access_data } from "../../../data/helpCenterData";
+import { AiFillThunderbolt } from "react-icons/ai";
 
 const QuickAccessHomePage = () => {
   return (
     <>
-      <h3 className="text-[#f39200] text-3xl font-semibold">دسترسی سریع</h3>
+      <TitleBox icon={<AiFillThunderbolt />} title={"دسترسی سریع"} />
       <div className="grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-3 max-sm:grid-cols-2 gap-5 my-10 rtl-grid">
         {quick_access_data.map((item) => {
           return (

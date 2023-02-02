@@ -1,12 +1,14 @@
 import { Disclosure, Transition } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
+import { BsQuestionLg } from "react-icons/bs";
+import TitleBox from "../../../components/titleBox";
 import { faq_data } from "../../../data/faq";
 
 const AcardeonSlime = () => {
   return (
     <>
       <div className="flex flex-col space-y-3">
-        <h3 className="text-[#f39200] text-3xl font-semibold">سوالات متداول</h3>
+      <TitleBox icon={<BsQuestionLg />} title={"سوالات متداول"} />
       </div>
       {faq_data
         .filter((item) => item.id === 7)

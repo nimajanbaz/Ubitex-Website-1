@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { BiCategoryAlt } from "react-icons/bi";
-import TitleBox from "./titleBox";
 import BlogCategoryHomePageSkeleton from "../../../components/skeleton/BlogCategoryHomePageSkeleton";
 import { GET_BLOG_CATEGORIES_URL } from "../../../config/api.config";
+import TitleBox from "../../../components/titleBox";
 
 const CategoryHomePage = () => {
   const [data, setDate] = useState(null);

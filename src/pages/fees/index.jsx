@@ -2,6 +2,7 @@ import React from "react";
 import TradingFee from "./components/tradingFee";
 import TransferFee from "./components/transferFee";
 import Header from "../../components/header";
+import LeveragedTokensAds from "../../components/leveragedTokensAds";
 
 const Fees = () => {
   return (
@@ -32,6 +33,9 @@ const Fees = () => {
             جدیدترین داده های فهرست شده در هر صفحه برداشت را بررسی کنید.
           </p>
           <TransferFee />
+
+          <LeveragedTokensAds />
+
         </div>
       </div>
     </>

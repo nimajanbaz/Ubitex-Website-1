@@ -8,6 +8,7 @@ import HeaderInfo from "./components/headerInfo";
 import HeaderImages from "./components/headerImages";
 import BlogPostsHomePageSlider from "./components/blogPostsSlider";
 import LastBlogPosts from "./components/lastBlogPost";
+import LeveragedTokensAds from "../../components/leveragedTokensAds";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
           <BlogPostsHomePageSlider />
           <CoinsTable />
           <Feature />
+          <LeveragedTokensAds />
           <Application />
           <LastBlogPosts />
         </div>
