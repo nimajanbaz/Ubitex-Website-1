@@ -13,7 +13,7 @@ import {
   GET_CRYPTO_INFO_URL,
   GET_MARKETS_HEADER_DATA_URL,
 } from "../../config/api.config";
-import LeveragedTokensAds from "./components/leveragedTokensAds";
+import LeveragedTokensAds from "../../components/leveragedTokensAds";
 
 const Markets = () => {
   const [markets, setMarkets] = useState();
@@ -201,7 +201,12 @@ const Markets = () => {
 
   return (
     <>
-      <Header title={"بازارها | صرافی ارزدیجیتال یوبیتکس"} />
+      <Header
+        title={"بازار ارز دیجیتال | صرافی آنلاین یوبیتکس"}
+        description={
+          "معامله در بازار ارز دیجیتال با کمترین کارمزد - خرید و فروش ارز دیجیتال – قیمت لحظه ای بیت کوین – سه ردیف از ارز دیجیتال همانند عکس باقی بماند و نوشته های بالا در بالای این جدول قرار بگیرد."
+        }
+      />
 
       <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto my-20 sm:w-full md:w-full xl:w-5/6">
         {gainer ? (

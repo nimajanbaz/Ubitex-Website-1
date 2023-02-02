@@ -34,7 +34,7 @@ const BrandColors = () => {
         </div>
 
         <div className="flex justify-between items-center rtl-grid w-full">
-          <div className="h-36 w-36 rounded-full bg-[#051d3b]"></div>
+          <div className="h-36 w-36 rounded-full bg-[#051d3b] border border-[#092c59]"></div>
 
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-2">

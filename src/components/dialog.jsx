@@ -45,7 +45,7 @@ const MyDialog = ({
                   }`}>
                   <Dialog.Title
                     as="h3"
-                    className="text-2xl font-semibold leading-6 text-[#f39200]">
+                    className="text-2xl font-semibold leading-6 text-[#f39200] rtl-grid">
                     {title}
                   </Dialog.Title>
                   {image ? (

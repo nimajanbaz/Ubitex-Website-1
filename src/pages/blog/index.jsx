@@ -3,6 +3,7 @@ import BlogHeaderSliderCard from "./components/homePageHeader/blogHeaderSliderCa
 import BlogHeaderSliderIntro from "./components/homePageHeader/blogHeaderSliderIntro";
 import CategoryHomePage from "./components/categoryHomePage";
 import LastPostsHomePage from "./components/lastPostsHomePage";
+import LeveragedTokensAds from "../../components/leveragedTokensAds";
 
 const BlogHomePage = () => {
   return (
@@ -16,12 +17,9 @@ const BlogHomePage = () => {
             <BlogHeaderSliderIntro />
           </div>
         </div>
-        <div className="p-14 rounded-xl bg-gray-50 dark:bg-[#051A36]">
-          <CategoryHomePage />
-        </div>
-        <div>
-          <LastPostsHomePage />
-        </div>
+        <CategoryHomePage />
+        <LastPostsHomePage />
+        <LeveragedTokensAds />
       </div>
     </>
   );
