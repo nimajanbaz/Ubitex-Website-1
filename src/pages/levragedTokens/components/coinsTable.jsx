@@ -8,12 +8,15 @@ import { LongBadge, ShortBadge } from "../../../components/badge";
 import MarketsTableSkeleton from "../../../components/skeleton/marketsTableSkeleton";
 import { Table } from "../../../components/table";
 import { GET_LEVERAGED_CRYPTO_INFO_URL } from "../../../config/api.config";
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
 import TitleBox from "../../../components/titleBox";
 import { RiScalesLine } from "react-icons/ri";
+import { HiArrowSmLeft } from "react-icons/hi";
 
 function PaginatedItems({ itemsPerPage, items }) {
-
   const columns = useMemo(
     () => [
       {
@@ -158,7 +161,7 @@ function PaginatedItems({ itemsPerPage, items }) {
             pageLinkClassName="hover:bg-opacity-20 bg-opacity-0 bg-[#f39200] hover:text-[#f39200] px-2 py-1 rounded transition-all"
             nextLinkClassName="hover:bg-opacity-20 flex bg-opacity-0 bg-[#f39200] hover:text-[#f39200] text-gray-400 px-2 py-1 rounded transition-all"
             previousLinkClassName="hover:bg-opacity-20 flex bg-opacity-0 bg-[#f39200] hover:text-[#f39200] text-gray-400 px-2 py-1 rounded transition-all"
-            activeClassName='text-[#f39200] rounded transition-all'
+            activeClassName="text-[#f39200] rounded transition-all"
             nextLabel={<MdOutlineKeyboardArrowLeft />}
             onPageChange={handlePageClick}
             pageRangeDisplayed={3}
@@ -175,37 +178,40 @@ function PaginatedItems({ itemsPerPage, items }) {
 }
 
 const LeveragedCoinsTable = () => {
-    const [markets, setMarkets] = useState();
-  
-    useEffect(() => {
-      const getData = async () => {
-        await axios
-          .get(GET_LEVERAGED_CRYPTO_INFO_URL)
-          .then((res) => {
-            const all = res.data;
-            setMarkets(all);
-          })
-          .catch((err) => console.log(err));
-      };
-      getData();
-    }, []);
+  const [markets, setMarkets] = useState();
 
-    
+  useEffect(() => {
+    const getData = async () => {
+      await axios
+        .get(GET_LEVERAGED_CRYPTO_INFO_URL)
+        .then((res) => {
+          const all = res.data;
+          setMarkets(all);
+        })
+        .catch((err) => console.log(err));
+    };
+    getData();
+  }, []);
+
   return (
     <>
       <div className="flex flex-col mx-auto mt-10">
-      <TitleBox icon={<RiScalesLine />} title={"توکن‌های لوریج دار یوبیتکس"} />
+        <div className="flex md:flex-row max-sm:flex-col-reverse sm:flex-col-reverse justify-between items-center">
+          <Link to={"/markets"}>
+            <button className="px-6 py-2 rounded-md bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 transition-all text-[#f39200] flex space-x-2 space-x-reverse items-center justify-center flex-row-reverse sm:mt-5 max-sm:mt-5">
+              <span>مشاهده همه بازارهای یوبیتکس</span>
+              <HiArrowSmLeft />
+            </button>
+          </Link>
+          <TitleBox
+            icon={<RiScalesLine />}
+            title={"توکن‌های لوریج دار یوبیتکس"}
+          />
+        </div>
 
         {markets ? (
-          <div className="max-md:overflow-scroll mt-10">
+          <div className="max-md:overflow-scroll mt-10 mb-14">
             <PaginatedItems itemsPerPage={8} items={markets} />
-            <div className="flex mx-auto justify-center items-center  mt-9 mb-5">
-              <Link
-                to={"/markets"}
-                className="text-[#f39200] cursor-pointer transition-all text-lg px-6 py-3 bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 rounded-md">
-                <span>مشاهده همه بازارهای یوبیتکس</span>
-              </Link>
-            </div>
           </div>
         ) : (
           <MarketsTableSkeleton />

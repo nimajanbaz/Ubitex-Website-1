@@ -25,7 +25,7 @@ const VideoGuide = () => {
           <div className="grid lg:grid-cols-3 gap-5 md:grid-cols-3 grid-cols-1 mb-10 rtl-grid">
             {help_center_data.map((guide) => {
               return (
-                <div className="bg-gray-50 dark:bg-[#051a36] p-3 rounded-md flex flex-col space-y-4">
+                <div className="bg-gray-50 dark:bg-[#051a36] dark:hover:bg-[#072041] transition-all p-3 rounded-md flex flex-col space-y-4">
                   <img
                     src={guide.img}
                     alt=""
@@ -34,7 +34,7 @@ const VideoGuide = () => {
                   <h3 className="text-xl font-semibold px-3">{guide.title}</h3>
                   <p className="px-3 text-sm">{guide.text}</p>
                   <Link to={guide.slug}>
-                    <button className="px-4 py-2 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200] w-full">
+                    <button className="px-4 py-3 rounded-md bg-[#f39200] bg-opacity-10 hover:bg-opacity-20 transition-all text-[#f39200] w-full">
                       اطلاعات بیشتر
                     </button>
                   </Link>

@@ -16,11 +16,11 @@ const AllPosts = () => {
 
   const breadcrumbItems = [
     {
-        href: '/blog/posts',
-        label: 'همه پست‌ها'
-    }
-  ]
-  
+      href: "/blog/posts",
+      label: "همه پست‌ها",
+    },
+  ];
+
   useEffect(() => {
     fetch(GET_BLOG_POST_URL)
       .then((response) => response.json())
@@ -36,7 +36,7 @@ const AllPosts = () => {
           )
           .filter((d) =>
             categoryFilter !== "all"
-              ? d.categories.some(i => i.label === categoryFilter)
+              ? d.categories.some((i) => i.label === categoryFilter)
               : d
           )
       );
@@ -46,11 +46,11 @@ const AllPosts = () => {
   return (
     <>
       <div className="sm:w-full md:w-full lg:w-4/5 xl:w-4/5 2xl:w-3/4 mx-auto rtl-grid leading-7">
-        <Breadcrumb2 items={breadcrumbItems} className='mb-5 mt-10' />
+        <Breadcrumb2 items={breadcrumbItems} className="mb-5 mt-10" />
 
         <div className="flex flex-col space-y-3">
           <h2 className="font-semibold text-2xl text-[#f39200]">
-            با موضوع بیاموزید
+            دسترسی آسان به دنیای بلاکچین و ارز دیجیتال
           </h2>
 
           <div className="flex space-x-8 space-x-reverse items-center">
@@ -65,9 +65,7 @@ const AllPosts = () => {
           </div>
 
           <div className="flex space-x-8 space-x-reverse items-center">
-            <span className="text-gray-400 dark:text-gray-500">
-              دسته بندی‌ها
-            </span>
+            <span className="text-gray-400 dark:text-gray-500">سطح پست</span>
             <Levels
               onSelect={(e) => {
                 setLevelFilter(e);

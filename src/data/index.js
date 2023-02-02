@@ -161,7 +161,7 @@ export const footer_data = {
     {
       id: 2,
       title: "کارت هدیه",
-      href: "/redirect-to-platform",
+      href: "/cryptocard",
     },
     {
       id: 3,

@@ -6,16 +6,18 @@ import { leveraged_tokens_data } from "../../data/leveragedTokenData";
 import AcardeonSlime from "./components/faqHomePage";
 import TradeHomePage from "./components/tradeHomePage";
 import LeveragedCoinsTable from "./components/coinsTable";
+import TitleBox from "../../components/titleBox";
+import { BsInfoLg, BsStars } from "react-icons/bs";
 
 const LeveragedToken = () => {
   return (
-    <>
+    <div>
       <Header
         title={"توکن‌ های لوریج‌ دار یا اهرم دار | صرافی ارزدیجیتال یوبیتکس"}
         description="یوبیتکس اولین صرافی ارز دیجیتال در ایران است که قابلیت معامله توکن‌ های لوریج‌ دار یا اهرم دار را فراهم کرده. امکان کسب سود حتی در ریزش بازار ارز دیجیتال"
       />
       <div className="px-4 sm:px-6 text-right max-w-[1400px] mx-auto my-10">
-        <div className="grid grid-cols-9 items-center my-10 space-y-5 bg-gray-50 dark:bg-[#051a36] rounded-3xl p-16 rtl-grid">
+        <div className="grid grid-cols-9 items-center my-10 space-y-5 rtl-grid">
           <div className="flex flex-col space-y-5 lg:col-span-3  col-span-9">
             <h1 className="text-[#f39200] text-4xl font-semibold">
               {leveraged_tokens_data.header.title}
@@ -40,9 +42,10 @@ const LeveragedToken = () => {
         <LeveragedCoinsTable />
         <div className="mb-10 flex justify-between items-center flex-row-reverse">
           <div className="flex flex-col space-y-3">
-            <h2 className="text-[#f39200] text-3xl font-semibold">
-              {leveraged_tokens_data.info.title}
-            </h2>
+            <TitleBox
+            icon={<BsInfoLg />}
+            title={leveraged_tokens_data.info.title}
+          />
           </div>
         </div>
         <div className="grid grid-cols-8 rtl-grid gap-8">
@@ -86,14 +89,16 @@ const LeveragedToken = () => {
             })}
           </div>
         </div>
-        <div className="my-10 flex flex-col justify-center items-center bg-gray-50 dark:bg-[#051a36] rounded-3xl p-16">
-          <h2 className="text-[#f39200] text-3xl font-semibold">
-            {leveraged_tokens_data.advantage.title}
-          </h2>
+        <div className="my-10 flex flex-col justify-center">
+          <TitleBox
+            icon={<BsStars />}
+            title={leveraged_tokens_data.advantage.title}
+          />
+
           <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-8 mt-10 transition-all rtl-grid">
             {leveraged_tokens_data.advantage.items.map((item) => {
               return (
-                <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-50 hover:bg-white dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
+                <div className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-50 hover:bg-white dark:bg-[#04162d] p-12 rounded-xl flex flex-col justify-center text-center space-y-3">
                   <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                     {item.icon}
                   </span>
@@ -108,7 +113,7 @@ const LeveragedToken = () => {
         <AcardeonSlime />
         <TradeHomePage />
       </div>
-    </>
+    </div>
   );
 };
 

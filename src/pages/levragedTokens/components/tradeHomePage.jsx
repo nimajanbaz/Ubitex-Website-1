@@ -14,7 +14,7 @@ const TradeHomePage = () => {
         </p>
         <div className="flex space-x-6">
           <Link to={"/redirect-to-platform"}>
-            <button className="px-8 py-3 rounded-md bg-[#f39200] bg-opacity-10 text-[#f39200] flex space-x-2 justify-center items-center">
+            <button className="px-8 py-3 rounded-md bg-[#f39200] bg-opacity-10  hover:bg-opacity-20 transition-all text-[#f39200] flex space-x-2 justify-center items-center">
               <span>
                 <HiArrowSmLeft />
               </span>

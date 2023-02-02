@@ -23,6 +23,7 @@ import Search from "./pages/blog/pages/search";
 import CreatorPage from "./pages/blog/pages/writer";
 import Tags from "./pages/blog/pages/tags";
 import BrandMaterial from "./pages/brandMaterial";
+import CryptoCard from "./pages/cryptoCard";
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/markets" element={<Markets />} />
             <Route path="/leveraged-tokens" element={<LeveragedToken />} />
             <Route path="/brand-material" element={<BrandMaterial />} />
+            <Route path="/cryptocard" element={<CryptoCard />} />
 
             <Route path="/blog" element={<BlogHomePage />} />
             <Route path="/blog/search" element={<Search />} />

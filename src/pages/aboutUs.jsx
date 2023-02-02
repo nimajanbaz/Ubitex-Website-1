@@ -26,7 +26,7 @@ const AboutUs = () => {
               return (
                 <div
                   key={item.id}
-                  className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-100 dark:bg-[#04162d] p-12 rounded-lg flex flex-col justify-center text-center space-y-3">
+                  className=" transition-all cursor-pointer dark:hover:bg-[#051b38] bg-gray-100 dark:bg-[#04162d] p-12 rounded-xl flex flex-col justify-center text-center space-y-3">
                   <span className="text-[#f39200] text-4xl p-3 rounded-lg bg-[#f39200] bg-opacity-10 flex justify-center mx-auto">
                     {item.icon}
                   </span>
