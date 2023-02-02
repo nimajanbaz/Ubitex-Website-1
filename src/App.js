@@ -22,6 +22,7 @@ import AllPosts from "./pages/blog/pages/allPosts";
 import Search from "./pages/blog/pages/search";
 import CreatorPage from "./pages/blog/pages/writer";
 import Tags from "./pages/blog/pages/tags";
+import Pairs from "./pages/pairs";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/terms" element={<Terms />} />
             <Route path="/download" element={<Application />} />
             <Route path="/markets" element={<Markets />} />
+            <Route path="/pairs/:slug" element={<Pairs />} />
             <Route path="/leveraged-tokens" element={<LeveragedToken />} />
 
             <Route path="/blog" element={<BlogHomePage />} />
