@@ -7,7 +7,7 @@ const VideoGuide = () => {
   return (
     <>
       <Header title={"راهنمای تصویری"} />
-      <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
+      <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto mb-20 mt-10 sm:w-full md:w-full lg:w-4/5 xl:w-5/6 space-y-10">
         <div className="mb-10 w-full relative">
           <div className="my-10 flex justify-between items-center flex-row-reverse">
             <div className="flex flex-col space-y-3">

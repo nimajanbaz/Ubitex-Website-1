@@ -26,8 +26,8 @@ const Search = () => {
       <div className="flex flex-col items-center rounded-xl relative w-4/5 sm:h-[200px] md:h-[600px] mx-auto ">
         <img
           className="loading-animation object-cover rounded-3xl mt-10"
-          src="https://bapi.ubitex.io/ipfs/167343027"
-          alt=""
+          src="https://ipfs.ubitex.io/ipfs/QmE9dLwZFY6Wx8Rs0kE1rqPl5c3uM738sC4hW5pyigUd"
+          alt="Search Banner"
         />
       </div>
       <div className="relative container -mt-20 lg:-mt-40 bg-white dark:bg-[#051A36] mx-auto py-20 space-y-14 border border-gray-100 dark:border-[#092c59] rounded-3xl w-1/2 shadow-2xl my-10 flex flex-col justify-center items-center">

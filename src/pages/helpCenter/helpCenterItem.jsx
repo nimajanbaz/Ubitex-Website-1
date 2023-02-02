@@ -11,7 +11,7 @@ const HelpCenterItem = () => {
 
   return (
     <>
-      <div className="px-4 sm:px-6 text-right max-w-[1300px] mx-auto">
+      <div className="px-10 sm:px-10 max-sm:p-0 text-right mx-auto mb-20 mt-10 sm:w-full md:w-full lg:w-4/5 xl:w-5/6 space-y-10">
         {/* Header */}
         <div className="flex flex-col my-10 h-auto">
           {help_center_data
@@ -35,7 +35,7 @@ const HelpCenterItem = () => {
                       <HiArrowSmLeft />
                     </button>
                   </div>
-                  <div className="xl:h-[700px] lg:h-[500px] md:h-[400px] sm:h-[400px] max-sm:h-[200px] w-full loading-animation rounded-2xl">
+                  <div className="xl:h-[600px] xl:w-3/4 mx-auto lg:h-[500px] md:h-[400px] sm:h-[400px] max-sm:h-[200px] w-full loading-animation rounded-2xl">
                     <iframe
                       src={item.videoLink}
                       title={item.title}

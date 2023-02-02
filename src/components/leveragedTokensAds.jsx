@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
-import LeveragedTokenSymbol2 from "../assets/img/trusted-section.webp";
 
 const LeveragedTokensAds = () => {
   return (
     <>
       <div className="p-14 rounded-2xl bg-gray-50 dark:bg-[#051a36] rtl-grid flex max-md:flex max-md:flex-col gap-20 items-center mb-10">
-        <div>
+        <div className="w-3/12">
           <img
-            src={LeveragedTokenSymbol2}
+            src={'https://ipfs.ubitex.io/ipfs/QmiBY6rs1R31LwHUXplAx5bBjnz5GgaCv2fMLfpKHZmA'}
             alt="Leveraged Tokens Ads"
-            className="h-[150px]"
           />
         </div>
         <div className="flex flex-col gap-4">

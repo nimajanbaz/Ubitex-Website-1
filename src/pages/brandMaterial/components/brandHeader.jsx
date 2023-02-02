@@ -1,4 +1,3 @@
-import headerImage from "../../../assets/img/global-pc.png";
 
 const BrandHeader = () => {
   return (
@@ -9,7 +8,7 @@ const BrandHeader = () => {
           <p className="text-lg">لوگوها و رنگ‌های سازمانی برند یوبیتکس </p>
         </div>
         <div className="w-1/2 max-md:hidden">
-          <img src={headerImage} alt="" className="w-3/4 mx-auto" />
+          <img src={'https://ipfs.ubitex.io/ipfs/Qm5fMoltmHC3wE58Dn0dUuhVv3qLQ1zkzehKzVewIqyx'} alt="" className="w-3/4 mx-auto" />
         </div>
       </div>
     </>
