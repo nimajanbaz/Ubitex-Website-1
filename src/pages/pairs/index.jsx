@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import CoinMid from "./components/coinmid";
 import CoinName from "./components/coinname";
 import CoinPrice from "./components/coinprice";
+import CopyBtnDemo from "../../components/copytoclipboard";
 
 const Pairs = () => {
   const [data, setdata] = useState();
@@ -35,13 +37,39 @@ const Pairs = () => {
               <CoinPrice data={data} />
             </div>
           </div>
-          <div className="grid grid-cols-3 bg-gradient-to-b from-orange-100 to-orange-300  ">
-          <div className="flex flex-col">
-               
-               title={"اکسپلوررها"}
-               items={data.explorers}
-
+          <div className="grid grid-cols-3 ">
+            <div>
+              <div>کانترکت‌ها</div>
+              <div className="flex flex-col">
+                {data.contractsList.map((item) => {
+                  return (
+                    <>
+                      <div className="flex space-x-3 space-y-4 items-center text-xs">
+                        <img
+                          className="w-[20px] h-[20px] mt-6 ml-3"
+                          src={item.chainLogo}
+                        />
+                        <div className="">{item.chainName}</div>
+                        <div>
+                          {item.contractAddress.substring(0, 10) + "..."}
+                        </div>
+                        <div>
+                          <CopyBtnDemo item={item} />
+                        </div>
+                      </div>
+                    </>
+                  );
+                })}
               </div>
+            </div>
+            <div>
+              <div>
+                اکسپلوررها
+              </div>
+              <div className="">
+                {data.explorers}
+              </div>
+            </div>
           </div>
           <div>555</div>
         </div>
