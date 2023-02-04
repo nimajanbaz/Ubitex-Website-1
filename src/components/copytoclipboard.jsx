@@ -19,7 +19,7 @@ export default function CopyBtnDemo({ item }) {
     );
   };
 
-  const btnStyle = copied ? "bg-gray-500 text-white" : "";
+  const btnStyle = copied ? "bg-[#f39200] bg-opacity-10 px-2 py-1 rounded text-[#f39200] transition-all" : "";
 
   return (
     <div className="text-center">

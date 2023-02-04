@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import CoinMid from "./components/coinmid";
 import CoinName from "./components/coinname";
 import CoinPrice from "./components/coinprice";
 import CopyBtnDemo from "../../components/copytoclipboard";
+import TradingViewWidget, { Themes } from 'react-tradingview-widget';
 
 const Pairs = () => {
   const [data, setdata] = useState();
@@ -28,30 +28,31 @@ const Pairs = () => {
   return (
     <>
       {data ? (
-        <div className="flex flex-col rtl-grid w-5/6">
-          <div className="flex space-x-10 space-x-reverse">
-            <div className="w-2/5">
+        <div className="flex flex-col rtl-grid sm:w-full md:w-full lg:w-full xl:w-11/12 2xl:w-11/12">
+          <div className="flex space-x-20 space-x-reverse">
+            <div className="w-2/6">
               <CoinName data={data} />
             </div>
-            <div className="w-3/5">
+            <div className="w-4/6">
               <CoinPrice data={data} />
             </div>
           </div>
-          <div className="grid grid-cols-3 ">
+          <div className="grid grid-cols-2 ">
             <div>
               <div>کانترکت‌ها</div>
               <div className="flex flex-col">
                 {data.contractsList.map((item) => {
                   return (
                     <>
-                      <div className="flex space-x-3 space-y-4 items-center text-xs">
+                      <div className="flex item-center text-xs mt-3 space-x-4">
                         <img
-                          className="w-[20px] h-[20px] mt-6 ml-3"
+                          className="w-[20px] h-[20px] ml-4 "
                           src={item.chainLogo}
+                          title={item.chainName}
                         />
-                        <div className="">{item.chainName}</div>
+                        {/* <div className="text-gray-300 dark:text-gray-600">{item.chainName}</div> */}
                         <div>
-                          {item.contractAddress.substring(0, 10) + "..."}
+                          {item.contractAddress.substring(0, 30) + "..."}
                         </div>
                         <div>
                           <CopyBtnDemo item={item} />
@@ -63,15 +64,19 @@ const Pairs = () => {
               </div>
             </div>
             <div>
-              <div>
-                اکسپلوررها
-              </div>
-              <div className="">
-                {data.explorers}
-              </div>
+              <div>اکسپلوررها</div>
+              <div className="grid grid-col">{data.explorers}</div>
             </div>
           </div>
-          <div>555</div>
+          <div className="mt-10 w-full">
+            <div><TradingViewWidget
+    symbol={data.symbol+"usdt"}
+    theme={Themes.DARK}
+    locale="IR"
+   
+  /></div>
+            <div>{data.description}</div>
+          </div>
         </div>
       ) : null}
     </>
