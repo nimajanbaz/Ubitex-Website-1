@@ -1,6 +1,8 @@
 import { HiArrowTrendingUp, HiArrowTrendingDown } from "react-icons/hi2";
 import React from "react";
 import SocialIcons from "../../../components/socialIcons";
+import IntToString from "../../../components/inttostring";
+
 
 const CoinName = ({ data }) => {
   return (
@@ -37,37 +39,33 @@ const CoinName = ({ data }) => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-4 text-xs justify-between pt-10 divide-x divide-x-reverse divide-gray-600">
+        <div className="grid grid-cols-4 text-xs justify-between pt-10 divide-x divide-x-reverse divide-gray-200 dark:divide-gray-600">
           <div>
-            <div className="text-gray-500">حجم معاملات 24 ساعته</div>
-            <div>
-              {data.marketCapCahnge24h.toLocaleString(undefined, {
-                minimumFractionDigits: 0,
-              })}
+            <div className="text-gray-500 mb-1">حجم معاملات 24 ساعته</div>
+            <div className="text-base">
+            <IntToString 
+              num={data.marketCapCahnge24h}/>
             </div>
           </div>
           <div className="pr-6">
-            <div className="text-gray-500">مارکت کپ</div>
-            <div>
-              {data.marketCap.toLocaleString(undefined, {
-                minimumFractionDigits: 0,
-              })}
+            <div className="text-gray-500 mb-1">مارکت کپ</div>
+            <div className="text-base">
+              <IntToString 
+              num={data.marketCap}/>
             </div>
           </div>
           <div className="pr-6">
-            <div className="text-gray-500">سکه‌های در گردش</div>
-            <div>
-              {data.circulatingSupply.toLocaleString(undefined, {
-                minimumFractionDigits: 0,
-              })}
+            <div className="text-gray-500 mb-1">سکه‌های در گردش</div>
+            <div className="text-base"><IntToString 
+              num={data.circulatingSupply}
+             />
             </div>
           </div>
           <div className="pr-6">
-            <div className="text-gray-500">کل سکه‌ها</div>
-            <div>
-              {data.totalSupply.toLocaleString(undefined, {
-                minimumFractionDigits: 0,
-              })}
+            <div className="text-gray-500 mb-1">کل سکه‌ها</div>
+            <div className="text-base">
+            <IntToString 
+              num={data.totalSupply}/>
             </div>
           </div>
         </div>
@@ -77,7 +75,7 @@ const CoinName = ({ data }) => {
               href={data.website}
               target="_blank"
               rel="noreferrer"
-              className="rounded-md px-4 py-2 text-xs border border-gray-100 dark:border-gray-800 bg-[#f39200] bg-opacity-0 hover:bg-opacity-10 hover:border-none cursor-pointer transition-all hover:text-[#f39200]"
+              className="rounded-md px-4 py-2 text-xs bg-gray-50 dark:bg-gray-800 hover:border-none cursor-pointer transition-all hover:text-[#f39200] hover:bg-[#f39200] hover:bg-opacity-10"
             >
               وب سایت
             </a>
@@ -87,7 +85,7 @@ const CoinName = ({ data }) => {
               href={data.whitePaper}
               rel="noreferrer"
               target="_blank"
-              className="rounded-md px-4 py-2 text-xs border border-gray-100 dark:border-gray-800 bg-[#f39200] bg-opacity-0 hover:bg-opacity-10 hover:border-none cursor-pointer transition-all hover:text-[#f39200]"
+              className="rounded-md px-4 py-2 text-xs bg-gray-50 dark:bg-gray-800 hover:border-none cursor-pointer transition-all hover:text-[#f39200] hover:bg-[#f39200] hover:bg-opacity-10"
             >
               وایت پیپر
             </a>

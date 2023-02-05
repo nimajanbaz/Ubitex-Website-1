@@ -23,6 +23,7 @@ import Search from "./pages/blog/pages/search";
 import CreatorPage from "./pages/blog/pages/writer";
 import Tags from "./pages/blog/pages/tags";
 import Pairs from "./pages/pairs";
+import QrCode from "./components/qrcode";
 
 const App = () => {
   return (
@@ -35,6 +36,7 @@ const App = () => {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/fees" element={<Fees />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/qrcodegenerator" element={<QrCode />} />
             <Route path="/download" element={<Application />} />
             <Route path="/markets" element={<Markets />} />
             <Route path="/pairs/:slug" element={<Pairs />} />

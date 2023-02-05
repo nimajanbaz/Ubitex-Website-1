@@ -5,7 +5,7 @@ export default function CopyBtnDemo({ item }) {
   const [copied, setCopied] = useState(false);
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText({ item }).then(
+    navigator.clipboard.writeText(item).then(
       () => {
         setCopied(true);
         // changing back to default state after 2 seconds.

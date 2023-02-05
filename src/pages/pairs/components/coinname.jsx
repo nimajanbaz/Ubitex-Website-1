@@ -1,5 +1,4 @@
 import React from "react";
-import Linkdropdown from "../../../components/linkdropdown";
 
 const CoinName = ({ data }) => {
   return (
