@@ -94,9 +94,7 @@ const CoinName = ({ data }) => {
             <div className="flex">
               {data.socialMedia.map((item) => {
                 return (
-                  <span>
                     <SocialIcons item={item} />
-                  </span>
                 );
               })}
             </div>
