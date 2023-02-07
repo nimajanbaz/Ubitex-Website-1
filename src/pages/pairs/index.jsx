@@ -22,7 +22,7 @@ const Pairs = () => {
 
   setInterval(() => {
     setreload(reload + 1);
-  },60000);
+  },6000);
 
   useEffect(() => {
     refresh();
@@ -42,6 +42,7 @@ const Pairs = () => {
           </div>
 <CoinContract data={data} />
           <div>
+          <h2 className="text-xl my-10">قیمت</h2>
             <ChartInfo 
             data={data}/>
           </div>
