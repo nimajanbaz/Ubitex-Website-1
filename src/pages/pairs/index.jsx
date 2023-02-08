@@ -3,30 +3,28 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CoinName from "./components/coinname";
 import CoinPrice from "./components/coinprice";
-import CopyBtnDemo from "../../components/copytoclipboard";
 
 import CoinContract from "./components/coincontract";
 import ChartInfo from "./components/chart";
 
-
 const Pairs = () => {
-  const [data, setdata] = useState();
-  const [reload, setreload] = useState(0);
+  const [data, setdata] = useState(null);
   const { slug } = useParams();
   const refresh = () => {
-    console.log("test");
     fetch(`https://bapi.ubitex.io/v1.0/cryptoInfo/${slug}`)
       .then((response) => response.json())
       .then((data) => setdata(data));
   };
 
-  setInterval(() => {
-    setreload(reload + 1);
-  },6000);
-
   useEffect(() => {
     refresh();
-  }, [slug, reload]);
+
+    const interval = setInterval(() => {
+      refresh();
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, [slug]);
 
   return (
     <>
@@ -40,11 +38,10 @@ const Pairs = () => {
               <CoinPrice data={data} />
             </div>
           </div>
-<CoinContract data={data} />
+          <CoinContract data={data} />
           <div>
-          <h2 className="text-xl my-10">قیمت</h2>
-            <ChartInfo 
-            data={data}/>
+            <h2 className="text-xl my-10">قیمت</h2>
+            <ChartInfo data={data} />
           </div>
         </div>
       ) : null}

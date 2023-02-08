@@ -3,14 +3,20 @@ import ReactHtmlParser from "react-html-parser";
 import TradingViewWidget from "../../../components/tradingview";
 
 const ChartInfo = ({ data }) => {
-  const [theme, settheme] = useState(localStorage.getItem("theme"));
-
+  const [color, setcolor] = useState();
+  useEffect (()=>{if (localStorage.getItem("theme") === "dark") {
+    setcolor("rgba(255, 255, 255, 1)");
+  } else {
+    setcolor("rgba(0, 0, 0, 1)");
+  }} , [])
+  
   return (
-    <>
+    <> 
       <div className="flex gap-20">
         <div className="w-4/5">
           <div className="h-[600px]">
-            <TradingViewWidget Symbol={data.symbol + "usdt"} theme={theme} />
+           {color ? (
+            <TradingViewWidget Symbol={data.symbol + "usdt"} color={color} /> ):null}
           </div>
           <div className="mt-10 flex flex-col gap-2">
             <h2 className="text-lg">درباره {data.nameFa}</h2>
@@ -19,21 +25,25 @@ const ChartInfo = ({ data }) => {
         </div>
         <div className="w-1/5">
           <div>
-            <div className="flex justify-between mb-10">
-              <div className="flex flex-col items-center space-y-2">
-                <div className="text-gray-400 dark:text-gray-500 text-xs">خرید (تومان)</div>
-                <div className="text-emerald-600 bg-emerald-600 bg-opacity-10 rounded-md px-4 py-2">
+            <div className="flex justify-between mb-10 w-full gap-3">
+              <div className="flex flex-col items-center justify-center space-y-2 w-full">
+                <div className="text-gray-400 dark:text-gray-500 text-xs">
+                  خرید (تومان)
+                </div>
+                <div className="text-emerald-600 bg-emerald-600 bg-opacity-10 rounded-md flex justify-center items-center w-full py-2">
                   {data.buyPriceTMN.toLocaleString(undefined, {
-                minimumFractionDigits: 0,
-              })}
+                    minimumFractionDigits: 0,
+                  })}
                 </div>
               </div>
-              <div className="flex flex-col items-center space-y-2">
-              <div className="text-gray-400 dark:text-gray-500 text-xs">فروش (تومان)</div>
-                <div className="text-red-600 bg-red-600 bg-opacity-10 rounded-md px-4 py-2">
+              <div className="flex flex-col items-center space-y-2 w-full">
+                <div className="text-gray-400 dark:text-gray-500 text-xs">
+                  فروش (تومان)
+                </div>
+                <div className="text-red-600 bg-red-600 bg-opacity-10 rounded-md flex justify-center items-center py-2 w-full">
                   {data.sellPriceTMN.toLocaleString(undefined, {
-                minimumFractionDigits: 0,
-              })}
+                    minimumFractionDigits: 0,
+                  })}
                 </div>
               </div>
             </div>
