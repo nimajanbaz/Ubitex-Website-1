@@ -3,7 +3,7 @@ import React from "react";
 const CoinName = ({ data }) => {
   return (
     <>
-      <div className="my-10 rtl-grid">
+      <div className="flex rtl-grid">
         <div className="flex flex-col space-x-reverse space-y-5">
           <div className="flex space-x-6 space-x-reverse">
             <div className="w-[50px] h-[50px]">

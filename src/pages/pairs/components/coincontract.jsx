@@ -3,7 +3,7 @@ import CopyBtnDemo from "../../../components/copytoclipboard";
 const CoinContract = ({ data }) => {
   return (
     <>
-      <div className="flex gap-10 ">
+      <div className="flex gap-10 rtl-grid">
         <div className="w-2/5">
           <div className="text-xl">کانترکت‌ها</div>
           <div className="flex flex-col">

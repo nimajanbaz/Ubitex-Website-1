@@ -7,7 +7,7 @@ import IntToString from "../../../components/inttostring";
 const CoinName = ({ data }) => {
   return (
     <>
-      <div className="my-10 rtl-grid">
+      <div className="rtl-grid">
         <div className="flex flex-col">
           <div className="text-xs">قیمت</div>
           <div className="flex space-x-2 space-x-reverse items-end">
